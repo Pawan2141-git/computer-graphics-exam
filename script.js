@@ -16,8 +16,6 @@ const loadingScreen = document.getElementById('loading-screen');
 const examScreen    = document.getElementById('exam-screen');
 const resultScreen  = document.getElementById('result-screen');
 
-const apiKeyInput   = document.getElementById('api-key-input');
-const toggleKeyBtn  = document.getElementById('toggle-key-btn');
 const dropZone      = document.getElementById('drop-zone');
 const dropInner     = document.getElementById('drop-inner');
 const fileSelected  = document.getElementById('file-selected');
@@ -81,19 +79,6 @@ function checkReady() {
   const hasFile = !!pdfInput.files[0];
   generateBtn.disabled = !hasFile;
 }
-
-// ─── API Key toggle ───────────────────────────────────────────────────────────
-toggleKeyBtn.addEventListener('click', () => {
-  apiKeyInput.type = apiKeyInput.type === 'password' ? 'text' : 'password';
-});
-apiKeyInput.addEventListener('input', checkReady);
-
-// ─── Save / restore API key ───────────────────────────────────────────────────
-const savedKey = localStorage.getItem('gemini_api_key');
-if (savedKey) { apiKeyInput.value = savedKey; checkReady(); }
-apiKeyInput.addEventListener('change', () => {
-  if (apiKeyInput.value.trim()) localStorage.setItem('gemini_api_key', apiKeyInput.value.trim());
-});
 
 // ─── Drop zone ────────────────────────────────────────────────────────────────
 dropZone.addEventListener('click', () => pdfInput.click());
@@ -288,58 +273,6 @@ ${excerpt}`;
   return sanitizeMCQs(parsed);
 }
 
-// ─── Gemini API Call (Optional, for users with custom key) ─────────────────────
-async function generateMCQsGemini(text, numQ, difficulty, apiKey) {
-  const excerpt = text.length > 8000 ? text.slice(0, 8000) : text;
-  const prompt = `You are an expert MCQ test creator. Based on the document, generate ${numQ} multiple choice questions.
-Difficulty: ${difficulty}.
-Return ONLY a valid JSON array:
-[
-  {
-    "q": "Question text?",
-    "options": ["Option A", "Option B", "Option C", "Option D"],
-    "answer": "Option A",
-    "topic": "Topic"
-  }
-]
-Document:
-${excerpt}`;
-
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 4096,
-          responseMimeType: 'application/json'
-        }
-      })
-    }
-  );
-
-  if (!response.ok) {
-    const err = await response.json().catch(() => ({}));
-    throw new Error('Gemini API error: ' + (err?.error?.message || `HTTP ${response.status}`));
-  }
-
-  const data = await response.json();
-  const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-  let parsed;
-  try {
-    parsed = JSON.parse(raw);
-  } catch (_) {
-    const match = raw.match(/\[[\s\S]*\]/);
-    if (!match) throw new Error('Could not parse Gemini response.');
-    parsed = JSON.parse(match[0]);
-  }
-
-  return sanitizeMCQs(parsed);
-}
-
 // ─── Smart NLP Fallback (100% Client-side & Offline) ──────────────────────────
 function generateMCQsSmartNLP(text, numQ) {
   // Extract informative sentences from text
@@ -439,11 +372,10 @@ function sanitizeMCQs(rawArray) {
 
 // ─── Generate flow ────────────────────────────────────────────────────────────
 generateBtn.addEventListener('click', async () => {
-  const customKey = apiKeyInput.value.trim();
-  const file      = pdfInput.files[0];
-  const numQ      = parseInt(document.getElementById('num-questions').value, 10);
-  const diff      = document.getElementById('difficulty').value;
-  const minsPerQ  = parseFloat(document.getElementById('time-per-q').value);
+  const file     = pdfInput.files[0];
+  const numQ     = parseInt(document.getElementById('num-questions').value, 10);
+  const diff     = document.getElementById('difficulty').value;
+  const minsPerQ = parseFloat(document.getElementById('time-per-q').value);
 
   if (!file) return;
 
@@ -475,29 +407,23 @@ generateBtn.addEventListener('click', async () => {
         finalMCQs = directQuestions;
       }
     } else {
-      // Step 3: No pre-existing questions found -> Use AI to generate new questions!
-      if (customKey && customKey.length > 10) {
-        setProgress(60, 'Using Gemini AI...', `Generating ${numQ} questions with custom key`);
-        finalMCQs = await generateMCQsGemini(text, numQ, diff, customKey);
-      } else {
-        // Built-in Free AI without any API key!
-        setProgress(60, 'Built-in AI Thinking...', `Generating ${numQ} MCQs (No API key needed)`);
+      // Step 3: No pre-existing questions found -> Use Free AI to generate new questions!
+      setProgress(60, 'Built-in AI Thinking...', `Generating ${numQ} MCQs from document...`);
 
-        let prog = 60;
-        const progInterval = setInterval(() => {
-          prog = Math.min(prog + 2, 92);
-          setProgress(prog, 'Built-in AI is working...', 'Creating questions from your document');
-        }, 500);
+      let prog = 60;
+      const progInterval = setInterval(() => {
+        prog = Math.min(prog + 2, 92);
+        setProgress(prog, 'Built-in AI is working...', 'Creating questions from your document');
+      }, 500);
 
-        try {
-          finalMCQs = await generateMCQsFreeAI(text, numQ, diff);
-        } catch (aiErr) {
-          console.warn('Free AI error, falling back to local NLP generator:', aiErr);
-          setProgress(80, 'Using Local Generator...', 'Extracting concepts directly from text');
-          finalMCQs = generateMCQsSmartNLP(text, numQ);
-        } finally {
-          clearInterval(progInterval);
-        }
+      try {
+        finalMCQs = await generateMCQsFreeAI(text, numQ, diff);
+      } catch (aiErr) {
+        console.warn('Free AI error, falling back to local NLP generator:', aiErr);
+        setProgress(80, 'Using Local Generator...', 'Extracting concepts directly from text');
+        finalMCQs = generateMCQsSmartNLP(text, numQ);
+      } finally {
+        clearInterval(progInterval);
       }
     }
 
