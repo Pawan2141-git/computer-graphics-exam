@@ -7553,14 +7553,22 @@ function populateJumpSelect() {
   questions.forEach((q, idx) => {
     const key = q.lecture || (q.topic ? q.topic.split(":")[0].trim() : "Other");
     if (!groupMap.has(key)) {
-      groupMap.set(key, { index: idx, title: q.topic || key });
+      let displayTitle = q.topic || key;
+      if (activeSection === "Assignment Questions" && key.startsWith("Assignment ")) {
+        const num = parseInt(key.replace("Assignment ", ""), 10);
+        const startQ = (num - 1) * 10 + 1;
+        const endQ = num * 10;
+        const topicPart = q.topic.includes(":") ? q.topic.split(":")[1].trim() : "";
+        displayTitle = `${key} (Q${startQ}-${endQ}): ${topicPart}`;
+      }
+      groupMap.set(key, { index: idx, title: displayTitle });
     }
   });
 
   const defaultOpt = document.createElement("option");
   defaultOpt.value = "";
   defaultOpt.textContent = activeSection === "Assignment Questions" 
-    ? "Jump to Assignment..." 
+    ? "Jump to Assignment (1 - 12)..." 
     : "Jump to Topic / Lecture...";
   lectureSelect.appendChild(defaultOpt);
 
