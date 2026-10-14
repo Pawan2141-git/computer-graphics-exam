@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +11,50 @@
     <div id="start-screen" class="start-screen">
         <div class="start-card">
             <h1>Computer Graphics Exam</h1>
-            <p><span id="total-questions">460</span> questions &middot; <span id="total-minutes">180</span> minutes</p>
+            
+            <div class="section-selector-container">
+                <span class="section-select-label">Choose Section to Practice:</span>
+                <div class="section-tabs">
+                    <button class="section-tab active" data-section="Assignment Questions">
+                        📝 Assignment Questions (60)
+                    </button>
+                    <button class="section-tab" data-section="Lecture MCQs">
+                        📚 Lecture MCQs (460)
+                    </button>
+                    <button class="section-tab" data-section="All">
+                        🎯 All Questions (520)
+                    </button>
+                </div>
+            </div>
+
+            <div class="section-info-box">
+                <h3 id="active-section-title">Assignment Questions</h3>
+                <p><span id="total-questions">60</span> questions &middot; <span id="total-minutes">45</span> minutes</p>
+            </div>
+
             <p class="start-hint">The timer will only start when you press the button below.</p>
             <button id="start-btn">Start Test</button>
         </div>
     </div>
 
     <header class="topbar">
-        <h2>Computer Graphics Exam</h2>
-        <div id="timer">03:00:00</div>
-        <button id="stop-btn" class="stop-btn" hidden>Stop</button>
+        <div class="topbar-left">
+            <h2>Computer Graphics Exam</h2>
+            <span class="current-section-badge">Assignment Questions</span>
+        </div>
+
+        <div class="topbar-center">
+            <div class="section-tabs nav-tabs">
+                <button class="section-tab active" data-section="Assignment Questions">Assignments (60)</button>
+                <button class="section-tab" data-section="Lecture MCQs">Lectures (460)</button>
+                <button class="section-tab" data-section="All">All (520)</button>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+            <div id="timer">45:00</div>
+            <button id="stop-btn" class="stop-btn" hidden>Stop</button>
+        </div>
     </header>
 
     <main class="exam-container">
@@ -29,7 +62,7 @@
             <div class="question-header">
                 <span id="question-number">Question 1</span>
                 <span id="question-topic" class="question-topic"></span>
-                <span id="question-count">1 of 460</span>
+                <span id="question-count">1 of 60</span>
             </div>
 
             <h3 id="question-text">Loading question...</h3>
@@ -49,7 +82,7 @@
             <div class="palette-header">
                 <h3>Question Palette</h3>
                 <div class="lecture-jump">
-                    <label for="lecture-select">Jump to Lecture:</label>
+                    <label for="lecture-select">Jump to Topic:</label>
                     <select id="lecture-select"></select>
                 </div>
             </div>

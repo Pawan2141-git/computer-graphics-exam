@@ -1,9 +1,8 @@
-// 460 Questions extracted from:
-// 1. Computer_Graphics_MCQs_200.pdf (L1 - L20)
-// 2. Computer_Graphics_MCQs_L21-L39.pdf (L21 - L39)
-// 3. Computer_Graphics_MCQs_L40-L49.pdf (L40 - L49)
+// 520 Total Questions:
+// - 460 Lecture MCQs (L1 - L49 from NPTEL PDFs)
+// - 60 Assignment Questions (Assignments 1 - 6)
 
-const questions = [
+const allQuestions = [
   {
     "q": "In the CAD example, how does virtual assembly of components on screen help an engineer?",
     "topic": "L1: Introduction to Computer Graphics",
@@ -14,7 +13,8 @@ const questions = [
       "It removes the need for specifying component dimensions",
       "It saves time, effort and cost as no physical prototype is needed"
     ],
-    "answer": "It saves time, effort and cost as no physical prototype is needed"
+    "answer": "It saves time, effort and cost as no physical prototype is needed",
+    "section": "Lecture MCQs"
   },
   {
     "q": "DNA visualization is an example of:",
@@ -26,7 +26,8 @@ const questions = [
       "Information visualization",
       "Document processing"
     ],
-    "answer": "Scientific visualization"
+    "answer": "Scientific visualization",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Computer network traffic flow visualization is an example of:",
@@ -38,7 +39,8 @@ const questions = [
       "Information visualization",
       "Image processing"
     ],
-    "answer": "Information visualization"
+    "answer": "Information visualization",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Computers understand only:",
@@ -50,7 +52,8 @@ const questions = [
       "Pictures",
       "Binary language of 0s and 1s"
     ],
-    "answer": "Binary language of 0s and 1s"
+    "answer": "Binary language of 0s and 1s",
+    "section": "Lecture MCQs"
   },
   {
     "q": "How many basic questions are framed from the fundamental question of computer graphics?",
@@ -62,7 +65,8 @@ const questions = [
       "Three",
       "Five"
     ],
-    "answer": "Four"
+    "answer": "Four",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which of the following is NOT one of the four basic questions of CG?",
@@ -74,7 +78,8 @@ const questions = [
       "How to synthesize parts into realistic imagery",
       "How to represent the constituent parts of imagery"
     ],
-    "answer": "How to increase the clock speed of the CPU"
+    "answer": "How to increase the clock speed of the CPU",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Computer graphics can be summarised as:",
@@ -86,7 +91,8 @@ const questions = [
       "Rendering static images or animation on computer screens in an efficient way",
       "Compressing video files"
     ],
-    "answer": "Rendering static images or animation on computer screens in an efficient way"
+    "answer": "Rendering static images or animation on computer screens in an efficient way",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Displaying something on a mobile phone needs different techniques from a desktop because of differences in:",
@@ -98,7 +104,8 @@ const questions = [
       "Screen colour only",
       "Internet speed"
     ],
-    "answer": "CPU speed, memory capacity and power consumption"
+    "answer": "CPU speed, memory capacity and power consumption",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which area of computer graphics deals with manipulating existing images?",
@@ -110,7 +117,8 @@ const questions = [
       "Image processing",
       "Image synthesis"
     ],
-    "answer": "Image processing"
+    "answer": "Image processing",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Text characters on a computer screen are, in computer graphics:",
@@ -122,7 +130,8 @@ const questions = [
       "Always vector curves",
       "Only binary numbers"
     ],
-    "answer": "Also images (objects rendered with a style and size)"
+    "answer": "Also images (objects rendered with a style and size)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Who proposed the four phases of CG evolution (Lockheed, 1981)?",
@@ -134,7 +143,8 @@ const questions = [
       "Ivan Sutherland",
       "Sylvan Chasen"
     ],
-    "answer": "Sylvan Chasen"
+    "answer": "Sylvan Chasen",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 'Gestational Period' of CG covers which years?",
@@ -146,7 +156,8 @@ const questions = [
       "1970-1981",
       "After 1981"
     ],
-    "answer": "1950-1963"
+    "answer": "1950-1963",
+    "section": "Lecture MCQs"
   },
   {
     "q": "SAGE was:",
@@ -158,7 +169,8 @@ const questions = [
       "A texture mapping method",
       "A computer game"
     ],
-    "answer": "The air defense system of the US Air Force, a product of the Whirlwind project"
+    "answer": "The air defense system of the US Air Force, a product of the Whirlwind project",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The first computer game, Spacewar, was made in 1961 by:",
@@ -170,7 +182,8 @@ const questions = [
       "Bui Tuong Phong",
       "Ivan Sutherland"
     ],
-    "answer": "Steve Russell and team"
+    "answer": "Steve Russell and team",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The first CAD system DAC-1 was developed by:",
@@ -182,7 +195,8 @@ const questions = [
       "Intel",
       "IBM"
     ],
-    "answer": "IBM"
+    "answer": "IBM",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Intel released its first commercial microprocessor, the 4004, in:",
@@ -194,7 +208,8 @@ const questions = [
       "1971",
       "1981"
     ],
-    "answer": "1971"
+    "answer": "1971",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Ray tracing technique was introduced by Whitted in:",
@@ -206,7 +221,8 @@ const questions = [
       "1978",
       "1974"
     ],
-    "answer": "1980"
+    "answer": "1980",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which movie (1973) is mentioned as the first to use computer graphics?",
@@ -218,7 +234,8 @@ const questions = [
       "Spacewar",
       "Star Wars"
     ],
-    "answer": "Westworld"
+    "answer": "Westworld",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The release of the IBM PC in 1981 led CG to shift its focus towards:",
@@ -230,7 +247,8 @@ const questions = [
       "Vector devices",
       "Military use"
     ],
-    "answer": "Laymen, which gave rise to HCI"
+    "answer": "Laymen, which gave rise to HCI",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which describes 'Rendering' among the three major 3D concerns (modeling, rendering, animation)?",
@@ -242,7 +260,8 @@ const questions = [
       "Designing input devices",
       "Creating object geometry in 3D"
     ],
-    "answer": "Creating and displaying a 2D image of 3D objects"
+    "answer": "Creating and displaying a 2D image of 3D objects",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Image generation in a CG system is performed by the:",
@@ -254,7 +273,8 @@ const questions = [
       "Mouse",
       "Display controller (graphics card with GPU)"
     ],
-    "answer": "Display controller (graphics card with GPU)"
+    "answer": "Display controller (graphics card with GPU)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Video memory is typically part of the graphics card and is called:",
@@ -266,7 +286,8 @@ const questions = [
       "VRAM",
       "Hard disk"
     ],
-    "answer": "VRAM"
+    "answer": "VRAM",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The video controller converts the digital image to:",
@@ -278,7 +299,8 @@ const questions = [
       "Binary strings",
       "Vectors"
     ],
-    "answer": "Analog voltages"
+    "answer": "Analog voltages",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Vector scan devices are also known as:",
@@ -290,7 +312,8 @@ const questions = [
       "Pixel devices",
       "Raster devices"
     ],
-    "answer": "Random-scan, stroke-writing or calligraphic devices"
+    "answer": "Random-scan, stroke-writing or calligraphic devices",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Vector scan devices are good for rendering:",
@@ -302,7 +325,8 @@ const questions = [
       "Video",
       "Complex photo-realistic scenes"
     ],
-    "answer": "Wireframe (outline) images"
+    "answer": "Wireframe (outline) images",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In raster scan, each row of the pixel grid is called a:",
@@ -314,7 +338,8 @@ const questions = [
       "Frame",
       "Voxel"
     ],
-    "answer": "Scan line"
+    "answer": "Scan line",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Why is a frame buffer used in raster scan systems?",
@@ -326,7 +351,8 @@ const questions = [
       "To remove colours",
       "To increase screen size"
     ],
-    "answer": "Display processor works in nanoseconds while video controller works in milliseconds (speed mismatch)"
+    "answer": "Display processor works in nanoseconds while video controller works in milliseconds (speed mismatch)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A typical screen refresh rate is at least:",
@@ -338,7 +364,8 @@ const questions = [
       "600 Hz",
       "60 Hz"
     ],
-    "answer": "60 Hz"
+    "answer": "60 Hz",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The colour look-up table method assumes that:",
@@ -350,7 +377,8 @@ const questions = [
       "Only a small fraction of the colour gamut is required and those colours are known",
       "Frame buffer is very large"
     ],
-    "answer": "Only a small fraction of the colour gamut is required and those colours are known"
+    "answer": "Only a small fraction of the colour gamut is required and those colours are known",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Raster graphics and vector graphics refer to:",
@@ -362,7 +390,8 @@ const questions = [
       "Only image representation, not the underlying rendering hardware",
       "Types of CPU"
     ],
-    "answer": "Only image representation, not the underlying rendering hardware"
+    "answer": "Only image representation, not the underlying rendering hardware",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In which stage are objects put together from local coordinates into world coordinates?",
@@ -374,7 +403,8 @@ const questions = [
       "Lighting",
       "Modeling transformation"
     ],
-    "answer": "Modeling transformation"
+    "answer": "Modeling transformation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 3rd stage of the pipeline (lighting) uses methods that mimic:",
@@ -386,7 +416,8 @@ const questions = [
       "Laws of mechanics",
       "Laws of optics"
     ],
-    "answer": "Laws of optics"
+    "answer": "Laws of optics",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The process of removing objects outside the view volume is:",
@@ -398,7 +429,8 @@ const questions = [
       "Interpolation",
       "Shading"
     ],
-    "answer": "Clipping"
+    "answer": "Clipping",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Hidden surface removal is also known as:",
@@ -410,7 +442,8 @@ const questions = [
       "Scan conversion",
       "Anti-aliasing"
     ],
-    "answer": "Visible surface detection"
+    "answer": "Visible surface detection",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Window-to-viewport transformation maps the 2D projected scene to:",
@@ -422,7 +455,8 @@ const questions = [
       "World coordinates",
       "The frame buffer directly"
     ],
-    "answer": "A region of the device coordinate system called viewport"
+    "answer": "A region of the device coordinate system called viewport",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 4th stage (viewing pipeline) involves:",
@@ -434,7 +468,8 @@ const questions = [
       "5 transformations",
       "3 transformations + 2 operations (clipping, hidden surface removal)"
     ],
-    "answer": "3 transformations + 2 operations (clipping, hidden surface removal)"
+    "answer": "3 transformations + 2 operations (clipping, hidden surface removal)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Scan conversion is also called:",
@@ -446,7 +481,8 @@ const questions = [
       "Clipping",
       "Modeling"
     ],
-    "answer": "Rasterization"
+    "answer": "Rasterization",
+    "section": "Lecture MCQs"
   },
   {
     "q": "OpenGL stands for:",
@@ -458,7 +494,8 @@ const questions = [
       "Object Graphics Layer",
       "Open source Graphics Library"
     ],
-    "answer": "Open source Graphics Library"
+    "answer": "Open source Graphics Library",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The function glColor3f(r, g, b) in OpenGL:",
@@ -470,7 +507,8 @@ const questions = [
       "Rotates an object",
       "Clears the screen"
     ],
-    "answer": "Assigns a colour to a 3D point"
+    "answer": "Assigns a colour to a 3D point",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which stage concerns mapping a continuous device coordinate space to the discrete pixel grid?",
@@ -482,7 +520,8 @@ const questions = [
       "Object representation",
       "Lighting"
     ],
-    "answer": "Scan conversion"
+    "answer": "Scan conversion",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The four broad types of object representation are point sample, boundary, space partitioning and:",
@@ -494,7 +533,8 @@ const questions = [
       "Sweep representation",
       "Texture representation"
     ],
-    "answer": "Sweep representation"
+    "answer": "Sweep representation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Point sample representation captures raw data using sensors such as:",
@@ -506,7 +546,8 @@ const questions = [
       "Printers",
       "3D range scanners"
     ],
-    "answer": "3D range scanners"
+    "answer": "3D range scanners",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Representing a cube as a collection of interlinked rectangles is an example of:",
@@ -518,7 +559,8 @@ const questions = [
       "Boundary representation",
       "Sweep representation"
     ],
-    "answer": "Boundary representation"
+    "answer": "Boundary representation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In space partitioning, any point inside the object lies in:",
@@ -530,7 +572,8 @@ const questions = [
       "No region",
       "Exactly one of the disjoint regions"
     ],
-    "answer": "Exactly one of the disjoint regions"
+    "answer": "Exactly one of the disjoint regions",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A common way to depict hierarchically partitioned regions is a:",
@@ -542,7 +585,8 @@ const questions = [
       "Space-partitioning tree",
       "Linked list"
     ],
-    "answer": "Space-partitioning tree"
+    "answer": "Space-partitioning tree",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In a sweep surface, a 3D surface is obtained by:",
@@ -554,7 +598,8 @@ const questions = [
       "Dividing space into voxels",
       "Combining Boolean operators"
     ],
-    "answer": "Traversing an entity (point, line, polygon, curve) along a path in space"
+    "answer": "Traversing an entity (point, line, polygon, curve) along a path in space",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A surface of revolution is obtained when:",
@@ -566,7 +611,8 @@ const questions = [
       "A mesh is subdivided",
       "A 2D entity is rotated around an axis"
     ],
-    "answer": "A 2D entity is rotated around an axis"
+    "answer": "A 2D entity is rotated around an axis",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The three types of boundary representation techniques are:",
@@ -578,7 +624,8 @@ const questions = [
       "Voxel, pixel, texel",
       "Octree, BSP, CSG"
     ],
-    "answer": "Mesh, parametric, implicit"
+    "answer": "Mesh, parametric, implicit",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which are space-partitioning methods?",
@@ -590,7 +637,8 @@ const questions = [
       "Octrees, BSP trees and CSG",
       "Fractals and particles"
     ],
-    "answer": "Octrees, BSP trees and CSG"
+    "answer": "Octrees, BSP trees and CSG",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Particle system representation is used for:",
@@ -602,7 +650,8 @@ const questions = [
       "Polygon meshes",
       "Simulation of physics"
     ],
-    "answer": "Simulation of physics"
+    "answer": "Simulation of physics",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Mesh representation uses:",
@@ -614,7 +663,8 @@ const questions = [
       "Textures",
       "Only splines"
     ],
-    "answer": "Polygons with vertex/edge lists"
+    "answer": "Polygons with vertex/edge lists",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Non-polygonal surfaces in mesh representation are:",
@@ -626,7 +676,8 @@ const questions = [
       "Ignored",
       "Converted to voxels"
     ],
-    "answer": "Approximated by triangle or simple convex polygon meshes"
+    "answer": "Approximated by triangle or simple convex polygon meshes",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Increasing the number of polygons in a mesh gives:",
@@ -638,7 +689,8 @@ const questions = [
       "Better approximation but more storage and computation",
       "No change"
     ],
-    "answer": "Better approximation but more storage and computation"
+    "answer": "Better approximation but more storage and computation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "At the end of the pipeline, before rendering, all other representations are converted to:",
@@ -650,7 +702,8 @@ const questions = [
       "Mesh representation",
       "CSG"
     ],
-    "answer": "Mesh representation"
+    "answer": "Mesh representation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The implicit equation of a sphere of radius r at the origin is:",
@@ -662,7 +715,8 @@ const questions = [
       "x^2 + y^2 + z^2 = r^2",
       "xyz = r"
     ],
-    "answer": "x^2 + y^2 + z^2 = r^2"
+    "answer": "x^2 + y^2 + z^2 = r^2",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The parameters in the parametric form of a sphere are:",
@@ -674,7 +728,8 @@ const questions = [
       "Mass and density",
       "Latitude and longitude angles (theta and phi)"
     ],
-    "answer": "Latitude and longitude angles (theta and phi)"
+    "answer": "Latitude and longitude angles (theta and phi)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Quadric surfaces include:",
@@ -686,7 +741,8 @@ const questions = [
       "Only planes",
       "Only cubes"
     ],
-    "answer": "Spheres, ellipsoids, tori, paraboloids, hyperboloids"
+    "answer": "Spheres, ellipsoids, tori, paraboloids, hyperboloids",
+    "section": "Lecture MCQs"
   },
   {
     "q": "'Blobby objects' are objects whose shapes show:",
@@ -698,7 +754,8 @@ const questions = [
       "Rigidity",
       "A degree of fluidity (e.g. water droplets, melting objects)"
     ],
-    "answer": "A degree of fluidity (e.g. water droplets, melting objects)"
+    "answer": "A degree of fluidity (e.g. water droplets, melting objects)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A Gaussian density function is characterised by:",
@@ -710,7 +767,8 @@ const questions = [
       "Height and standard deviation",
       "Position only"
     ],
-    "answer": "Height and standard deviation"
+    "answer": "Height and standard deviation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The Metaball model uses:",
@@ -722,7 +780,8 @@ const questions = [
       "Cubic spline",
       "Quadratic density function"
     ],
-    "answer": "Quadratic density function"
+    "answer": "Quadratic density function",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Control points are:",
@@ -734,7 +793,8 @@ const questions = [
       "Points which define the curve (it passes through or near them)",
       "Texture elements"
     ],
-    "answer": "Points which define the curve (it passes through or near them)"
+    "answer": "Points which define the curve (it passes through or near them)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For n+1 control points, interpolation with a single polynomial uses a polynomial of degree:",
@@ -746,7 +806,8 @@ const questions = [
       "n - 1",
       "2n"
     ],
-    "answer": "n"
+    "answer": "n",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The local controllability problem means:",
@@ -758,7 +819,8 @@ const questions = [
       "Changing one control point may require recomputing the entire curve",
       "The curve cannot be drawn"
     ],
-    "answer": "Changing one control point may require recomputing the entire curve"
+    "answer": "Changing one control point may require recomputing the entire curve",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A spline is:",
@@ -770,7 +832,8 @@ const questions = [
       "A texture",
       "A set of pixels"
     ],
-    "answer": "Several lower-degree polynomial pieces joined together"
+    "answer": "Several lower-degree polynomial pieces joined together",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In graphics, splines are commonly made up of:",
@@ -782,7 +845,8 @@ const questions = [
       "Constant functions",
       "Cubic (third-degree) polynomials"
     ],
-    "answer": "Cubic (third-degree) polynomials"
+    "answer": "Cubic (third-degree) polynomials",
+    "section": "Lecture MCQs"
   },
   {
     "q": "C1 parametric continuity means:",
@@ -794,7 +858,8 @@ const questions = [
       "First-order parametric derivatives of adjoining curves are equal at the boundary",
       "Curves never meet"
     ],
-    "answer": "First-order parametric derivatives of adjoining curves are equal at the boundary"
+    "answer": "First-order parametric derivatives of adjoining curves are equal at the boundary",
+    "section": "Lecture MCQs"
   },
   {
     "q": "G1 geometric continuity means:",
@@ -806,7 +871,8 @@ const questions = [
       "Tangent directions are equal but magnitudes may differ",
       "Curves do not meet"
     ],
-    "answer": "Tangent directions are equal but magnitudes may differ"
+    "answer": "Tangent directions are equal but magnitudes may differ",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Approximating splines:",
@@ -818,7 +884,8 @@ const questions = [
       "Pass close to control points; control points define a convex hull",
       "Do not use control points"
     ],
-    "answer": "Pass close to control points; control points define a convex hull"
+    "answer": "Pass close to control points; control points define a convex hull",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The inverse of the constraint matrix C is called the:",
@@ -830,7 +897,8 @@ const questions = [
       "Parameter matrix",
       "Basis matrix"
     ],
-    "answer": "Basis matrix"
+    "answer": "Basis matrix",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For the linear polynomial example, the blending functions are:",
@@ -842,7 +910,8 @@ const questions = [
       "u and u^2",
       "1 and u"
     ],
-    "answer": "1 - u and u"
+    "answer": "1 - u and u",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Natural cubic splines support C2 continuity but:",
@@ -854,7 +923,8 @@ const questions = [
       "Use no control points",
       "Are quadratic"
     ],
-    "answer": "Do not support local controllability"
+    "answer": "Do not support local controllability",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Hermite cubic splines support:",
@@ -866,7 +936,8 @@ const questions = [
       "No continuity",
       "Only G0"
     ],
-    "answer": "C1 continuity and local controllability"
+    "answer": "C1 continuity and local controllability",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Cardinal cubic splines, setting tension t = 0 gives the:",
@@ -878,7 +949,8 @@ const questions = [
       "Catmull-Rom (Overhauser) spline",
       "B-spline"
     ],
-    "answer": "Catmull-Rom (Overhauser) spline"
+    "answer": "Catmull-Rom (Overhauser) spline",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Bezier curves are named after Pierre Bezier, who first used them to design:",
@@ -890,7 +962,8 @@ const questions = [
       "Boeing aircraft",
       "Bridges"
     ],
-    "answer": "Renault car bodies"
+    "answer": "Renault car bodies",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A cubic Bezier curve piece:",
@@ -902,7 +975,8 @@ const questions = [
       "Passes through only p1 and p2",
       "Is a straight line"
     ],
-    "answer": "Starts at p0, ends at p3, other two points shape the convex hull"
+    "answer": "Starts at p0, ends at p3, other two points shape the convex hull",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Bezier blending functions are known as:",
@@ -914,7 +988,8 @@ const questions = [
       "Bernstein polynomials",
       "Legendre polynomials"
     ],
-    "answer": "Bernstein polynomials"
+    "answer": "Bernstein polynomials",
+    "section": "Lecture MCQs"
   },
   {
     "q": "B-splines support:",
@@ -926,7 +1001,8 @@ const questions = [
       "C2 continuity and local controllability",
       "Only C0"
     ],
-    "answer": "C2 continuity and local controllability"
+    "answer": "C2 continuity and local controllability",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the B-spline example with n = 4 control points and k = 2, the number of knots n + k is:",
@@ -938,7 +1014,8 @@ const questions = [
       "6",
       "8"
     ],
-    "answer": "6"
+    "answer": "6",
+    "section": "Lecture MCQs"
   },
   {
     "q": "NURBS stands for:",
@@ -950,7 +1027,8 @@ const questions = [
       "New uniform ratio B-spline",
       "Non-uniform rational B-spline"
     ],
-    "answer": "Non-uniform rational B-spline"
+    "answer": "Non-uniform rational B-spline",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The De Casteljau algorithm is used to:",
@@ -962,7 +1040,8 @@ const questions = [
       "Clip lines",
       "Compute colours"
     ],
-    "answer": "Render Bezier curves with reduced computation"
+    "answer": "Render Bezier curves with reduced computation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A voxel is the 3D equivalent of a:",
@@ -974,7 +1053,8 @@ const questions = [
       "Pixel",
       "Vertex"
     ],
-    "answer": "Pixel"
+    "answer": "Pixel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the octree method, a region is divided into how many sub-regions at each step?",
@@ -986,7 +1066,8 @@ const questions = [
       "4",
       "2"
     ],
-    "answer": "8"
+    "answer": "8",
+    "section": "Lecture MCQs"
   },
   {
     "q": "BSP stands for:",
@@ -998,7 +1079,8 @@ const questions = [
       "Basic Surface Plane",
       "Binary Shape Pattern"
     ],
-    "answer": "Binary Space Partitioning"
+    "answer": "Binary Space Partitioning",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In BSP, each recursive step divides space into:",
@@ -1010,7 +1092,8 @@ const questions = [
       "4 parts",
       "8 parts"
     ],
-    "answer": "2 parts"
+    "answer": "2 parts",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The major problem with uniform voxel grids is:",
@@ -1022,7 +1105,8 @@ const questions = [
       "Cannot store colour",
       "Large memory requirement"
     ],
-    "answer": "Large memory requirement"
+    "answer": "Large memory requirement",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the modified octree, each internal node has:",
@@ -1034,7 +1118,8 @@ const questions = [
       "Exactly 4 children",
       "1 child"
     ],
-    "answer": "0 or 8 children"
+    "answer": "0 or 8 children",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the modified BSP, each node has:",
@@ -1046,7 +1131,8 @@ const questions = [
       "0 or 4 children",
       "Exactly 8 children"
     ],
-    "answer": "0 or 2 children"
+    "answer": "0 or 2 children",
+    "section": "Lecture MCQs"
   },
   {
     "q": "CSG represents objects by:",
@@ -1058,7 +1144,8 @@ const questions = [
       "Scanning points",
       "Dividing space"
     ],
-    "answer": "Applying Boolean operators (union, intersection, difference) on primitive shapes"
+    "answer": "Applying Boolean operators (union, intersection, difference) on primitive shapes",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Ease of manipulation of a representation is particularly important in:",
@@ -1070,7 +1157,8 @@ const questions = [
       "Animation",
       "Static images"
     ],
-    "answer": "Animation"
+    "answer": "Animation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Splines are preferred over meshes for ease of acquiring data because:",
@@ -1082,7 +1170,8 @@ const questions = [
       "They need more control points",
       "They approximate a curved surface with fewer control points"
     ],
-    "answer": "They approximate a curved surface with fewer control points"
+    "answer": "They approximate a curved surface with fewer control points",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Objects are initially defined in:",
@@ -1094,7 +1183,8 @@ const questions = [
       "View coordinates",
       "Device coordinates"
     ],
-    "answer": "Local/object coordinates"
+    "answer": "Local/object coordinates",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Translation displaces a point by:",
@@ -1106,7 +1196,8 @@ const questions = [
       "A scale factor",
       "tx and ty along X and Y directions"
     ],
-    "answer": "tx and ty along X and Y directions"
+    "answer": "tx and ty along X and Y directions",
+    "section": "Lecture MCQs"
   },
   {
     "q": "By convention, positive angular movement in rotation is:",
@@ -1118,7 +1209,8 @@ const questions = [
       "Counterclockwise",
       "Clockwise"
     ],
-    "answer": "Counterclockwise"
+    "answer": "Counterclockwise",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Uniform scaling means:",
@@ -1130,7 +1222,8 @@ const questions = [
       "No scaling",
       "Same scaling factor along X and Y"
     ],
-    "answer": "Same scaling factor along X and Y"
+    "answer": "Same scaling factor along X and Y",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Scaling with a factor greater than 1 results in:",
@@ -1142,7 +1235,8 @@ const questions = [
       "Rotation",
       "Enlargement"
     ],
-    "answer": "Enlargement"
+    "answer": "Enlargement",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Shearing changes an object's:",
@@ -1154,7 +1248,8 @@ const questions = [
       "Shape",
       "Colour"
     ],
-    "answer": "Shape"
+    "answer": "Shape",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Shearing is strictly not a basic transformation because it can be derived from:",
@@ -1166,7 +1261,8 @@ const questions = [
       "Translation and scaling",
       "Rotation and translation"
     ],
-    "answer": "Rotation and scaling"
+    "answer": "Rotation and scaling",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Translation, rotation, scaling and shearing are also called:",
@@ -1178,7 +1274,8 @@ const questions = [
       "Optical transformations",
       "Colour transformations"
     ],
-    "answer": "Geometric transformations"
+    "answer": "Geometric transformations",
+    "section": "Lecture MCQs"
   },
   {
     "q": "To transform an object, the transformation is applied to:",
@@ -1190,7 +1287,8 @@ const questions = [
       "Only the first vertex",
       "Only the colours"
     ],
-    "answer": "All the points that make up its surfaces"
+    "answer": "All the points that make up its surfaces",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Scaling (and shearing) may also:",
@@ -1202,7 +1300,8 @@ const questions = [
       "Remove the object",
       "Change its colour"
     ],
-    "answer": "Reposition the object"
+    "answer": "Reposition the object",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Translation cannot be represented by a 2x2 matrix, so we use:",
@@ -1214,7 +1313,8 @@ const questions = [
       "Quaternions",
       "Polar coordinates"
     ],
-    "answer": "Homogeneous coordinate system"
+    "answer": "Homogeneous coordinate system",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In homogeneous coordinates a 2D point (x, y) is represented as:",
@@ -1226,7 +1326,8 @@ const questions = [
       "(xy, h)",
       "(x, y)"
     ],
-    "answer": "(xh, yh, h) where x = xh/h and y = yh/h"
+    "answer": "(xh, yh, h) where x = xh/h and y = yh/h",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A homogeneous point of the form (xh, yh, 0) is considered to be:",
@@ -1238,7 +1339,8 @@ const questions = [
       "At the origin",
       "Invalid"
     ],
-    "answer": "At infinity"
+    "answer": "At infinity",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For geometric transformations the homogeneous factor h is:",
@@ -1250,7 +1352,8 @@ const questions = [
       "2",
       "-1"
     ],
-    "answer": "1"
+    "answer": "1",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In a composite matrix, the transformation applied first is placed:",
@@ -1262,7 +1365,8 @@ const questions = [
       "On the left",
       "On the rightmost side"
     ],
-    "answer": "On the rightmost side"
+    "answer": "On the rightmost side",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Matrix multiplication is:",
@@ -1274,7 +1378,8 @@ const questions = [
       "Always identity",
       "Not commutative, so sequence matters"
     ],
-    "answer": "Not commutative, so sequence matters"
+    "answer": "Not commutative, so sequence matters",
+    "section": "Lecture MCQs"
   },
   {
     "q": "With M = T(5,5).S(0.5,1), the vertex (2,0) is transformed to:",
@@ -1286,7 +1391,8 @@ const questions = [
       "(7, 5)",
       "(5, 5)"
     ],
-    "answer": "(6, 5)"
+    "answer": "(6, 5)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "To scale about an arbitrary fixed point F(x, y), the composite matrix is:",
@@ -1298,7 +1404,8 @@ const questions = [
       "T(-x,-y).S.T(x,y)",
       "T(x,y).S(sx,sy).T(-x,-y)"
     ],
-    "answer": "T(x,y).S(sx,sy).T(-x,-y)"
+    "answer": "T(x,y).S(sx,sy).T(-x,-y)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The three steps for transformation about an arbitrary fixed point are:",
@@ -1310,7 +1417,8 @@ const questions = [
       "Translate fixed point to origin, transform, translate back",
       "Rotate, rotate, rotate"
     ],
-    "answer": "Translate fixed point to origin, transform, translate back"
+    "answer": "Translate fixed point to origin, transform, translate back",
+    "section": "Lecture MCQs"
   },
   {
     "q": "To get Cartesian coordinates after multiplying with a homogeneous matrix we:",
@@ -1322,7 +1430,8 @@ const questions = [
       "Add h",
       "Subtract h"
     ],
-    "answer": "Divide the elements by h"
+    "answer": "Divide the elements by h",
+    "section": "Lecture MCQs"
   },
   {
     "q": "3D transformation matrices in homogeneous coordinates are of size:",
@@ -1334,7 +1443,8 @@ const questions = [
       "3x3",
       "2x2"
     ],
-    "answer": "4x4"
+    "answer": "4x4",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In 3D we have how many basic rotations?",
@@ -1346,7 +1456,8 @@ const questions = [
       "One",
       "Two"
     ],
-    "answer": "Three (about X, Y and Z axes)"
+    "answer": "Three (about X, Y and Z axes)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "How many shearing factors are in the 3D shearing matrix?",
@@ -1358,7 +1469,8 @@ const questions = [
       "Nine",
       "Six"
     ],
-    "answer": "Six"
+    "answer": "Six",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Rotation about an arbitrary axis is a composition of how many transformations?",
@@ -1370,7 +1482,8 @@ const questions = [
       "Seven",
       "Three"
     ],
-    "answer": "Five"
+    "answer": "Five",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The first step in rotating about an arbitrary axis through P1 and P2 is:",
@@ -1382,7 +1495,8 @@ const questions = [
       "Scaling",
       "Rotation about Z"
     ],
-    "answer": "Translation of the axis point (P2) to the origin"
+    "answer": "Translation of the axis point (P2) to the origin",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Inverse rotations are obtained by:",
@@ -1394,7 +1508,8 @@ const questions = [
       "Squaring the matrix",
       "Transposing colours"
     ],
-    "answer": "Changing the sign of the angle"
+    "answer": "Changing the sign of the angle",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the partition wall example, the first transformation applied is:",
@@ -1406,7 +1521,8 @@ const questions = [
       "T(-2, -2, 0) (translate centre to origin)",
       "T(0,2,2)"
     ],
-    "answer": "T(-2, -2, 0) (translate centre to origin)"
+    "answer": "T(-2, -2, 0) (translate centre to origin)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "S(1, 2, 2) in the partition wall example means scaling by 2 in:",
@@ -1418,7 +1534,8 @@ const questions = [
       "X and Z",
       "X and Y"
     ],
-    "answer": "Y and Z"
+    "answer": "Y and Z",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The final matrix in the partition wall example is:",
@@ -1430,7 +1547,8 @@ const questions = [
       "T(-2,-2,0) S RY RZ T(0,2,2)",
       "S T RY RZ"
     ],
-    "answer": "T(0,2,2) S(1,2,2) RY(90) RZ(90) T(-2,-2,0)"
+    "answer": "T(0,2,2) S(1,2,2) RY(90) RZ(90) T(-2,-2,0)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "shxy and shxz in 3D shear along Y and Z directions, leaving:",
@@ -1442,7 +1560,8 @@ const questions = [
       "z unchanged",
       "y unchanged"
     ],
-    "answer": "x unchanged"
+    "answer": "x unchanged",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 3rd stage assigns colours to objects so that we can perceive:",
@@ -1454,7 +1573,8 @@ const questions = [
       "Motion only",
       "Temperature"
     ],
-    "answer": "Depth, creating the impression of 3D"
+    "answer": "Depth, creating the impression of 3D",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Transport of light energy from the source to the point is called:",
@@ -1466,7 +1586,8 @@ const questions = [
       "Illumination",
       "Clipping"
     ],
-    "answer": "Illumination"
+    "answer": "Illumination",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Shading (surface rendering) refers to:",
@@ -1478,7 +1599,8 @@ const questions = [
       "Assigning colours to pixels, using interpolation",
       "Clipping edges"
     ],
-    "answer": "Assigning colours to pixels, using interpolation"
+    "answer": "Assigning colours to pixels, using interpolation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which of these is NOT a typical light source in graphics?",
@@ -1490,7 +1612,8 @@ const questions = [
       "Quadric source",
       "Point source"
     ],
-    "answer": "Quadric source"
+    "answer": "Quadric source",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A point light source is characterised by:",
@@ -1502,7 +1625,8 @@ const questions = [
       "Colour only",
       "Position and intensity"
     ],
-    "answer": "Position and intensity"
+    "answer": "Position and intensity",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A spotlight additionally has:",
@@ -1514,7 +1638,8 @@ const questions = [
       "An angular limit within which points are illuminated",
       "Infinite size"
     ],
-    "answer": "An angular limit within which points are illuminated"
+    "answer": "An angular limit within which points are illuminated",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Ambient light:",
@@ -1526,7 +1651,8 @@ const questions = [
       "Has strong direction",
       "Is the same as a spotlight"
     ],
-    "answer": "Has no spatial or directional characteristics, illuminating all surfaces equally"
+    "answer": "Has no spatial or directional characteristics, illuminating all surfaces equally",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Ambient light exists because of:",
@@ -1538,7 +1664,8 @@ const questions = [
       "Frame buffer",
       "Indirect illumination from surrounding surfaces reflecting light"
     ],
-    "answer": "Indirect illumination from surrounding surfaces reflecting light"
+    "answer": "Indirect illumination from surrounding surfaces reflecting light",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Applying a full lighting model at every point is not used for real-time 3D because:",
@@ -1550,7 +1677,8 @@ const questions = [
       "It is computation intensive",
       "Colours are limited"
     ],
-    "answer": "It is computation intensive"
+    "answer": "It is computation intensive",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Surface properties affecting colour include:",
@@ -1562,7 +1690,8 @@ const questions = [
       "Only texture",
       "Only colour"
     ],
-    "answer": "Optical (reflectance, refractance) and geometric (position, orientation)"
+    "answer": "Optical (reflectance, refractance) and geometric (position, orientation)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Total reflected intensity from a point is the sum of:",
@@ -1574,7 +1703,8 @@ const questions = [
       "Ambient, diffuse and specular components",
       "Only ambient"
     ],
-    "answer": "Ambient, diffuse and specular components"
+    "answer": "Ambient, diffuse and specular components",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Diffuse reflection happens from:",
@@ -1586,7 +1716,8 @@ const questions = [
       "Mirrors",
       "Rough or grainy surfaces, reflecting light in all directions"
     ],
-    "answer": "Rough or grainy surfaces, reflecting light in all directions"
+    "answer": "Rough or grainy surfaces, reflecting light in all directions",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Specular reflection produces:",
@@ -1598,7 +1729,8 @@ const questions = [
       "Texture",
       "Shadow"
     ],
-    "answer": "A bright spot for a viewer in the reflection direction"
+    "answer": "A bright spot for a viewer in the reflection direction",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Reflection coefficients (ka, kd, ks) vary between:",
@@ -1610,7 +1742,8 @@ const questions = [
       "1 and 10",
       "-1 and 1"
     ],
-    "answer": "0.0 and 1.0"
+    "answer": "0.0 and 1.0",
+    "section": "Lecture MCQs"
   },
   {
     "q": "ka is the:",
@@ -1622,7 +1755,8 @@ const questions = [
       "Attenuation factor",
       "Specular coefficient"
     ],
-    "answer": "Diffuse coefficient for ambient light"
+    "answer": "Diffuse coefficient for ambient light",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lambert's cosine law relates reflected energy to the cosine of the angle between:",
@@ -1634,7 +1768,8 @@ const questions = [
       "Two normals",
       "Light direction and surface normal"
     ],
-    "answer": "Light direction and surface normal"
+    "answer": "Light direction and surface normal",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In vector form, diffuse intensity is proportional to:",
@@ -1646,7 +1781,8 @@ const questions = [
       "N + L",
       "N - L"
     ],
-    "answer": "N . L (dot product of unit normal and light vector)"
+    "answer": "N . L (dot product of unit normal and light vector)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The Phong specular reflection model was proposed by Bui Tuong Phong in:",
@@ -1658,7 +1794,8 @@ const questions = [
       "1981",
       "1995"
     ],
-    "answer": "1973"
+    "answer": "1973",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Radial attenuation is typically computed with:",
@@ -1670,7 +1807,8 @@ const questions = [
       "A linear function",
       "A constant"
     ],
-    "answer": "An inverse quadratic function of distance"
+    "answer": "An inverse quadratic function of distance",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Angular attenuation is primarily used to generate:",
@@ -1682,7 +1820,8 @@ const questions = [
       "Texture",
       "Spotlight effect"
     ],
-    "answer": "Spotlight effect"
+    "answer": "Spotlight effect",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Shading models reduce computation by:",
@@ -1694,7 +1833,8 @@ const questions = [
       "Reducing resolution only",
       "Skipping colours"
     ],
-    "answer": "Computing colour at a few points and interpolating the rest"
+    "answer": "Computing colour at a few points and interpolating the rest",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which is the simplest shading model with least computation?",
@@ -1706,7 +1846,8 @@ const questions = [
       "Ray tracing",
       "Phong shading"
     ],
-    "answer": "Flat shading"
+    "answer": "Flat shading",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Gouraud shading first determines:",
@@ -1718,7 +1859,8 @@ const questions = [
       "Average unit normal vector at each vertex",
       "Texels"
     ],
-    "answer": "Average unit normal vector at each vertex"
+    "answer": "Average unit normal vector at each vertex",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Gouraud shading linearly interpolates:",
@@ -1730,7 +1872,8 @@ const questions = [
       "Light sources",
       "Vertex intensities across the polygon"
     ],
-    "answer": "Vertex intensities across the polygon"
+    "answer": "Vertex intensities across the polygon",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Iterative interpolation in Gouraud shading needs only:",
@@ -1742,7 +1885,8 @@ const questions = [
       "Square roots",
       "Multiplication"
     ],
-    "answer": "Addition"
+    "answer": "Addition",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A drawback of Gouraud shading is:",
@@ -1754,7 +1898,8 @@ const questions = [
       "Too accurate",
       "Needs no vertices"
     ],
-    "answer": "Poor specular effects and Mach bands"
+    "answer": "Poor specular effects and Mach bands",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Mach bands are:",
@@ -1766,7 +1911,8 @@ const questions = [
       "A psychological phenomenon in which bright bands appear where solid colour blocks meet",
       "A projection type"
     ],
-    "answer": "A psychological phenomenon in which bright bands appear where solid colour blocks meet"
+    "answer": "A psychological phenomenon in which bright bands appear where solid colour blocks meet",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Phong shading is also called:",
@@ -1778,7 +1924,8 @@ const questions = [
       "Flat rendering",
       "Raster shading"
     ],
-    "answer": "Normal-vector interpolation rendering"
+    "answer": "Normal-vector interpolation rendering",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Phong shading, the lighting model is applied:",
@@ -1790,7 +1937,8 @@ const questions = [
       "Never",
       "At each projected pixel using the interpolated normal"
     ],
-    "answer": "At each projected pixel using the interpolated normal"
+    "answer": "At each projected pixel using the interpolated normal",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the shelf example, the colour at P3 on a surface lit only by ambient light (ka = 0.5, Ia = 1) is:",
@@ -1802,7 +1950,8 @@ const questions = [
       "0.79",
       "1.0"
     ],
-    "answer": "0.5"
+    "answer": "0.5",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lighting and shading models compute intensities as real numbers between:",
@@ -1814,7 +1963,8 @@ const questions = [
       "-1 and 1",
       "0 and 255"
     ],
-    "answer": "0.0 and 1.0"
+    "answer": "0.0 and 1.0",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A frame buffer with 8 bits per pixel can represent how many intensity values?",
@@ -1826,7 +1976,8 @@ const questions = [
       "1024",
       "256"
     ],
-    "answer": "256"
+    "answer": "256",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Our eyes perceive intensity differences in terms of:",
@@ -1838,7 +1989,8 @@ const questions = [
       "Frequency",
       "Wavelength only"
     ],
-    "answer": "Relative difference (ratios)"
+    "answer": "Relative difference (ratios)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the mapping algorithm, successive device intensities must maintain a:",
@@ -1850,7 +2002,8 @@ const questions = [
       "Common difference",
       "Random spacing"
     ],
-    "answer": "Common ratio r"
+    "answer": "Common ratio r",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The dynamic range (I0 and IN) of a display can be found with a:",
@@ -1862,7 +2015,8 @@ const questions = [
       "Photometer",
       "Oscilloscope"
     ],
-    "answer": "Photometer"
+    "answer": "Photometer",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The highest device intensity value is usually taken as:",
@@ -1874,7 +2028,8 @@ const questions = [
       "1.0",
       "0.0"
     ],
-    "answer": "1.0"
+    "answer": "1.0",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For I0 = 0.01 and 256 levels, the common ratio r is approximately:",
@@ -1886,7 +2041,8 @@ const questions = [
       "1.5",
       "0.5"
     ],
-    "answer": "1.0182"
+    "answer": "1.0182",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A computed intensity is mapped to:",
@@ -1898,7 +2054,8 @@ const questions = [
       "The maximum value",
       "Zero"
     ],
-    "answer": "The nearest device-supported intensity"
+    "answer": "The nearest device-supported intensity",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Related concepts left out of this lecture are:",
@@ -1910,7 +2067,8 @@ const questions = [
       "Rotation and shear",
       "Clipping and HSR"
     ],
-    "answer": "Gamma correction and halftoning/dithering"
+    "answer": "Gamma correction and halftoning/dithering",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In summary, intensity mapping converts:",
@@ -1922,7 +2080,8 @@ const questions = [
       "Meshes to splines",
       "Computed values to device-supported values"
     ],
-    "answer": "Computed values to device-supported values"
+    "answer": "Computed values to device-supported values",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Light entering the eye passes through the cornea, pupil and lens before reaching the:",
@@ -1934,7 +2093,8 @@ const questions = [
       "Optic cable",
       "Retina"
     ],
-    "answer": "Retina"
+    "answer": "Retina",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The amount of light entering the eye is controlled by the:",
@@ -1946,7 +2106,8 @@ const questions = [
       "Lens",
       "Cornea"
     ],
-    "answer": "Iris"
+    "answer": "Iris",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Cones are mainly found in a small central region of the retina called the:",
@@ -1958,7 +2119,8 @@ const questions = [
       "Lens",
       "Pupil"
     ],
-    "answer": "Fovea"
+    "answer": "Fovea",
+    "section": "Lecture MCQs"
   },
   {
     "q": "We perceive colours only in:",
@@ -1970,7 +2132,8 @@ const questions = [
       "Scotopic vision",
       "Neither"
     ],
-    "answer": "Photopic vision"
+    "answer": "Photopic vision",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which photoreceptors work in weak light and see in shades of gray?",
@@ -1982,7 +2145,8 @@ const questions = [
       "Both",
       "Rods"
     ],
-    "answer": "Rods"
+    "answer": "Rods",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Visible light ranges from red (about 700 nm) to violet at about:",
@@ -1994,7 +2158,8 @@ const questions = [
       "400 nm",
       "1000 nm"
     ],
-    "answer": "400 nm"
+    "answer": "400 nm",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Different spectra giving the same colour sensation are called metamers, and the behaviour is called:",
@@ -2006,7 +2171,8 @@ const questions = [
       "Aliasing",
       "Metamerism"
     ],
-    "answer": "Metamerism"
+    "answer": "Metamerism",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The RGB model is:",
@@ -2018,7 +2184,8 @@ const questions = [
       "Linear",
       "Subtractive"
     ],
-    "answer": "Additive"
+    "answer": "Additive",
+    "section": "Lecture MCQs"
   },
   {
     "q": "MIPMAP stands for Multum In Parvo, meaning:",
@@ -2030,7 +2197,8 @@ const questions = [
       "Maps in pixels",
       "Many things in a small space"
     ],
-    "answer": "Many things in a small space"
+    "answer": "Many things in a small space",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Solid texturing defines the texture in a:",
@@ -2042,7 +2210,8 @@ const questions = [
       "1D texture space",
       "3D texture space (u,v,w)"
     ],
-    "answer": "3D texture space (u,v,w)"
+    "answer": "3D texture space (u,v,w)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The first step of the viewing pipeline is to transform the:",
@@ -2054,7 +2223,8 @@ const questions = [
       "Objects to meshes",
       "3D world coordinate scene to the view (eye/camera) coordinate system"
     ],
-    "answer": "3D world coordinate scene to the view (eye/camera) coordinate system"
+    "answer": "3D world coordinate scene to the view (eye/camera) coordinate system",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The viewing process is simulated similar to:",
@@ -2066,7 +2236,8 @@ const questions = [
       "Drawing a map",
       "Printing a book"
     ],
-    "answer": "Taking a photograph"
+    "answer": "Taking a photograph",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The three basis vectors of the view coordinate system are usually denoted by:",
@@ -2078,7 +2249,8 @@ const questions = [
       "i, j, k",
       "u, v, n"
     ],
-    "answer": "u, v, n"
+    "answer": "u, v, n",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The basis vector n is computed as:",
@@ -2090,7 +2262,8 @@ const questions = [
       "n = u x v",
       "n = o + p"
     ],
-    "answer": "n = o - p"
+    "answer": "n = o - p",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The look-at point is also called:",
@@ -2102,7 +2275,8 @@ const questions = [
       "Centre of projection",
       "Origin of world"
     ],
-    "answer": "Centre of interest"
+    "answer": "Centre of interest",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The view-up vector is computed as:",
@@ -2114,7 +2288,8 @@ const questions = [
       "Vup = o - pup",
       "Vup = n x u"
     ],
-    "answer": "Vup = pup - o"
+    "answer": "Vup = pup - o",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The basis vector u is computed as:",
@@ -2126,7 +2301,8 @@ const questions = [
       "u = n x v",
       "u = v + n"
     ],
-    "answer": "u = v x n"
+    "answer": "u = v x n",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The matrix Mw2v is a composition of:",
@@ -2138,7 +2314,8 @@ const questions = [
       "Translation and rotation (R.T)",
       "Shading and lighting"
     ],
-    "answer": "Translation and rotation (R.T)"
+    "answer": "Translation and rotation (R.T)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the example, camera at (1,2,2) and look-at point (2,2,2) give n =",
@@ -2150,7 +2327,8 @@ const questions = [
       "(0, 1, 0)",
       "(0, 0, 1)"
     ],
-    "answer": "(-1, 0, 0)"
+    "answer": "(-1, 0, 0)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the example, the object centre (2,2,2) is transformed to which point in view coordinates?",
@@ -2162,7 +2340,8 @@ const questions = [
       "(2, 2, 2)",
       "(0, 0, -1)"
     ],
-    "answer": "(0, 0, -1)"
+    "answer": "(0, 0, -1)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Projection in general transforms objects from:",
@@ -2174,7 +2353,8 @@ const questions = [
       "World to device",
       "2D to 3D"
     ],
-    "answer": "n dimensions to (n - 1) dimensions"
+    "answer": "n dimensions to (n - 1) dimensions",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The area on the view plane that contains projected objects is the:",
@@ -2186,7 +2366,8 @@ const questions = [
       "Viewport",
       "Clipping window"
     ],
-    "answer": "Clipping window"
+    "answer": "Clipping window",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lines from object surfaces to the view plane are called:",
@@ -2198,7 +2379,8 @@ const questions = [
       "Vertices",
       "Edges"
     ],
-    "answer": "Projectors"
+    "answer": "Projectors",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In perspective projection the projectors:",
@@ -2210,7 +2392,8 @@ const questions = [
       "Are curved",
       "Converge to a centre of projection"
     ],
-    "answer": "Converge to a centre of projection"
+    "answer": "Converge to a centre of projection",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In parallel projection the centre of projection is at:",
@@ -2222,7 +2405,8 @@ const questions = [
       "The origin",
       "The viewer"
     ],
-    "answer": "Infinity"
+    "answer": "Infinity",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Perspective foreshortening means:",
@@ -2234,7 +2418,8 @@ const questions = [
       "All objects equal",
       "Near objects disappear"
     ],
-    "answer": "Distant objects appear smaller"
+    "answer": "Distant objects appear smaller",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Vanishing points occur in:",
@@ -2246,7 +2431,8 @@ const questions = [
       "Perspective projection",
       "Flat shading"
     ],
-    "answer": "Perspective projection"
+    "answer": "Perspective projection",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Parallel projection is useful for:",
@@ -2258,7 +2444,8 @@ const questions = [
       "Animation",
       "Realistic games"
     ],
-    "answer": "Engineering drawings (CAD) as it preserves shape and size"
+    "answer": "Engineering drawings (CAD) as it preserves shape and size",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The view volume for perspective projection is a:",
@@ -2270,7 +2457,8 @@ const questions = [
       "Cube",
       "Frustum"
     ],
-    "answer": "Frustum"
+    "answer": "Frustum",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For parallel projection with near plane at distance d along -z, the projected z' equals:",
@@ -2282,7 +2470,8 @@ const questions = [
       "z",
       "0"
     ],
-    "answer": "-d"
+    "answer": "-d",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The canonical view volume (CVV) for parallel projection is a cube in the range:",
@@ -2294,7 +2483,8 @@ const questions = [
       "[0, 10]",
       "[0, 1]"
     ],
-    "answer": "[-1, 1]"
+    "answer": "[-1, 1]",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The CVV is used to:",
@@ -2306,7 +2496,8 @@ const questions = [
       "Simplify clipping calculations",
       "Increase colours"
     ],
-    "answer": "Simplify clipping calculations"
+    "answer": "Simplify clipping calculations",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A perspective frustum is transformed to a parallel CVV using:",
@@ -2318,7 +2509,8 @@ const questions = [
       "Projection only",
       "Rotation only"
     ],
-    "answer": "Shearing and scaling"
+    "answer": "Shearing and scaling",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The overall transformation sequence is:",
@@ -2330,7 +2522,8 @@ const questions = [
       "P' = P . Tproj",
       "P' = TVC . Tproj . Tcvv . P"
     ],
-    "answer": "P' = Tproj . Tcvv . TVC . P"
+    "answer": "P' = Tproj . Tcvv . TVC . P",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The depth (z) value is preserved in the z-buffer because it is needed for:",
@@ -2342,7 +2535,8 @@ const questions = [
       "Scaling",
       "Hidden surface removal"
     ],
-    "answer": "Hidden surface removal"
+    "answer": "Hidden surface removal",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The clipping window on the CVV is called the:",
@@ -2354,7 +2548,8 @@ const questions = [
       "Frame",
       "Raster window"
     ],
-    "answer": "Normalized window"
+    "answer": "Normalized window",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The viewport is defined in:",
@@ -2366,7 +2561,8 @@ const questions = [
       "World space",
       "Texture space"
     ],
-    "answer": "Device space"
+    "answer": "Device space",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Parallel projection of the point (0,0,-1) onto the plane z = -0.5 gives:",
@@ -2378,7 +2574,8 @@ const questions = [
       "(1, 1, 1)",
       "(0, 0, 0.5)"
     ],
-    "answer": "(0, 0, -0.5)"
+    "answer": "(0, 0, -0.5)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the perspective example the homogeneous factor h obtained is:",
@@ -2390,7 +2587,8 @@ const questions = [
       "1",
       "0"
     ],
-    "answer": "-2"
+    "answer": "-2",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For the window-to-viewport example (window [-1,1]x[-1,1], viewport (4,4) to (6,8)), the point (0,0) maps to:",
@@ -2402,7 +2600,8 @@ const questions = [
       "(6, 8)",
       "(0, 0)"
     ],
-    "answer": "(5, 6)"
+    "answer": "(5, 6)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The process of discarding objects that lie outside the view volume is called:",
@@ -2414,7 +2613,8 @@ const questions = [
       "Rasterization",
       "Texture mapping"
     ],
-    "answer": "Clipping"
+    "answer": "Clipping",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The clipping algorithms discussed assume clipping is done against the:",
@@ -2426,7 +2626,8 @@ const questions = [
       "Viewport only",
       "Frame buffer"
     ],
-    "answer": "Canonical view volume (cube)"
+    "answer": "Canonical view volume (cube)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A point (x, y) is retained in 2D point clipping if:",
@@ -2438,7 +2639,8 @@ const questions = [
       "x > wxmax",
       "y < wymin"
     ],
-    "answer": "wxmin <= x <= wxmax AND wymin <= y <= wymax"
+    "answer": "wxmin <= x <= wxmax AND wymin <= y <= wymax",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The Cohen-Sutherland algorithm divides the window and its surrounding into how many regions?",
@@ -2450,7 +2652,8 @@ const questions = [
       "6",
       "4"
     ],
-    "answer": "9"
+    "answer": "9",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Each Cohen-Sutherland region code has how many bits (above, below, right, left)?",
@@ -2462,7 +2665,8 @@ const questions = [
       "6",
       "4"
     ],
-    "answer": "4"
+    "answer": "4",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If both end point region codes are 0000, the line is:",
@@ -2474,7 +2678,8 @@ const questions = [
       "Needs rotation",
       "Completely outside, discard"
     ],
-    "answer": "Completely inside, retain"
+    "answer": "Completely inside, retain",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If the bitwise AND of the two end point codes is NOT 0000, the line is:",
@@ -2486,7 +2691,8 @@ const questions = [
       "Completely outside, so discard it",
       "Completely inside"
     ],
-    "answer": "Completely outside, so discard it"
+    "answer": "Completely outside, so discard it",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For segment AB with both end point codes 0010, the AND is 0010. What is the result?",
@@ -2498,7 +2704,8 @@ const questions = [
       "Line is rotated",
       "Line is retained"
     ],
-    "answer": "Line is totally outside, discard"
+    "answer": "Line is totally outside, discard",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Cohen-Sutherland works best when:",
@@ -2510,7 +2717,8 @@ const questions = [
       "Few lines can be trivially accepted or rejected",
       "All lines cross the window"
     ],
-    "answer": "Many lines can be clipped without further processing"
+    "answer": "Many lines can be clipped without further processing",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The earliest faster line clipping algorithm based on the parametric line equation was proposed by:",
@@ -2522,7 +2730,8 @@ const questions = [
       "Cyrus and Beck",
       "Bresenham"
     ],
-    "answer": "Cyrus and Beck"
+    "answer": "Cyrus and Beck",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Two efficient fill-area (polygon) clipping algorithms discussed are:",
@@ -2534,7 +2743,8 @@ const questions = [
       "Gouraud and Phong",
       "Sutherland-Hodgeman and Weiler-Atherton"
     ],
-    "answer": "Sutherland-Hodgeman and Weiler-Atherton"
+    "answer": "Sutherland-Hodgeman and Weiler-Atherton",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Sutherland-Hodgeman, the polygon vertex list is passed through how many clippers (for a 2D window)?",
@@ -2546,7 +2756,8 @@ const questions = [
       "Three",
       "Two"
     ],
-    "answer": "Four"
+    "answer": "Four",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Sutherland-Hodgeman, if vi is inside and vj is outside a clipper, the output is:",
@@ -2558,7 +2769,8 @@ const questions = [
       "The intersection point of the edge with the clipper",
       "vj"
     ],
-    "answer": "The intersection point of the edge with the clipper"
+    "answer": "The intersection point of the edge with the clipper",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If vi is outside and vj is inside the clipper, the output is:",
@@ -2570,7 +2782,8 @@ const questions = [
       "NULL",
       "The intersection point and vj"
     ],
-    "answer": "The intersection point and vj"
+    "answer": "The intersection point and vj",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If both vertices of an edge are outside the clipper, the output is:",
@@ -2582,7 +2795,8 @@ const questions = [
       "NULL",
       "Both vertices"
     ],
-    "answer": "NULL"
+    "answer": "NULL",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Sutherland-Hodgeman works well when the fill-area is:",
@@ -2594,7 +2808,8 @@ const questions = [
       "Any concave polygon",
       "A circle"
     ],
-    "answer": "A convex polygon clipped against a rectangular window"
+    "answer": "A convex polygon clipped against a rectangular window",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Weiler-Atherton can clip:",
@@ -2606,7 +2821,8 @@ const questions = [
       "Only rectangles",
       "Any polygon (convex or concave) against any polygonal clipping window"
     ],
-    "answer": "Any polygon (convex or concave) against any polygonal clipping window"
+    "answer": "Any polygon (convex or concave) against any polygonal clipping window",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Weiler-Atherton, at an inside-to-outside intersection we follow:",
@@ -2618,7 +2834,8 @@ const questions = [
       "The normal vector",
       "Polygon edges"
     ],
-    "answer": "Window (clip) boundaries in the same direction"
+    "answer": "Window (clip) boundaries in the same direction",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In 3D Cohen-Sutherland, the number of regions and code bits are:",
@@ -2630,7 +2847,8 @@ const questions = [
       "9 regions and 4 bits",
       "8 regions and 3 bits"
     ],
-    "answer": "27 regions and 6 bits"
+    "answer": "27 regions and 6 bits",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A 3D point is kept in the normalized view volume if:",
@@ -2642,7 +2860,8 @@ const questions = [
       "z < -1 only",
       "x = y = z"
     ],
-    "answer": "-1 <= x <= 1 AND -1 <= y <= 1 AND -1 <= z <= 1"
+    "answer": "-1 <= x <= 1 AND -1 <= y <= 1 AND -1 <= z <= 1",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Hidden surface removal is needed because:",
@@ -2654,7 +2873,8 @@ const questions = [
       "It replaces projection",
       "Clipping removes colour"
     ],
-    "answer": "Clipping cannot remove objects that are inside the view volume but blocked by others"
+    "answer": "Clipping cannot remove objects that are inside the view volume but blocked by others",
+    "section": "Lecture MCQs"
   },
   {
     "q": "HSR methods are broadly of which two types?",
@@ -2666,7 +2886,8 @@ const questions = [
       "Raster and vector",
       "Lighting and shading"
     ],
-    "answer": "Object space and image space"
+    "answer": "Object space and image space",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Object space HSR methods:",
@@ -2678,7 +2899,8 @@ const questions = [
       "Need no computation",
       "Depend on screen resolution"
     ],
-    "answer": "Compare objects and parts of objects before projection"
+    "answer": "Compare objects and parts of objects before projection",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Image space HSR methods decide visibility:",
@@ -2690,7 +2912,8 @@ const questions = [
       "Per object",
       "Point by point at each pixel position"
     ],
-    "answer": "Point by point at each pixel position"
+    "answer": "Point by point at each pixel position",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Coherence in HSR refers to:",
@@ -2702,7 +2925,8 @@ const questions = [
       "Increasing resolution",
       "Colour matching"
     ],
-    "answer": "Using results computed for one part of the scene for nearby parts"
+    "answer": "Using results computed for one part of the scene for nearby parts",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Edge coherence says that the visibility of an edge changes only when:",
@@ -2714,7 +2938,8 @@ const questions = [
       "It moves",
       "It is clipped"
     ],
-    "answer": "It crosses another edge"
+    "answer": "It crosses another edge",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In back face elimination, with surface normal N(a, b, c), a surface is eliminated if:",
@@ -2726,7 +2951,8 @@ const questions = [
       "b = 0",
       "c > 0"
     ],
-    "answer": "c <= 0"
+    "answer": "c <= 0",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the example, z components of normals are -12, -4, 4, 2 for ACB, ADB, DCB, ADC. Which surfaces are visible?",
@@ -2738,7 +2964,8 @@ const questions = [
       "None",
       "DCB and ADC"
     ],
-    "answer": "DCB and ADC"
+    "answer": "DCB and ADC",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The Z-buffer (depth buffer) algorithm is an image space method and its buffer has the same size as the:",
@@ -2750,7 +2977,8 @@ const questions = [
       "Viewport border",
       "Frame buffer"
     ],
-    "answer": "Frame buffer"
+    "answer": "Frame buffer",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A limitation of the depth-buffer method is that it cannot handle:",
@@ -2762,7 +2990,8 @@ const questions = [
       "Polygons",
       "Transparent surfaces (A-buffer was developed to overcome this)"
     ],
-    "answer": "Transparent surfaces (A-buffer was developed to overcome this)"
+    "answer": "Transparent surfaces (A-buffer was developed to overcome this)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The depth sorting algorithm is often called:",
@@ -2774,7 +3003,8 @@ const questions = [
       "Gouraud's algorithm",
       "Painter's algorithm"
     ],
-    "answer": "Painter's algorithm"
+    "answer": "Painter's algorithm",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In painter's algorithm, surfaces are rendered starting from the surface with:",
@@ -2786,7 +3016,8 @@ const questions = [
       "Maximum depth (farthest)",
       "Random depth"
     ],
-    "answer": "Maximum depth (farthest)"
+    "answer": "Maximum depth (farthest)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Two surfaces have no depth overlap if:",
@@ -2798,7 +3029,8 @@ const questions = [
       "They are both polygons",
       "Both have the same depth"
     ],
-    "answer": "Min depth of one surface > max depth of the other"
+    "answer": "Min depth of one surface > max depth of the other",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If all the overlap tests fail in painter's algorithm, we:",
@@ -2810,7 +3042,8 @@ const questions = [
       "Swap (reorder) the surfaces in the list",
       "Render with white colour"
     ],
-    "answer": "Swap (reorder) the surfaces in the list"
+    "answer": "Swap (reorder) the surfaces in the list",
+    "section": "Lecture MCQs"
   },
   {
     "q": "To avoid an infinite loop for intersecting surfaces, painter's algorithm uses:",
@@ -2822,7 +3055,8 @@ const questions = [
       "A Boolean flag per surface and divides the surface along the intersection line",
       "Shading"
     ],
-    "answer": "A Boolean flag per surface and divides the surface along the intersection line"
+    "answer": "A Boolean flag per surface and divides the surface along the intersection line",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Warnock's algorithm first subdivides the screen area into:",
@@ -2834,7 +3068,8 @@ const questions = [
       "9 regions",
       "2 parts"
     ],
-    "answer": "4 equal squares"
+    "answer": "4 equal squares",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Warnock's algorithm Case 1 (region contains no surface):",
@@ -2846,7 +3081,8 @@ const questions = [
       "Subdivide further",
       "Assign surface colour"
     ],
-    "answer": "Assign the background colour and do not subdivide"
+    "answer": "Assign the background colour and do not subdivide",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Warnock's Case 2 (nearest surface completely overlaps the region):",
@@ -2858,7 +3094,8 @@ const questions = [
       "Subdivide",
       "Remove the surface"
     ],
-    "answer": "Assign the surface colour to the region"
+    "answer": "Assign the surface colour to the region",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Warnock's recursion stops when a case is met or the region size becomes:",
@@ -2870,7 +3107,8 @@ const questions = [
       "Equal to pixel size",
       "Equal to screen size"
     ],
-    "answer": "Equal to pixel size"
+    "answer": "Equal to pixel size",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which pair is correctly classified?",
@@ -2882,7 +3120,8 @@ const questions = [
       "Painter - only image space",
       "Z-buffer - object space; Warnock - object space"
     ],
-    "answer": "Back face elimination - object space; Z-buffer - image space"
+    "answer": "Back face elimination - object space; Z-buffer - image space",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The initial decision parameter p0 in Bresenham's line algorithm is:",
@@ -2894,7 +3133,8 @@ const questions = [
       "2dy - dx",
       "2dx - dy"
     ],
-    "answer": "2dy - dx"
+    "answer": "2dy - dx",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Bresenham's algorithm is efficient because the decision parameter uses only:",
@@ -2906,7 +3146,8 @@ const questions = [
       "Trigonometry",
       "Square roots"
     ],
-    "answer": "Integer operations"
+    "answer": "Integer operations",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Bresenham's algorithm, if pk < 0 we choose:",
@@ -2918,7 +3159,8 @@ const questions = [
       "The upper pixel (yk + 1)",
       "No pixel"
     ],
-    "answer": "The lower pixel (yk)"
+    "answer": "The lower pixel (yk)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For line A(2,2) to B(7,5), the pixel list is (2,2),(3,3),(4,3),(5,4),(6,4),(7,5). The next pixel after (4,3) is:",
@@ -2930,7 +3172,8 @@ const questions = [
       "(5,5)",
       "(5,4)"
     ],
-    "answer": "(5,4)"
+    "answer": "(5,4)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "DDA reduces multiplication but still needs:",
@@ -2942,7 +3185,8 @@ const questions = [
       "No arithmetic",
       "Only integer addition"
     ],
-    "answer": "Floating point addition and rounding"
+    "answer": "Floating point addition and rounding",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The basic Bresenham algorithm assumes the slope m is in:",
@@ -2954,7 +3198,8 @@ const questions = [
       "0 <= m <= 1 or -1 <= m <= 0",
       "m < -1 only"
     ],
-    "answer": "0 <= m <= 1 or -1 <= m <= 0"
+    "answer": "0 <= m <= 1 or -1 <= m <= 0",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The circle midpoint algorithm uses which property of the circle?",
@@ -2966,7 +3211,8 @@ const questions = [
       "Eight-way symmetry",
       "Convexity"
     ],
-    "answer": "Eight-way symmetry"
+    "answer": "Eight-way symmetry",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The decision variable in the midpoint circle algorithm is evaluated at:",
@@ -2978,7 +3224,8 @@ const questions = [
       "(xk + 1, yk - 1/2)",
       "(xk, yk)"
     ],
-    "answer": "(xk + 1, yk - 1/2)"
+    "answer": "(xk + 1, yk - 1/2)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the midpoint circle algorithm, if pk < 0 the next pixel is (xk + 1, yk) and:",
@@ -2990,7 +3237,8 @@ const questions = [
       "p(k+1) = pk + 2xk + 3",
       "p(k+1) = pk"
     ],
-    "answer": "p(k+1) = pk + 2xk + 3"
+    "answer": "p(k+1) = pk + 2xk + 3",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the circle example with r = 2.7, the output list contains duplicate pixels, which are:",
@@ -3002,7 +3250,8 @@ const questions = [
       "Doubled in colour",
       "Kept as they are"
     ],
-    "answer": "Removed before rendering"
+    "answer": "Removed before rendering",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Regions are broadly defined in terms of:",
@@ -3014,7 +3263,8 @@ const questions = [
       "Light and shade",
       "2D and 3D"
     ],
-    "answer": "Pixel-level definition and geometric definition"
+    "answer": "Pixel-level definition and geometric definition",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The seed fill algorithm works on:",
@@ -3026,7 +3276,8 @@ const questions = [
       "A boundary-defined region and uses a stack, starting from an interior seed pixel",
       "Texture"
     ],
-    "answer": "A boundary-defined region and uses a stack, starting from an interior seed pixel"
+    "answer": "A boundary-defined region and uses a stack, starting from an interior seed pixel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 4-connected neighbours of a pixel are its:",
@@ -3038,7 +3289,8 @@ const questions = [
       "Only the top pixel",
       "Diagonal pixels only"
     ],
-    "answer": "Top, bottom, left and right pixels"
+    "answer": "Top, bottom, left and right pixels",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Flood fill differs from seed fill because it makes decisions based on:",
@@ -3050,7 +3302,8 @@ const questions = [
       "The original interior colour of the current pixel",
       "Depth"
     ],
-    "answer": "The original interior colour of the current pixel"
+    "answer": "The original interior colour of the current pixel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The scan line polygon fill algorithm works on:",
@@ -3062,7 +3315,8 @@ const questions = [
       "Geometric definition (vertices and edges)",
       "Octrees"
     ],
-    "answer": "Geometric definition (vertices and edges)"
+    "answer": "Geometric definition (vertices and edges)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For concave polygons, scan line fill needs an additional:",
@@ -3074,7 +3328,8 @@ const questions = [
       "Inside-outside test for each pixel",
       "Lighting model"
     ],
-    "answer": "Inside-outside test for each pixel"
+    "answer": "Inside-outside test for each pixel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the inside-outside test, if the line from pixel p to an outside point crosses polygon edges an even number of times, p is:",
@@ -3086,7 +3341,8 @@ const questions = [
       "Invalid",
       "Outside"
     ],
-    "answer": "Outside"
+    "answer": "Outside",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A 'font' or typeface denotes:",
@@ -3098,7 +3354,8 @@ const questions = [
       "The screen resolution",
       "The size of a character"
     ],
-    "answer": "The overall design style of characters (e.g. Times New Roman, Arial)"
+    "answer": "The overall design style of characters (e.g. Times New Roman, Arial)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "One DTP (postscript) point equals:",
@@ -3110,7 +3367,8 @@ const questions = [
       "1/12 inch",
       "1/72 inch"
     ],
-    "answer": "1/72 inch"
+    "answer": "1/72 inch",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Compared with bitmapped fonts, outline fonts:",
@@ -3122,7 +3380,8 @@ const questions = [
       "Need more storage and depend on resolution",
       "Cannot be resized"
     ],
-    "answer": "Need less storage, can be transformed and are resolution independent, but render slower"
+    "answer": "Need less storage, can be transformed and are resolution independent, but render slower",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Graphics operations are suited to a GPU because they are:",
@@ -3134,7 +3393,8 @@ const questions = [
       "Not computational",
       "Strictly serial"
     ],
-    "answer": "Highly parallel"
+    "answer": "Highly parallel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A GPU is a multicore system whose cores are grouped to form:",
@@ -3146,7 +3406,8 @@ const questions = [
       "Streaming multiprocessors (SM)",
       "Frame buffers"
     ],
-    "answer": "Streaming multiprocessors (SM)"
+    "answer": "Streaming multiprocessors (SM)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Geometric transformation of many vertices is an example of:",
@@ -3158,7 +3419,8 @@ const questions = [
       "SISD",
       "MIMD only"
     ],
-    "answer": "SIMD (single instruction, multiple data)"
+    "answer": "SIMD (single instruction, multiple data)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the GPU pipeline, triangles are sent to the GPU:",
@@ -3170,7 +3432,8 @@ const questions = [
       "All at once as an image",
       "As pixels"
     ],
-    "answer": "One vertex at a time through the graphics library API"
+    "answer": "One vertex at a time through the graphics library API",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In rasterization, GPUs exploit the fact that:",
@@ -3182,7 +3445,8 @@ const questions = [
       "Each pixel can be treated independently, so pixels are processed in parallel",
       "All pixels have the same colour"
     ],
-    "answer": "Each pixel can be treated independently, so pixels are processed in parallel"
+    "answer": "Each pixel can be treated independently, so pixels are processed in parallel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For hidden surface removal modern GPUs implement:",
@@ -3194,7 +3458,8 @@ const questions = [
       "Warnock's algorithm",
       "Back face only"
     ],
-    "answer": "Depth (Z) buffer algorithm in dedicated memory"
+    "answer": "Depth (Z) buffer algorithm in dedicated memory",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Early GPUs had a fixed-function pipeline, while modern GPUs:",
@@ -3206,7 +3471,8 @@ const questions = [
       "Are programmable (unified grid of shaders)",
       "Have no pipeline"
     ],
-    "answer": "Are programmable (unified grid of shaders)"
+    "answer": "Are programmable (unified grid of shaders)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Vertex shaders are used for:",
@@ -3218,7 +3484,8 @@ const questions = [
       "Compression",
       "Pixel texture only"
     ],
-    "answer": "Modeling transformations, lighting and projection of vertices"
+    "answer": "Modeling transformations, lighting and projection of vertices",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Fragment shaders perform:",
@@ -3230,7 +3497,8 @@ const questions = [
       "Clipping of lines",
       "Vertex projection"
     ],
-    "answer": "Pixel processing such as shading, texture mapping and HSR decisions"
+    "answer": "Pixel processing such as shading, texture mapping and HSR decisions",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Using a GPU for tasks not related to graphics is called:",
@@ -3242,7 +3510,8 @@ const questions = [
       "SGI",
       "SIMD"
     ],
-    "answer": "GPGPU"
+    "answer": "GPGPU",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Graphics software is broadly of which two types?",
@@ -3254,7 +3523,8 @@ const questions = [
       "2D and 3D",
       "Special-purpose packages and general programming packages"
     ],
-    "answer": "Special-purpose packages and general programming packages"
+    "answer": "Special-purpose packages and general programming packages",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The first graphics software standard (1984) was:",
@@ -3266,7 +3536,8 @@ const questions = [
       "DirectX",
       "GKS"
     ],
-    "answer": "GKS"
+    "answer": "GKS",
+    "section": "Lecture MCQs"
   },
   {
     "q": "OpenGL evolved from the graphics library (GL) of:",
@@ -3278,7 +3549,8 @@ const questions = [
       "Microsoft",
       "Silicon Graphics Inc. (SGI)"
     ],
-    "answer": "Silicon Graphics Inc. (SGI)"
+    "answer": "Silicon Graphics Inc. (SGI)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Core OpenGL does not support I/O, so display windows are created using:",
@@ -3290,7 +3562,8 @@ const questions = [
       "Java",
       "STDIO"
     ],
-    "answer": "GLUT (OpenGL Utility Toolkit)"
+    "answer": "GLUT (OpenGL Utility Toolkit)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "glutInitDisplayMode(GLUT_SINGLE OR GLUT_RGB) specifies:",
@@ -3302,7 +3575,8 @@ const questions = [
       "Double buffer and gray mode",
       "A single refresh buffer and RGB colour mode"
     ],
-    "answer": "A single refresh buffer and RGB colour mode"
+    "answer": "A single refresh buffer and RGB colour mode",
+    "section": "Lecture MCQs"
   },
   {
     "q": "glutMainLoop() must be:",
@@ -3314,7 +3588,8 @@ const questions = [
       "Optional",
       "Called inside createLine"
     ],
-    "answer": "The last function in main, putting the program in an infinite event loop"
+    "answer": "The last function in main, putting the program in an infinite event loop",
+    "section": "Lecture MCQs"
   },
   {
     "q": "glClearColor(1.0, 1.0, 1.0, 0.0) sets the window background to:",
@@ -3326,7 +3601,8 @@ const questions = [
       "Red",
       "White"
     ],
-    "answer": "White"
+    "answer": "White",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The fourth argument of glClearColor is the:",
@@ -3338,7 +3614,8 @@ const questions = [
       "Brightness",
       "Size"
     ],
-    "answer": "Alpha value (blending parameter)"
+    "answer": "Alpha value (blending parameter)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "gluOrtho2D(0.0, 800.0, 0.0, 600.0) specifies:",
@@ -3350,7 +3627,8 @@ const questions = [
       "An orthogonal projection window with lower-left (0,0) and top-right (800,600)",
       "The font size"
     ],
-    "answer": "An orthogonal projection window with lower-left (0,0) and top-right (800,600)"
+    "answer": "An orthogonal projection window with lower-left (0,0) and top-right (800,600)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "glColor3f(0.0, 1.0, 0.0) sets the colour to:",
@@ -3362,7 +3640,8 @@ const questions = [
       "White",
       "Blue"
     ],
-    "answer": "Green"
+    "answer": "Green",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The word 'animation' comes from the Latin 'anima', meaning:",
@@ -3374,7 +3653,8 @@ const questions = [
       "To impart life, motion or activity",
       "To paint"
     ],
-    "answer": "To impart life, motion or activity"
+    "answer": "To impart life, motion or activity",
+    "section": "Lecture MCQs"
   },
   {
     "q": "An animation is a sequence of frames, typically played at:",
@@ -3386,7 +3666,8 @@ const questions = [
       "200 fps",
       "0.5 fps"
     ],
-    "answer": "24 to 60 frames per second"
+    "answer": "24 to 60 frames per second",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In storyboarding, the animator:",
@@ -3398,7 +3679,8 @@ const questions = [
       "Records real motion",
       "Solves equations"
     ],
-    "answer": "Preplans the sequence with rough sketches of objects in each frame"
+    "answer": "Preplans the sequence with rough sketches of objects in each frame",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 'straight ahead' method means:",
@@ -3410,7 +3692,8 @@ const questions = [
       "Frames are hand-drawn one after another in order",
       "Frames are auto-generated"
     ],
-    "answer": "Frames are hand-drawn one after another in order"
+    "answer": "Frames are hand-drawn one after another in order",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which is NOT one of the four classes of computer animation?",
@@ -3422,7 +3705,8 @@ const questions = [
       "Physics-based",
       "Image compression"
     ],
-    "answer": "Image compression"
+    "answer": "Image compression",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In keyframing, the animator sets keys and the computer:",
@@ -3434,7 +3718,8 @@ const questions = [
       "Interpolates the in-between frames",
       "Records motion"
     ],
-    "answer": "Interpolates the in-between frames"
+    "answer": "Interpolates the in-between frames",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Motion capture means:",
@@ -3446,7 +3731,8 @@ const questions = [
       "Using only splines",
       "Generating frames by rules"
     ],
-    "answer": "Recording the motion of a real subject and mapping it onto a synthetic model"
+    "answer": "Recording the motion of a real subject and mapping it onto a synthetic model",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Physics-based animation solves:",
@@ -3458,7 +3744,8 @@ const questions = [
       "Simple rules",
       "Hash tables"
     ],
-    "answer": "Differential equations of motion with forces and masses, and is computationally expensive"
+    "answer": "Differential equations of motion with forces and masses, and is computationally expensive",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Procedural animation:",
@@ -3470,7 +3757,8 @@ const questions = [
       "Is the most accurate",
       "Needs no computation"
     ],
-    "answer": "Approximates complex processes with rules; cheaper but less flexible"
+    "answer": "Approximates complex processes with rules; cheaper but less flexible",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The principles of animation were summarised by:",
@@ -3482,7 +3770,8 @@ const questions = [
       "Ted Nelson in 1965",
       "Bui Tuong Phong in 1973"
     ],
-    "answer": "John Lasseter in 1987"
+    "answer": "John Lasseter in 1987",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which principle is described as the most critical component of any animation?",
@@ -3494,7 +3783,8 @@ const questions = [
       "Timing",
       "Appeal"
     ],
-    "answer": "Timing"
+    "answer": "Timing",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In timing, a slow-moving object is perceived as:",
@@ -3506,7 +3796,8 @@ const questions = [
       "Transparent",
       "Heavier"
     ],
-    "answer": "Heavier"
+    "answer": "Heavier",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The three parts of an action are:",
@@ -3518,7 +3809,8 @@ const questions = [
       "Timing, arcs, appeal",
       "Squash, stretch, arcs"
     ],
-    "answer": "Anticipation, action, follow-through"
+    "answer": "Anticipation, action, follow-through",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Follow-through is:",
@@ -3530,7 +3822,8 @@ const questions = [
       "The gradual termination of an action",
       "The preparation before an action"
     ],
-    "answer": "The gradual termination of an action"
+    "answer": "The gradual termination of an action",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A cloth flowing as a person runs is an example of:",
@@ -3542,7 +3835,8 @@ const questions = [
       "Straight ahead",
       "Timing"
     ],
-    "answer": "Secondary action"
+    "answer": "Secondary action",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Squash and stretch means:",
@@ -3554,7 +3848,8 @@ const questions = [
       "The object is coloured",
       "The object shape deforms to reflect motion and force"
     ],
-    "answer": "The object shape deforms to reflect motion and force"
+    "answer": "The object shape deforms to reflect motion and force",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The 'arcs' principle says realistic motion paths are:",
@@ -3566,7 +3861,8 @@ const questions = [
       "Curved rather than straight lines",
       "Circular only"
     ],
-    "answer": "Curved rather than straight lines"
+    "answer": "Curved rather than straight lines",
+    "section": "Lecture MCQs"
   },
   {
     "q": "'Slow in and out' means motion should:",
@@ -3578,7 +3874,8 @@ const questions = [
       "Be instantaneous",
       "Be constant speed"
     ],
-    "answer": "Start and end gradually (acceleration, cruise, deceleration)"
+    "answer": "Start and end gradually (acceleration, cruise, deceleration)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The pose-to-pose method is the basis of:",
@@ -3590,7 +3887,8 @@ const questions = [
       "Keyframing",
       "Compression"
     ],
-    "answer": "Keyframing"
+    "answer": "Keyframing",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Exaggeration is used to:",
@@ -3602,7 +3900,8 @@ const questions = [
       "Push effects beyond reality to make the animation more appealing",
       "Remove arcs"
     ],
-    "answer": "Push effects beyond reality to make the animation more appealing"
+    "answer": "Push effects beyond reality to make the animation more appealing",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Keyframing happens in two stages:",
@@ -3614,7 +3913,8 @@ const questions = [
       "Animator picks keyframes, computer generates in-betweens",
       "Record and compress"
     ],
-    "answer": "Animator picks keyframes, computer generates in-betweens"
+    "answer": "Animator picks keyframes, computer generates in-betweens",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Parameters specified at each keyframe are called:",
@@ -3626,7 +3926,8 @@ const questions = [
       "Voxels",
       "Knots"
     ],
-    "answer": "Articulation variables"
+    "answer": "Articulation variables",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Linear interpolation between two keyframes gives:",
@@ -3638,7 +3939,8 @@ const questions = [
       "A circle",
       "No motion"
     ],
-    "answer": "A straight-line path with constant speed"
+    "answer": "A straight-line path with constant speed",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Arcs in animation are achieved using which interpolation?",
@@ -3650,7 +3952,8 @@ const questions = [
       "Spline interpolation",
       "Linear interpolation"
     ],
-    "answer": "Spline interpolation"
+    "answer": "Spline interpolation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In a skeleton-based representation, the skeleton is:",
@@ -3662,7 +3965,8 @@ const questions = [
       "A texture",
       "A light"
     ],
-    "answer": "A tree (hierarchy) of bone joints used as an internal data structure"
+    "answer": "A tree (hierarchy) of bone joints used as an internal data structure",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In forward kinematics the animator specifies:",
@@ -3674,7 +3978,8 @@ const questions = [
       "Only the skin",
       "Only the root"
     ],
-    "answer": "The motion of every joint"
+    "answer": "The motion of every joint",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In inverse kinematics the animator specifies:",
@@ -3686,7 +3991,8 @@ const questions = [
       "Only the colours",
       "All joints"
     ],
-    "answer": "Only the end joints (e.g. wrist, ankle) and the computer solves the intermediate joints"
+    "answer": "Only the end joints (e.g. wrist, ankle) and the computer solves the intermediate joints",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A catch of inverse kinematics is that:",
@@ -3698,7 +4004,8 @@ const questions = [
       "The intermediate joint solution may not be unique and may look unnatural",
       "It is too slow always"
     ],
-    "answer": "The intermediate joint solution may not be unique and may look unnatural"
+    "answer": "The intermediate joint solution may not be unique and may look unnatural",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Skin is attached to the skeleton by:",
@@ -3710,7 +4017,8 @@ const questions = [
       "Linking each skin point to the nearest joint so it moves with the joint",
       "Painting"
     ],
-    "answer": "Linking each skin point to the nearest joint so it moves with the joint"
+    "answer": "Linking each skin point to the nearest joint so it moves with the joint",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The skeleton is never rendered; the viewer sees:",
@@ -3722,7 +4030,8 @@ const questions = [
       "The bones",
       "The joints"
     ],
-    "answer": "The skin deformation"
+    "answer": "The skin deformation",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Conformational parameters of a face define:",
@@ -3734,7 +4043,8 @@ const questions = [
       "The static shape (e.g. nose length, jaw width)",
       "The lighting"
     ],
-    "answer": "The static shape (e.g. nose length, jaw width)"
+    "answer": "The static shape (e.g. nose length, jaw width)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Expressive parameters define:",
@@ -3746,7 +4056,8 @@ const questions = [
       "Skeleton",
       "Dynamic facial change (e.g. eye opening, head rotation)"
     ],
-    "answer": "Dynamic facial change (e.g. eye opening, head rotation)"
+    "answer": "Dynamic facial change (e.g. eye opening, head rotation)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "FACS stands for:",
@@ -3758,7 +4069,8 @@ const questions = [
       "Face And Color Space",
       "Facial Action Coding System"
     ],
-    "answer": "Facial Action Coding System"
+    "answer": "Facial Action Coding System",
+    "section": "Lecture MCQs"
   },
   {
     "q": "FACS expresses any face as a combination of:",
@@ -3770,7 +4082,8 @@ const questions = [
       "Splines",
       "Voxels"
     ],
-    "answer": "Action units (AUs)"
+    "answer": "Action units (AUs)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Deformation is also called:",
@@ -3782,7 +4095,8 @@ const questions = [
       "Scanning",
       "Shading"
     ],
-    "answer": "Morphing"
+    "answer": "Morphing",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the tapered cube example, Y and Z are scaled by a function S(x) that:",
@@ -3794,7 +4108,8 @@ const questions = [
       "Is constant",
       "Is zero everywhere"
     ],
-    "answer": "Decreases along x"
+    "answer": "Decreases along x",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The simple deformation function approach has the problem that:",
@@ -3806,7 +4121,8 @@ const questions = [
       "It is hard to find a function for arbitrary deformation and it applies to the whole object",
       "It is too local"
     ],
-    "answer": "It is hard to find a function for arbitrary deformation and it applies to the whole object"
+    "answer": "It is hard to find a function for arbitrary deformation and it applies to the whole object",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In Free Form Deformation (FFD) the object region is enclosed in:",
@@ -3818,7 +4134,8 @@ const questions = [
       "A coordinate lattice (grid of control points)",
       "A texture"
     ],
-    "answer": "A coordinate lattice (grid of control points)"
+    "answer": "A coordinate lattice (grid of control points)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which is the correct FFD sequence?",
@@ -3830,7 +4147,8 @@ const questions = [
       "Render, then deform",
       "Build lattice, re-express object points relative to grid, distort lattice, interpolate object points"
     ],
-    "answer": "Build lattice, re-express object points relative to grid, distort lattice, interpolate object points"
+    "answer": "Build lattice, re-express object points relative to grid, distort lattice, interpolate object points",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The main advantage of FFD is:",
@@ -3842,7 +4160,8 @@ const questions = [
       "Local control of deformation on any region",
       "It needs no lattice"
     ],
-    "answer": "Local control of deformation on any region"
+    "answer": "Local control of deformation on any region",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Motion capture records motion of a 'talent', which means:",
@@ -3854,7 +4173,8 @@ const questions = [
       "A model file",
       "A light"
     ],
-    "answer": "The subject whose motion is recorded"
+    "answer": "The subject whose motion is recorded",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In magnetic motion capture, the main problem is:",
@@ -3866,7 +4186,8 @@ const questions = [
       "Interference from nearby objects and the inconvenience of cables or battery",
       "No sensors"
     ],
-    "answer": "Interference from nearby objects and the inconvenience of cables or battery"
+    "answer": "Interference from nearby objects and the inconvenience of cables or battery",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Optical motion capture uses:",
@@ -3878,7 +4199,8 @@ const questions = [
       "Magnetic sensors",
       "Reflective markers filmed by two or more cameras"
     ],
-    "answer": "Reflective markers filmed by two or more cameras"
+    "answer": "Reflective markers filmed by two or more cameras",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Optical mocap is less accurate mainly because of:",
@@ -3890,7 +4212,8 @@ const questions = [
       "Cables",
       "No cameras"
     ],
-    "answer": "Marker occlusion and image processing limits"
+    "answer": "Marker occlusion and image processing limits",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Compared with optical, magnetic mocap is:",
@@ -3902,7 +4225,8 @@ const questions = [
       "More accurate but more cumbersome",
       "Cheaper and lighter"
     ],
-    "answer": "More accurate but more cumbersome"
+    "answer": "More accurate but more cumbersome",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Physics-based animation requires solving:",
@@ -3914,7 +4238,8 @@ const questions = [
       "Colour tables",
       "Differential equations from physical laws"
     ],
-    "answer": "Differential equations from physical laws"
+    "answer": "Differential equations from physical laws",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the wrinkled cloth example, the physics-based approach:",
@@ -3926,7 +4251,8 @@ const questions = [
       "Imposes fixed wrinkles",
       "Uses markers"
     ],
-    "answer": "Models stress and strain of each thread, allowing any wrinkle pattern but at high cost"
+    "answer": "Models stress and strain of each thread, allowing any wrinkle pattern but at high cost",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Imposition of wrinkles is an example of:",
@@ -3938,7 +4264,8 @@ const questions = [
       "FFD",
       "A procedural technique (cheap but inflexible)"
     ],
-    "answer": "A procedural technique (cheap but inflexible)"
+    "answer": "A procedural technique (cheap but inflexible)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Procedural techniques are preferred when:",
@@ -3950,7 +4277,8 @@ const questions = [
       "Maximum realism is needed at any cost",
       "Real-time constraints or limited compute exist and the phenomenon is well characterized"
     ],
-    "answer": "Real-time constraints or limited compute exist and the phenomenon is well characterized"
+    "answer": "Real-time constraints or limited compute exist and the phenomenon is well characterized",
+    "section": "Lecture MCQs"
   },
   {
     "q": "FACS (Ekman and Friesen) is from which year?",
@@ -3962,7 +4290,8 @@ const questions = [
       "2008",
       "1978"
     ],
-    "answer": "1978"
+    "answer": "1978",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Multimedia is content represented in:",
@@ -3974,7 +4303,8 @@ const questions = [
       "Many forms (text, image, animation, video, sound) usually with interactivity",
       "Only images"
     ],
-    "answer": "Many forms (text, image, animation, video, sound) usually with interactivity"
+    "answer": "Many forms (text, image, animation, video, sound) usually with interactivity",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which is NOT one of the four aspects of multimedia?",
@@ -3986,7 +4316,8 @@ const questions = [
       "Content creation",
       "Search and retrieval"
     ],
-    "answer": "Compilation of source code"
+    "answer": "Compilation of source code",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The term 'hypertext' was coined by:",
@@ -3998,7 +4329,8 @@ const questions = [
       "Ted Nelson in 1965",
       "Ivan Sutherland"
     ],
-    "answer": "Ted Nelson in 1965"
+    "answer": "Ted Nelson in 1965",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Hypermedia is:",
@@ -4010,7 +4342,8 @@ const questions = [
       "Linear video",
       "Multimedia accessed non-linearly via links; the WWW is its best-known example"
     ],
-    "answer": "Multimedia accessed non-linearly via links; the WWW is its best-known example"
+    "answer": "Multimedia accessed non-linearly via links; the WWW is its best-known example",
+    "section": "Lecture MCQs"
   },
   {
     "q": "HTML differs from XML in that HTML:",
@@ -4022,7 +4355,8 @@ const questions = [
       "Uses a predefined set of tags",
       "Has no tags"
     ],
-    "answer": "Uses a predefined set of tags"
+    "answer": "Uses a predefined set of tags",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The multimedia production cycle is:",
@@ -4034,7 +4368,8 @@ const questions = [
       "Storyboard, flowchart, functional specification, prototype and test, deploy",
       "Prototype, storyboard, spec"
     ],
-    "answer": "Storyboard, flowchart, functional specification, prototype and test, deploy"
+    "answer": "Storyboard, flowchart, functional specification, prototype and test, deploy",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A storyboard is equivalent to:",
@@ -4046,7 +4381,8 @@ const questions = [
       "The final video",
       "The keyframes of a video"
     ],
-    "answer": "The keyframes of a video"
+    "answer": "The keyframes of a video",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Macromedia Director follows which authoring metaphor?",
@@ -4058,7 +4394,8 @@ const questions = [
       "Card",
       "Cast/Score/Scripting"
     ],
-    "answer": "Cast/Score/Scripting"
+    "answer": "Cast/Score/Scripting",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Microsoft PowerPoint is an example of which metaphor?",
@@ -4070,7 +4407,8 @@ const questions = [
       "Frames",
       "Iconic flow control"
     ],
-    "answer": "Slide show metaphor"
+    "answer": "Slide show metaphor",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In an HTML document, the HEAD contains:",
@@ -4082,7 +4420,8 @@ const questions = [
       "Only images",
       "The content, while BODY has metadata"
     ],
-    "answer": "Metadata about the document, while BODY has the content"
+    "answer": "Metadata about the document, while BODY has the content",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Sound is:",
@@ -4094,7 +4433,8 @@ const questions = [
       "Possible in space",
       "An electromagnetic wave"
     ],
-    "answer": "A pressure wave and a continuous analog signal that needs air"
+    "answer": "A pressure wave and a continuous analog signal that needs air",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A transducer converts sound pressure into:",
@@ -4106,7 +4446,8 @@ const questions = [
       "Light",
       "Heat"
     ],
-    "answer": "Voltage"
+    "answer": "Voltage",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Digitizing audio involves which two steps?",
@@ -4118,7 +4459,8 @@ const questions = [
       "Filtering and mixing",
       "Scanning and clipping"
     ],
-    "answer": "Sampling and quantization"
+    "answer": "Sampling and quantization",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The human audible range is roughly:",
@@ -4130,7 +4472,8 @@ const questions = [
       "20 Hz to 20 kHz",
       "100 kHz to 1 MHz"
     ],
-    "answer": "20 Hz to 20 kHz"
+    "answer": "20 Hz to 20 kHz",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Nyquist rate says to reconstruct a signal we must sample at:",
@@ -4142,7 +4485,8 @@ const questions = [
       "Twice the maximum frequency",
       "Any rate"
     ],
-    "answer": "Twice the maximum frequency"
+    "answer": "Twice the maximum frequency",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A 16-bit sample can represent how many levels?",
@@ -4154,7 +4498,8 @@ const questions = [
       "4096",
       "1,024"
     ],
-    "answer": "65,536"
+    "answer": "65,536",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Compared with FM synthesis, wave table synthesis gives:",
@@ -4166,7 +4511,8 @@ const questions = [
       "Less storage",
       "Less realistic sound"
     ],
-    "answer": "More realistic sound but needs more storage"
+    "answer": "More realistic sound but needs more storage",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which video signal type uses three separate R, G, B signals and gives the best colour but needs more bandwidth?",
@@ -4178,7 +4524,8 @@ const questions = [
       "S-video",
       "Composite video"
     ],
-    "answer": "Component video"
+    "answer": "Component video",
+    "section": "Lecture MCQs"
   },
   {
     "q": "S-video uses:",
@@ -4190,7 +4537,8 @@ const questions = [
       "Two wires: one for luminance and one for composite chrominance",
       "One wire"
     ],
-    "answer": "Two wires: one for luminance and one for composite chrominance"
+    "answer": "Two wires: one for luminance and one for composite chrominance",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In 4:2:2 chromatic subsampling of four pixels, the number of values transmitted is:",
@@ -4202,7 +4550,8 @@ const questions = [
       "12",
       "4"
     ],
-    "answer": "8 instead of 12"
+    "answer": "8 instead of 12",
+    "section": "Lecture MCQs"
   },
   {
     "q": "An encoder converts data into compressed form and its outputs are called:",
@@ -4214,7 +4563,8 @@ const questions = [
       "Pixels",
       "Codes or codewords"
     ],
-    "answer": "Codes or codewords"
+    "answer": "Codes or codewords",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lossless compression:",
@@ -4226,7 +4576,8 @@ const questions = [
       "Cannot be decoded",
       "Is always lossy"
     ],
-    "answer": "Allows exact recovery of the original, with usually a low compression ratio"
+    "answer": "Allows exact recovery of the original, with usually a low compression ratio",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lossy compression gives a higher ratio but:",
@@ -4238,7 +4589,8 @@ const questions = [
       "No data is lost",
       "Needs no quantization"
     ],
-    "answer": "Some information is permanently lost"
+    "answer": "Some information is permanently lost",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In vector quantization, a collection of code vectors is called:",
@@ -4250,7 +4602,8 @@ const questions = [
       "A lattice",
       "A frame"
     ],
-    "answer": "A codebook"
+    "answer": "A codebook",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Transform coding commonly uses which transform?",
@@ -4262,7 +4615,8 @@ const questions = [
       "Discrete Cosine Transform (DCT)",
       "Bresenham"
     ],
-    "answer": "Discrete Cosine Transform (DCT)"
+    "answer": "Discrete Cosine Transform (DCT)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "JPEG stands for:",
@@ -4274,7 +4628,8 @@ const questions = [
       "Java Photo Extension Group",
       "Joint Photographic Experts Group (standard since 1992)"
     ],
-    "answer": "Joint Photographic Experts Group (standard since 1992)"
+    "answer": "Joint Photographic Experts Group (standard since 1992)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "JPEG works because pixel values change slowly across an image, known as:",
@@ -4286,7 +4641,8 @@ const questions = [
       "Aliasing",
       "Spatial redundancy"
     ],
-    "answer": "Spatial redundancy"
+    "answer": "Spatial redundancy",
+    "section": "Lecture MCQs"
   },
   {
     "q": "JPEG divides each image component into blocks of size:",
@@ -4298,7 +4654,8 @@ const questions = [
       "4 by 4",
       "2 by 2"
     ],
-    "answer": "8 by 8"
+    "answer": "8 by 8",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In JPEG, the lossy step is:",
@@ -4310,7 +4667,8 @@ const questions = [
       "Block splitting",
       "Zigzag scan"
     ],
-    "answer": "Quantization (divide DCT coefficients by integers and round)"
+    "answer": "Quantization (divide DCT coefficients by integers and round)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In JPEG, AC coefficients are coded by RLC and the DC coefficient by:",
@@ -4322,7 +4680,8 @@ const questions = [
       "Zigzag",
       "Gamma correction"
     ],
-    "answer": "DPCM (differential pulse code modulation)"
+    "answer": "DPCM (differential pulse code modulation)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.261, the earliest video compression standard, was developed by:",
@@ -4334,7 +4693,8 @@ const questions = [
       "MPEG in 2003",
       "ITU-T in 1990"
     ],
-    "answer": "ITU-T in 1990"
+    "answer": "ITU-T in 1990",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Video compression mainly exploits:",
@@ -4346,7 +4706,8 @@ const questions = [
       "Only spatial redundancy",
       "Audio redundancy"
     ],
-    "answer": "Temporal redundancy between consecutive frames"
+    "answer": "Temporal redundancy between consecutive frames",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In motion compensation each frame is divided into macroblocks of size N by N, where N is typically:",
@@ -4358,7 +4719,8 @@ const questions = [
       "32 or 64",
       "8 or 16"
     ],
-    "answer": "8 or 16"
+    "answer": "8 or 16",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A motion vector represents:",
@@ -4370,7 +4732,8 @@ const questions = [
       "The colour of a block",
       "The quantization step"
     ],
-    "answer": "The displacement of a macroblock from the reference frame to the target frame"
+    "answer": "The displacement of a macroblock from the reference frame to the target frame",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.261 uses which kind of prediction?",
@@ -4382,7 +4745,8 @@ const questions = [
       "No prediction",
       "Forward prediction only"
     ],
-    "answer": "Forward prediction only"
+    "answer": "Forward prediction only",
+    "section": "Lecture MCQs"
   },
   {
     "q": "I-frames and P-frames differ because:",
@@ -4394,7 +4758,8 @@ const questions = [
       "I-frames use backward prediction",
       "P-frames are independent images"
     ],
-    "answer": "I-frames are coded independently like JPEG images, P-frames are predicted from a preceding I- or P-frame"
+    "answer": "I-frames are coded independently like JPEG images, P-frames are predicted from a preceding I- or P-frame",
+    "section": "Lecture MCQs"
   },
   {
     "q": "An H.261 macroblock in an I-frame consists of:",
@@ -4406,7 +4771,8 @@ const questions = [
       "Four 8x8 Y blocks, one 8x8 Cb block and one 8x8 Cr block",
       "Six Y blocks"
     ],
-    "answer": "Four 8x8 Y blocks, one 8x8 Cb block and one 8x8 Cr block"
+    "answer": "Four 8x8 Y blocks, one 8x8 Cb block and one 8x8 Cr block",
+    "section": "Lecture MCQs"
   },
   {
     "q": "When the prediction error is too large in a P-frame, the encoder:",
@@ -4418,7 +4784,8 @@ const questions = [
       "Encodes the macroblock itself instead of the difference (non-motion-compensation macroblock)",
       "Increases the frame rate"
     ],
-    "answer": "Encodes the macroblock itself instead of the difference (non-motion-compensation macroblock)"
+    "answer": "Encodes the macroblock itself instead of the difference (non-motion-compensation macroblock)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In H.261 quantization, a constant step_size is used for coefficients in a macroblock, and for non-DC coefficients step_size equals:",
@@ -4430,7 +4797,8 @@ const questions = [
       "2 x scale, where scale is an integer in [1, 31]",
       "1"
     ],
-    "answer": "2 x scale, where scale is an integer in [1, 31]"
+    "answer": "2 x scale, where scale is an integer in [1, 31]",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The four layers of the H.261 bitstream are:",
@@ -4442,7 +4810,8 @@ const questions = [
       "Header, body, footer and tail",
       "Sequence, GOP, picture and slice"
     ],
-    "answer": "Picture, GOB, macroblock and block"
+    "answer": "Picture, GOB, macroblock and block",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The MPEG-1 standard was first approved by ISO in:",
@@ -4454,7 +4823,8 @@ const questions = [
       "1988",
       "2003"
     ],
-    "answer": "1991"
+    "answer": "1991",
+    "section": "Lecture MCQs"
   },
   {
     "q": "MPEG-1 targets coded video and audio at up to about:",
@@ -4466,7 +4836,8 @@ const questions = [
       "1 Gbit per second",
       "1.5 Mbits per second"
     ],
-    "answer": "1.5 Mbits per second"
+    "answer": "1.5 Mbits per second",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which part of MPEG-1 (ISO/IEC 11172) is the video compression standard itself?",
@@ -4478,7 +4849,8 @@ const questions = [
       "Part 2",
       "Part 5"
     ],
-    "answer": "Part 2"
+    "answer": "Part 2",
+    "section": "Lecture MCQs"
   },
   {
     "q": "B-frames in MPEG-1 support:",
@@ -4490,7 +4862,8 @@ const questions = [
       "Bidirectional motion compensation with up to two motion vectors per macroblock",
       "Only DC coding"
     ],
-    "answer": "Bidirectional motion compensation with up to two motion vectors per macroblock"
+    "answer": "Bidirectional motion compensation with up to two motion vectors per macroblock",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Backward prediction helps because a target macroblock may have no match in past frames due to:",
@@ -4502,7 +4875,8 @@ const questions = [
       "Too many colours",
       "Low frame rate only"
     ],
-    "answer": "Occlusions or unexpected motion"
+    "answer": "Occlusions or unexpected motion",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In MPEG parameters, M is the interval between a P-frame and its preceding I- or P-frame, and N is the interval between:",
@@ -4514,7 +4888,8 @@ const questions = [
       "Two P-frames",
       "Two consecutive I-frames"
     ],
-    "answer": "Two consecutive I-frames"
+    "answer": "Two consecutive I-frames",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For M = 3 and N = 9, the display pattern is:",
@@ -4526,7 +4901,8 @@ const questions = [
       "I B B P B B P B B I ...",
       "I I I B B B P P P"
     ],
-    "answer": "I B B P B B P B B I ..."
+    "answer": "I B B P B B P B B I ...",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Coding order differs from display order in MPEG because:",
@@ -4538,7 +4914,8 @@ const questions = [
       "Frames are random",
       "P-frames are not coded"
     ],
-    "answer": "B-frames need future reference frames, so buffering is required"
+    "answer": "B-frames need future reference frames, so buffering is required",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Unlike H.261 which uses GOBs, MPEG-1 uses:",
@@ -4550,7 +4927,8 @@ const questions = [
       "Voxels",
       "Slices with a variable number of macroblocks"
     ],
-    "answer": "Slices with a variable number of macroblocks"
+    "answer": "Slices with a variable number of macroblocks",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The six layers of the MPEG-1 bitstream from top to bottom are:",
@@ -4562,7 +4940,8 @@ const questions = [
       "Header, GOP, frame, scan, block, bit",
       "Sequence, GOP, picture, slice, macroblock, block"
     ],
-    "answer": "Sequence, GOP, picture, slice, macroblock, block"
+    "answer": "Sequence, GOP, picture, slice, macroblock, block",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Images account for roughly what share of the size of most web pages?",
@@ -4574,7 +4953,8 @@ const questions = [
       "60-65%",
       "95%"
     ],
-    "answer": "60-65%"
+    "answer": "60-65%",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The gap that motivated WebP was that transparency required:",
@@ -4586,7 +4966,8 @@ const questions = [
       "No format",
       "GIF only"
     ],
-    "answer": "PNG, a fully lossless format with large files"
+    "answer": "PNG, a fully lossless format with large files",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Google reports WebP images are about how much smaller than PNG and JPEG at equivalent quality?",
@@ -4598,7 +4979,8 @@ const questions = [
       "30%",
       "5%"
     ],
-    "answer": "30%"
+    "answer": "30%",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lossy WebP is based on the key-frame encoding of which video codec?",
@@ -4610,7 +4992,8 @@ const questions = [
       "VP8",
       "H.261"
     ],
-    "answer": "VP8"
+    "answer": "VP8",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Which are the four VP8 intra-prediction modes shared by all macroblock types?",
@@ -4622,7 +5005,8 @@ const questions = [
       "ADC, DCT, RLE, LZW",
       "MV_PRED, B_PRED, P_PRED, I_PRED"
     ],
-    "answer": "H_PRED, V_PRED, DC_PRED, TM_PRED"
+    "answer": "H_PRED, V_PRED, DC_PRED, TM_PRED",
+    "section": "Lecture MCQs"
   },
   {
     "q": "VP8 adaptive block quantization allows a maximum of how many segments per image?",
@@ -4634,7 +5018,8 @@ const questions = [
       "256",
       "16"
     ],
-    "answer": "4"
+    "answer": "4",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lossless WebP applies which kind of pipeline?",
@@ -4646,7 +5031,8 @@ const questions = [
       "A lossy pipeline with quantization set to zero",
       "JPEG DCT only"
     ],
-    "answer": "Reversible transforms (spatial prediction, colour de-correlation, subtract green, colour indexing, packing) followed by LZ77-Huffman entropy coding"
+    "answer": "Reversible transforms (spatial prediction, colour de-correlation, subtract green, colour indexing, packing) followed by LZ77-Huffman entropy coding",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Colour indexing (palette) in lossless WebP is used if the number of unique ARGB values is:",
@@ -4658,7 +5044,8 @@ const questions = [
       "Less than 256",
       "Exactly 1"
     ],
-    "answer": "Less than 256"
+    "answer": "Less than 256",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Lossy RGB with lossless alpha in WebP gives about what average size reduction compared with transparent PNG?",
@@ -4670,7 +5057,8 @@ const questions = [
       "99%",
       "0%"
     ],
-    "answer": "60-70%"
+    "answer": "60-70%",
+    "section": "Lecture MCQs"
   },
   {
     "q": "AVIF differs from WebP in that AVIF:",
@@ -4682,7 +5070,8 @@ const questions = [
       "Is not royalty-free",
       "Uses VP8 and supports only 8-bit"
     ],
-    "answer": "Uses AV1 in a HEIF container, supports HDR and 8/10/12-bit depth, and was developed by the Alliance for Open Media"
+    "answer": "Uses AV1 in a HEIF container, supports HDR and 8/10/12-bit depth, and was developed by the Alliance for Open Media",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.26L, the predecessor of H.264, was launched in 1998 with the goal of:",
@@ -4694,7 +5083,8 @@ const questions = [
       "Replacing JPEG",
       "Creating audio codecs"
     ],
-    "answer": "Doubling the coding efficiency of existing standards"
+    "answer": "Doubling the coding efficiency of existing standards",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.264/AVC motion compensation supports block sizes:",
@@ -4706,7 +5096,8 @@ const questions = [
       "Only 16x16",
       "Only 8x8"
     ],
-    "answer": "From 16x16 down to 4x4 (up to 16 motion vectors per macroblock)"
+    "answer": "From 16x16 down to 4x4 (up to 16 motion vectors per macroblock)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.264/AVC luma motion vectors have what accuracy?",
@@ -4718,7 +5109,8 @@ const questions = [
       "Half-sample only",
       "Quarter-sample"
     ],
-    "answer": "Quarter-sample"
+    "answer": "Quarter-sample",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.264/AVC replaced the 8x8 DCT with:",
@@ -4730,7 +5122,8 @@ const questions = [
       "No transform",
       "A 16x16 DCT"
     ],
-    "answer": "A 4x4 integer transform"
+    "answer": "A 4x4 integer transform",
+    "section": "Lecture MCQs"
   },
   {
     "q": "CABAC in H.264/AVC is:",
@@ -4742,7 +5135,8 @@ const questions = [
       "Context-adaptive binary arithmetic coding that reduces bit rate 5-15% over CAVLC",
       "A motion estimation method"
     ],
-    "answer": "Context-adaptive binary arithmetic coding that reduces bit rate 5-15% over CAVLC"
+    "answer": "Context-adaptive binary arithmetic coding that reduces bit rate 5-15% over CAVLC",
+    "section": "Lecture MCQs"
   },
   {
     "q": "H.264/AVC separates video content from network delivery using VCL and NAL, and the Baseline profile has:",
@@ -4754,7 +5148,8 @@ const questions = [
       "SP/SI pictures only",
       "I and P slices only and no CABAC"
     ],
-    "answer": "I and P slices only and no CABAC"
+    "answer": "I and P slices only and no CABAC",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The Alliance for Open Media (AOM) was formed in 2015 to:",
@@ -4766,7 +5161,8 @@ const questions = [
       "Develop open, royalty-free multimedia technology",
       "Replace HTML"
     ],
-    "answer": "Develop open, royalty-free multimedia technology"
+    "answer": "Develop open, royalty-free multimedia technology",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In AV1, the superblock size is:",
@@ -4778,7 +5174,8 @@ const questions = [
       "Always 16x16",
       "4x4"
     ],
-    "answer": "128x128 or 64x64 luma samples"
+    "answer": "128x128 or 64x64 luma samples",
+    "section": "Lecture MCQs"
   },
   {
     "q": "AV1 extends motion accuracy to:",
@@ -4790,7 +5187,8 @@ const questions = [
       "Integer pixel only",
       "1/8 pixel with an affine motion model option"
     ],
-    "answer": "1/8 pixel with an affine motion model option"
+    "answer": "1/8 pixel with an affine motion model option",
+    "section": "Lecture MCQs"
   },
   {
     "q": "AV1 applies which three in-loop filters?",
@@ -4802,7 +5200,8 @@ const questions = [
       "Blur, sharpen and invert",
       "Deblocking, CDEF and loop restoration"
     ],
-    "answer": "Deblocking, CDEF and loop restoration"
+    "answer": "Deblocking, CDEF and loop restoration",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Ray tracing is needed because the simple lighting model:",
@@ -4814,7 +5213,8 @@ const questions = [
       "Cannot compute colour",
       "Is too accurate"
     ],
-    "answer": "Makes simplistic assumptions, so a global illumination model is needed for realism"
+    "answer": "Makes simplistic assumptions, so a global illumination model is needed for realism",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In ray tracing, rays are traced:",
@@ -4826,7 +5226,8 @@ const questions = [
       "Backward from the viewer toward the light source",
       "Forward from every light source"
     ],
-    "answer": "Backward from the viewer toward the light source"
+    "answer": "Backward from the viewer toward the light source",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A pixel ray is generated:",
@@ -4838,7 +5239,8 @@ const questions = [
       "One per frame",
       "One per light"
     ],
-    "answer": "One per pixel, passing through the pixel centre"
+    "answer": "One per pixel, passing through the pixel centre",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For parallel projection, pixel rays are:",
@@ -4850,7 +5252,8 @@ const questions = [
       "Random",
       "Curved"
     ],
-    "answer": "Parallel to each other, perpendicular to the view plane"
+    "answer": "Parallel to each other, perpendicular to the view plane",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For perspective projection, pixel rays:",
@@ -4862,7 +5265,8 @@ const questions = [
       "Start at the light",
       "Start from the centre of projection and pass through different pixel centres"
     ],
-    "answer": "Start from the centre of projection and pass through different pixel centres"
+    "answer": "Start from the centre of projection and pass through different pixel centres",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The primary ray is the ray that:",
@@ -4874,7 +5278,8 @@ const questions = [
       "Goes to the light",
       "Misses everything"
     ],
-    "answer": "Finds the closest (visible) surface for a pixel"
+    "answer": "Finds the closest (visible) surface for a pixel",
+    "section": "Lecture MCQs"
   },
   {
     "q": "At the hit point, secondary rays generated are:",
@@ -4886,7 +5291,8 @@ const questions = [
       "Reflected (specular) and transmitted (refracted) rays",
       "Only shadow rays"
     ],
-    "answer": "Reflected (specular) and transmitted (refracted) rays"
+    "answer": "Reflected (specular) and transmitted (refracted) rays",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the binary ray-tracing tree, the left edge represents reflection and the right edge represents:",
@@ -4898,7 +5304,8 @@ const questions = [
       "Shadow",
       "Refraction"
     ],
-    "answer": "Refraction"
+    "answer": "Refraction",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The recursion in ray tracing stops if the ray hits no surface, hits a light source, or:",
@@ -4910,7 +5317,8 @@ const questions = [
       "Reaches frame rate",
       "Touches the screen"
     ],
-    "answer": "Reaches the maximum tree depth"
+    "answer": "Reaches the maximum tree depth",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Total intensity at a surface point is the sum of:",
@@ -4922,7 +5330,8 @@ const questions = [
       "Local, reflected and transmitted components (shadow rays are used for the local component)",
       "Ambient only"
     ],
-    "answer": "Local, reflected and transmitted components (shadow rays are used for the local component)"
+    "answer": "Local, reflected and transmitted components (shadow rays are used for the local component)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A ray is represented as:",
@@ -4934,7 +5343,8 @@ const questions = [
       "An origin vector plus a direction vector, since it has a start point and a direction",
       "A plane"
     ],
-    "answer": "An origin vector plus a direction vector, since it has a start point and a direction"
+    "answer": "An origin vector plus a direction vector, since it has a start point and a direction",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The parametric form of a ray is:",
@@ -4946,7 +5356,8 @@ const questions = [
       "p = s . d",
       "p = s + t d (t >= 0, d unit direction)"
     ],
-    "answer": "p = s + t d (t >= 0, d unit direction)"
+    "answer": "p = s + t d (t >= 0, d unit direction)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For parallel projection, the direction of every pixel ray is:",
@@ -4958,7 +5369,8 @@ const questions = [
       "Different for each pixel",
       "Zero"
     ],
-    "answer": "The unit normal of the view plane"
+    "answer": "The unit normal of the view plane",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For perspective projection, the unit direction of a pixel ray is:",
@@ -4970,7 +5382,8 @@ const questions = [
       "Pr only",
       "Random"
     ],
-    "answer": "(Px - Pr) divided by its magnitude, where Pr is the projection point and Px the pixel point"
+    "answer": "(Px - Pr) divided by its magnitude, where Pr is the projection point and Px the pixel point",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Substituting the ray into the sphere equation gives:",
@@ -4982,7 +5395,8 @@ const questions = [
       "No equation",
       "A cubic equation"
     ],
-    "answer": "A quadratic equation in t (with A = 1 as d is a unit vector)"
+    "answer": "A quadratic equation in t (with A = 1 as d is a unit vector)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If the discriminant of the ray-sphere quadratic is negative:",
@@ -4994,7 +5408,8 @@ const questions = [
       "The ray is tangent",
       "The ray is inside"
     ],
-    "answer": "The ray does not intersect the sphere"
+    "answer": "The ray does not intersect the sphere",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If the discriminant is zero:",
@@ -5006,7 +5421,8 @@ const questions = [
       "The ray is parallel",
       "There is no intersection"
     ],
-    "answer": "The ray touches (is tangent to) the sphere at a single point"
+    "answer": "The ray touches (is tangent to) the sphere at a single point",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If both t values are negative:",
@@ -5018,7 +5434,8 @@ const questions = [
       "The ray hits twice in front",
       "The ray is tangent"
     ],
-    "answer": "Intersections lie behind the ray origin so there is no valid intersection"
+    "answer": "Intersections lie behind the ray origin so there is no valid intersection",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If the two t values differ in sign:",
@@ -5030,7 +5447,8 @@ const questions = [
       "The ray is tangent",
       "The sphere is empty"
     ],
-    "answer": "The ray originates inside the sphere"
+    "answer": "The ray originates inside the sphere",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If both t values are positive, we choose:",
@@ -5042,7 +5460,8 @@ const questions = [
       "The larger t",
       "The average"
     ],
-    "answer": "The smaller t (closest intersection, visible point)"
+    "answer": "The smaller t (closest intersection, visible point)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Intersection checks take about what share of ray-tracing render time?",
@@ -5054,7 +5473,8 @@ const questions = [
       "1 percent",
       "50 percent"
     ],
-    "answer": "95 percent"
+    "answer": "95 percent",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The two broad families to reduce intersection calculations are:",
@@ -5066,7 +5486,8 @@ const questions = [
       "Clipping and culling",
       "Shading and lighting"
     ],
-    "answer": "Bounding volume techniques and spatial subdivision methods"
+    "answer": "Bounding volume techniques and spatial subdivision methods",
+    "section": "Lecture MCQs"
   },
   {
     "q": "With bounding volumes, if the ray misses the volume:",
@@ -5078,7 +5499,8 @@ const questions = [
       "All enclosed surfaces are skipped",
       "All surfaces are tested"
     ],
-    "answer": "All enclosed surfaces are skipped"
+    "answer": "All enclosed surfaces are skipped",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Hierarchical bounding volumes are:",
@@ -5090,7 +5512,8 @@ const questions = [
       "Random volumes",
       "One big volume only"
     ],
-    "answer": "Smaller volumes nested inside larger ones, tested top-down"
+    "answer": "Smaller volumes nested inside larger ones, tested top-down",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In uniform spatial subdivision each step divides a cell into:",
@@ -5102,7 +5525,8 @@ const questions = [
       "Four squares",
       "Eight equal octants"
     ],
-    "answer": "Eight equal octants"
+    "answer": "Eight equal octants",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Adaptive subdivision divides a cell:",
@@ -5114,7 +5538,8 @@ const questions = [
       "Never",
       "Randomly"
     ],
-    "answer": "Only if it contains surfaces"
+    "answer": "Only if it contains surfaces",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Supersampling anti-aliasing:",
@@ -5126,7 +5551,8 @@ const questions = [
       "Uses only corner pixels",
       "Divides each pixel into subpixels, traces a ray per subpixel and averages the colours"
     ],
-    "answer": "Divides each pixel into subpixels, traces a ray per subpixel and averages the colours"
+    "answer": "Divides each pixel into subpixels, traces a ray per subpixel and averages the colours",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Adaptive sampling starts with how many rays per pixel?",
@@ -5138,7 +5564,8 @@ const questions = [
       "Five (centre and four corners)",
       "Two"
     ],
-    "answer": "Five (centre and four corners)"
+    "answer": "Five (centre and four corners)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "If the five ray colours are dissimilar in adaptive sampling, the pixel is:",
@@ -5150,7 +5577,8 @@ const questions = [
       "Coloured black",
       "Discarded"
     ],
-    "answer": "Divided into a 2 by 2 subpixel grid and the test is repeated"
+    "answer": "Divided into a 2 by 2 subpixel grid and the test is repeated",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Adaptive sampling saves work because:",
@@ -5162,7 +5590,8 @@ const questions = [
       "Smooth regions stop early and detailed regions get more sampling",
       "It skips edges"
     ],
-    "answer": "Smooth regions stop early and detailed regions get more sampling"
+    "answer": "Smooth regions stop early and detailed regions get more sampling",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Cartesian frames are characterised by:",
@@ -5174,7 +5603,8 @@ const questions = [
       "Curved axes",
       "Mutually perpendicular (orthogonal) straight axes"
     ],
-    "answer": "Mutually perpendicular (orthogonal) straight axes"
+    "answer": "Mutually perpendicular (orthogonal) straight axes",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the inverted 2D frame:",
@@ -5186,7 +5616,8 @@ const questions = [
       "X points down",
       "The origin is at the upper-left corner and positive Y points downward"
     ],
-    "answer": "The origin is at the upper-left corner and positive Y points downward"
+    "answer": "The origin is at the upper-left corner and positive Y points downward",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Converting Y from the standard to the inverted frame, the X coordinate:",
@@ -5198,7 +5629,8 @@ const questions = [
       "Remains unchanged",
       "Is negated"
     ],
-    "answer": "Remains unchanged"
+    "answer": "Remains unchanged",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In a right-handed frame, curling the fingers from positive X to positive Y points the thumb along:",
@@ -5210,7 +5642,8 @@ const questions = [
       "Negative Y",
       "Negative Z"
     ],
-    "answer": "Positive Z"
+    "answer": "Positive Z",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the left-handed frame used for screens:",
@@ -5222,7 +5655,8 @@ const questions = [
       "Z is zero",
       "Positive Z is behind the screen, so larger Z is farther from the viewer"
     ],
-    "answer": "Positive Z is behind the screen, so larger Z is farther from the viewer"
+    "answer": "Positive Z is behind the screen, so larger Z is farther from the viewer",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A vector is defined by:",
@@ -5234,7 +5668,8 @@ const questions = [
       "Magnitude only",
       "Magnitude and direction"
     ],
-    "answer": "Magnitude and direction"
+    "answer": "Magnitude and direction",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Direction cosines are:",
@@ -5246,7 +5681,8 @@ const questions = [
       "Dot products",
       "Sines of angles"
     ],
-    "answer": "Cosines of the angles a vector makes with the X, Y and Z axes"
+    "answer": "Cosines of the angles a vector makes with the X, Y and Z axes",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A unit vector along V is obtained by:",
@@ -5258,7 +5694,8 @@ const questions = [
       "Dividing each component by the magnitude of V",
       "Adding 1"
     ],
-    "answer": "Dividing each component by the magnitude of V"
+    "answer": "Dividing each component by the magnitude of V",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The dot product of two vectors:",
@@ -5270,7 +5707,8 @@ const questions = [
       "Is always one",
       "Is a vector"
     ],
-    "answer": "Is a scalar, is zero for perpendicular vectors and is commutative"
+    "answer": "Is a scalar, is zero for perpendicular vectors and is commutative",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The cross product of two vectors:",
@@ -5282,7 +5720,8 @@ const questions = [
       "Is a scalar",
       "Is commutative"
     ],
-    "answer": "Is a vector perpendicular to both, is not commutative, and is zero for parallel vectors"
+    "answer": "Is a vector perpendicular to both, is not commutative, and is zero for parallel vectors",
+    "section": "Lecture MCQs"
   },
   {
     "q": "An r by c matrix has:",
@@ -5294,7 +5733,8 @@ const questions = [
       "c rows and r columns",
       "c elements"
     ],
-    "answer": "r rows and c columns"
+    "answer": "r rows and c columns",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Two matrices can be added only if they:",
@@ -5306,7 +5746,8 @@ const questions = [
       "Have the same shape (same rows and columns)",
       "Are identity"
     ],
-    "answer": "Have the same shape (same rows and columns)"
+    "answer": "Have the same shape (same rows and columns)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The product AB of an m by n matrix A and p by q matrix B exists if and only if:",
@@ -5318,7 +5759,8 @@ const questions = [
       "n = p, giving an m by q result",
       "m = q"
     ],
-    "answer": "n = p, giving an m by q result"
+    "answer": "n = p, giving an m by q result",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Matrix multiplication is:",
@@ -5330,7 +5772,8 @@ const questions = [
       "Not distributive",
       "Commutative"
     ],
-    "answer": "Not commutative, but distributive over addition"
+    "answer": "Not commutative, but distributive over addition",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The transpose of a product (M1 M2) equals:",
@@ -5342,7 +5785,8 @@ const questions = [
       "Zero",
       "M1 transpose times M2 transpose"
     ],
-    "answer": "M2 transpose times M1 transpose"
+    "answer": "M2 transpose times M1 transpose",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Applying transformation A, then B, then C is equivalent to the matrix product:",
@@ -5354,7 +5798,8 @@ const questions = [
       "A + B + C",
       "B . A . C"
     ],
-    "answer": "C . B . A"
+    "answer": "C . B . A",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The determinant is defined only for:",
@@ -5366,7 +5811,8 @@ const questions = [
       "Any matrix",
       "Vectors only"
     ],
-    "answer": "Square matrices (second order: m11 m22 - m12 m21)"
+    "answer": "Square matrices (second order: m11 m22 - m12 m21)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The inverse of a matrix exists only if:",
@@ -5378,7 +5824,8 @@ const questions = [
       "It is square and its determinant is non-zero (non-singular)",
       "It has zeros"
     ],
-    "answer": "It is square and its determinant is non-zero (non-singular)"
+    "answer": "It is square and its determinant is non-zero (non-singular)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The identity matrix has:",
@@ -5390,7 +5837,8 @@ const questions = [
       "Random values",
       "0s on the diagonal"
     ],
-    "answer": "1s on the diagonal and 0s elsewhere, and M M^-1 = I"
+    "answer": "1s on the diagonal and 0s elsewhere, and M M^-1 = I",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the example, M + 2M equals:",
@@ -5402,7 +5850,8 @@ const questions = [
       "M squared",
       "0"
     ],
-    "answer": "3M (scalar multiplication and addition are element-wise)"
+    "answer": "3M (scalar multiplication and addition are element-wise)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "The slope of the line through (x1, y1) and (x2, y2) is:",
@@ -5414,7 +5863,8 @@ const questions = [
       "0 always",
       "(x2 - x1) / (y2 - y1)"
     ],
-    "answer": "(y2 - y1) / (x2 - x1), undefined for vertical lines"
+    "answer": "(y2 - y1) / (x2 - x1), undefined for vertical lines",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For P(2, 3) and Q(4, 5), the line in slope-intercept form is:",
@@ -5426,7 +5876,8 @@ const questions = [
       "y = x - 1",
       "y = 2x"
     ],
-    "answer": "y = x + 1"
+    "answer": "y = x + 1",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the slope-intercept form y = mx + c, c is:",
@@ -5438,7 +5889,8 @@ const questions = [
       "Zero",
       "The X-intercept"
     ],
-    "answer": "The intercept on the Y-axis"
+    "answer": "The intercept on the Y-axis",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Two lines y = m1 x + c1 and y = m2 x + c2 intersect at x equal to:",
@@ -5450,7 +5902,8 @@ const questions = [
       "c1 + c2",
       "(m1 - m2) / (c2 - c1)"
     ],
-    "answer": "(c2 - c1) / (m1 - m2), defined only when m1 is not equal to m2"
+    "answer": "(c2 - c1) / (m1 - m2), defined only when m1 is not equal to m2",
+    "section": "Lecture MCQs"
   },
   {
     "q": "Parallel lines:",
@@ -5462,7 +5915,8 @@ const questions = [
       "Always intersect",
       "Have equal slopes and never intersect"
     ],
-    "answer": "Have equal slopes and never intersect"
+    "answer": "Have equal slopes and never intersect",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A vertical line has the equation x = b, and its intersection with y = mx + c is:",
@@ -5474,7 +5928,8 @@ const questions = [
       "(b, b)",
       "(mb + c, b)"
     ],
-    "answer": "(b, mb + c)"
+    "answer": "(b, mb + c)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A horizontal line y = b meets y = mx + c at:",
@@ -5486,7 +5941,8 @@ const questions = [
       "(b, 0)",
       "(b, (b - c) / m)"
     ],
-    "answer": "((b - c) / m, b)"
+    "answer": "((b - c) / m, b)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "In the plane equation Ax + By + Cz + D = 0, the normal vector is:",
@@ -5498,7 +5954,8 @@ const questions = [
       "(D, A, B)",
       "(x, y, z)"
     ],
-    "answer": "(A, B, C)"
+    "answer": "(A, B, C)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "A plane through three non-collinear points a, b, c has its normal found by:",
@@ -5510,7 +5967,8 @@ const questions = [
       "Adding the points",
       "Dividing the points"
     ],
-    "answer": "The cross product of (b - a) and (c - a)"
+    "answer": "The cross product of (b - a) and (c - a)",
+    "section": "Lecture MCQs"
   },
   {
     "q": "For a(1,1,1), b(3,4,5), c(7,7,7), the normal vector and plane equation are:",
@@ -5522,21 +5980,766 @@ const questions = [
       "n = (6, 12, 6) and x + 2y + z = 0",
       "n = (0, 0, 0)"
     ],
-    "answer": "n = (-6, 12, -6) and -x + 2y - z = 0"
+    "answer": "n = (-6, 12, -6) and -x + 2y - z = 0",
+    "section": "Lecture MCQs"
+  },
+  {
+    "q": "What do we do in CG?",
+    "options": [
+      "We generate 2D image and display on a screen.",
+      "We generate 3D image and display on a screen.",
+      "Both a, and b.",
+      "None of these."
+    ],
+    "answer": "We generate 2D image and display on a screen.",
+    "topic": "Assignment 1: Introduction to CG",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "What does the video memory do?",
+    "options": [
+      "It stores the image in the form of string of 0 and 1, which is generated by display Controller.",
+      "It stores the image in the form of string of 0 and 1, which is generated by video controller.",
+      "It stores the videos, which is generated by display controller.",
+      "All of the above."
+    ],
+    "answer": "It stores the image in the form of string of 0 and 1, which is generated by display Controller.",
+    "topic": "Assignment 1: Video Memory & Display",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which among the following is correct?",
+    "options": [
+      "We can use a raster scan method to render a vector graphics but cannot use a vector scan method to render a raster graphics.",
+      "We can use a vector scan method to render a raster graphics but cannot use a raster scan method to render a vector graphics.",
+      "We can use a raster scan method to render a vector graphics and vice versa.",
+      "We can use only raster scan method to render a raster graphics and only vector screen method to render vector graphics."
+    ],
+    "answer": "We can use a raster scan method to render a vector graphics and vice versa.",
+    "topic": "Assignment 1: Raster vs Vector",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Computer graphics are used in mobile phones, information kiosks at popular spots such as airports, ATMS, large displays at open air music concerts, air traffic control panels, and so on.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 1: CG Applications",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The term \"Computer Graphics\" was coined in",
+    "options": [
+      "1860",
+      "1869",
+      "1960",
+      "1965"
+    ],
+    "answer": "1960",
+    "topic": "Assignment 1: History of CG",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The process of removing objects that lie outside view volume is called",
+    "options": [
+      "clipping",
+      "projection transformation",
+      "hidden surface removal",
+      "hidden surface detection"
+    ],
+    "answer": "clipping",
+    "topic": "Assignment 1: Viewing Basics",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "How many phases are there in the evolution of computer graphics?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "10"
+    ],
+    "answer": "4",
+    "topic": "Assignment 1: Evolution of CG",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "How many stages are there in 3D graphics pipeline?",
+    "options": [
+      "1",
+      "4",
+      "0",
+      "5"
+    ],
+    "answer": "5",
+    "topic": "Assignment 1: Graphics Pipeline",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The \"childhood\" phase in the evolution of computer graphics was the period 1964-1970.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 1: Evolution Phases",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "First stage of the 3D graphics pipeline is \"object representation\".",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 1: Pipeline Stages",
+    "lecture": "Assignment 1",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which among the following is not a subcategory of space partitioning technique?",
+    "options": [
+      "Mesh representation",
+      "Octrees",
+      "BSP trees",
+      "Constructive solid geometry"
+    ],
+    "answer": "Mesh representation",
+    "topic": "Assignment 2: Object Representation",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "All other representations are converted to ___________________ representation at the end of the pipeline before the objects are rendered.",
+    "options": [
+      "Mesh",
+      "BSP tree",
+      "Octree",
+      "None of the above"
+    ],
+    "answer": "Mesh",
+    "topic": "Assignment 2: Representation Conversion",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "To represent a blobby object a suitable combination of Gaussian density functions is used. The Gaussian density function is characterized by two parameters: height and __________________.",
+    "options": [
+      "Length",
+      "Standard error",
+      "Standard deviation",
+      "Blobby factor"
+    ],
+    "answer": "Standard deviation",
+    "topic": "Assignment 2: Blobby Objects",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Sweep surface and surface of ________________ are two sweep representation techniques used in computer graphics.",
+    "options": [
+      "revolution",
+      "evolution",
+      "extrusion",
+      "rotation"
+    ],
+    "answer": "revolution",
+    "topic": "Assignment 2: Sweep Representation",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "We can represent a curve using a single parameter ‘u’.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 2: Parametric Curves",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Spline refers to ___________________ of several polynomials.",
+    "options": [
+      "Difference",
+      "Joining",
+      "Division",
+      "Multiplication"
+    ],
+    "answer": "Joining",
+    "topic": "Assignment 2: Splines",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Natural cubic spline are made up of pieces of __________________ degree polynomial.",
+    "options": [
+      "First",
+      "Second",
+      "Third",
+      "Fourth"
+    ],
+    "answer": "Third",
+    "topic": "Assignment 2: Natural Cubic Spline",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Cubic Bezier curves are examples of approximating splines.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 2: Bezier Curves",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "There are two types of continuity conditions: parametric continuity and __________ continuity.",
+    "options": [
+      "geometric",
+      "algebraic",
+      "differential",
+      "continuous"
+    ],
+    "answer": "geometric",
+    "topic": "Assignment 2: Continuity Conditions",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Natural cubic splines are examples of interpolating splines.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 2: Spline Types",
+    "lecture": "Assignment 2",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "At the time of defining the objects, its shape, size, and position is not important.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 3: Object Modeling",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the following (for homogeneous coordinate system):\nI. Ph(xh, yh, 0)   A. is considered to be infinity\nII. Ph(0, 0, 0)    B. is not allowed\nIII. Ph(1, 1, 1)   C. is allowed",
+    "options": [
+      "I-A, II-B, III-C",
+      "I-B, II-A, III-C",
+      "I-A, II-C, III-B",
+      "I-C, II-A, III-B"
+    ],
+    "answer": "I-A, II-B, III-C",
+    "topic": "Assignment 3: Homogeneous Coordinates",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In order to obtain composite matrix we multiply basic matrix in sequence. In this case__________________________________________________________.",
+    "options": [
+      "We follow right-to-left rule in forming the sequence",
+      "We follow left-to-right rule in forming the sequence",
+      "We can follow either right-to-left or left-to-right rule in forming the sequence",
+      "Any order can be considered in forming the sequence, as we are multiplying the matrices"
+    ],
+    "answer": "We follow right-to-left rule in forming the sequence",
+    "topic": "Assignment 3: Composite Transformations",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "We can create a _____ grid to represent a 3D space.",
+    "options": [
+      "Pixel",
+      "Voxel",
+      "Frequency",
+      "Time"
+    ],
+    "answer": "Voxel",
+    "topic": "Assignment 3: Space Representation",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "With shearing transformation, we cannot change shape of an object.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 3: Shearing Transformation",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "When same scaling factor is used along both X and Y direction it is called",
+    "options": [
+      "Uniform scaling",
+      "Differential scaling",
+      "Equilateral scaling",
+      "Perpendicular scaling"
+    ],
+    "answer": "Uniform scaling",
+    "topic": "Assignment 3: 2D Transformations",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Matrix multiplication is commutative",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 3: Matrix Properties",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "There are __________ basic modeling transformations.",
+    "options": [
+      "4",
+      "2",
+      "3",
+      "5"
+    ],
+    "answer": "4",
+    "topic": "Assignment 3: Modeling Transformations",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "We need homogeneous coordinate system to represent modeling transformations as linear equations.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 3: Homogeneous Representation",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Representation of transformations in equation form is not very useful in developing modular graphics packages/libraries.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 3: Matrix Formulation",
+    "lecture": "Assignment 3",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "One of the primary purposes of assigning colors to the objects in a scene is to perceive depth, which helps in creating impression of 3D.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 4: Depth & Color",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the following:\nI. Transport of light energy               A. Lighting\nII. Light get reflected from surrounding surface   B. Illumination\nIII. Process of computing the luminous intensity    C. Ambient light",
+    "options": [
+      "I-A, II-B, III-C",
+      "I-B, II-C, III-A",
+      "I-C, II-B, III-A",
+      "I-A, II-C, III-B"
+    ],
+    "answer": "I-B, II-C, III-A",
+    "topic": "Assignment 4: Lighting & Illumination",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Lighting model computes color in terms of",
+    "options": [
+      "Power",
+      "Complexity",
+      "Intensity",
+      "Voxel"
+    ],
+    "answer": "Intensity",
+    "topic": "Assignment 4: Lighting Model",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Incident light tends to reflect in all directions from a rough or grainy surface. This is called",
+    "options": [
+      "Diffuse reflection",
+      "Specular reflection",
+      "Ambient reflection",
+      "Total internal reflection"
+    ],
+    "answer": "Diffuse reflection",
+    "topic": "Assignment 4: Light Reflection",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In lighting model, to avoid indistinguishable overlapping of surfaces with different distances we use",
+    "options": [
+      "Intensity Attenuation",
+      "Color Attenuation",
+      "Intensity Reflection",
+      "Color Reflection"
+    ],
+    "answer": "Intensity Attenuation",
+    "topic": "Assignment 4: Attenuation",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "We can perceive absolute difference in intensity values.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 4: Intensity Perception",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In graphics, how many light source types are generally considered?",
+    "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": "3",
+    "topic": "Assignment 4: Light Sources",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In the simple lighting model, surfaces are considered to be “ideal diffuse reflectors”.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 4: Diffuse Reflectors",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Color of a surface point depends on the properties of the light source as well as the surface containing the point.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 4: Surface Color",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In the simple lighting model, we assume presence of a single ambient light source fully illuminating all the surfaces.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 4: Ambient Light",
+    "lecture": "Assignment 4",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which of the following is not a color model?",
+    "options": [
+      "RGB",
+      "XYZ",
+      "CMY",
+      "ABC"
+    ],
+    "answer": "ABC",
+    "topic": "Assignment 5: Color Models",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In order to simulate viewing transformation, first we need to define the view coordinate system, and then we perform the actual transformation.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 5: View Coordinates",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The different spectra of light that result in the sensation of the same color are known as",
+    "options": [
+      "monomers",
+      "polymers",
+      "alikemers",
+      "metamers"
+    ],
+    "answer": "metamers",
+    "topic": "Assignment 5: Color Sensation",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Transformations required to align View Coordinate with World Coordinate are translation and ______________________________.",
+    "options": [
+      "scaling",
+      "shearing",
+      "rotation",
+      "shifting"
+    ],
+    "answer": "rotation",
+    "topic": "Assignment 5: Viewing Transformation",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In ___________ projection, the projectors converge to a center of projection at finite distance.",
+    "options": [
+      "parallel",
+      "perspective",
+      "distant",
+      "finite"
+    ],
+    "answer": "perspective",
+    "topic": "Assignment 5: Projections",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which of the following is not a perspective projection anomaly?",
+    "options": [
+      "Perspective foreshortening",
+      "Vanishing points",
+      "Clipping window",
+      "View confusion"
+    ],
+    "answer": "Clipping window",
+    "topic": "Assignment 5: Projection Anomalies",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Stimulation of all the three cone types gives us the color perception – this is known as the tristimulus theory of vision.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 5: Color Vision",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The fourth stage of 3D graphics pipeline essentially simulates the process of taking of a photograph.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 5: Camera Simulation",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Vision accomplished with cones is called ___________ vision.",
+    "options": [
+      "photopic",
+      "scotopic",
+      "mesopic",
+      "dichromatic"
+    ],
+    "answer": "photopic",
+    "topic": "Assignment 5: Eye Physiology",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In the fourth stage of graphics pipeline, we transfer the 3D view coordinate scene to the 2D view plane using ___________ transformation.",
+    "options": [
+      "projection",
+      "viewing",
+      "affine",
+      "homogeneous"
+    ],
+    "answer": "projection",
+    "topic": "Assignment 5: Projection Stage",
+    "lecture": "Assignment 5",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Cohen-Sutherland algorithm is used for",
+    "options": [
+      "point clipping",
+      "line clipping",
+      "fill-area clipping",
+      "all of the above"
+    ],
+    "answer": "line clipping",
+    "topic": "Assignment 6: Line Clipping",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the following:\nI. Line                          A. Sutherland-Hodgeman algorithm\nII. Convex fill-area             B. Cohen-Sutherland algorithm\nIII. Convex and concave fill-area C. Weiler-Atherton Algorithm",
+    "options": [
+      "I-A, II-B, III-C",
+      "I-B, II-A, III-C",
+      "I-C, II-B, III-A",
+      "I-A, II-C, III-B"
+    ],
+    "answer": "I-B, II-A, III-C",
+    "topic": "Assignment 6: Clipping Algorithms",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "HSR is a computationally intensive process - one way to reduce computation is use of coherence properties. There are several types of coherences. Which among the following is not a coherence-type?",
+    "options": [
+      "Object coherence",
+      "Face coherence",
+      "Edge-line coherence",
+      "Scan-line coherence",
+      "Depth coherence"
+    ],
+    "answer": "Edge-line coherence",
+    "topic": "Assignment 6: Hidden Surface Removal",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "‘Back Face Elimination’ is required for _______________________.",
+    "options": [
+      "hidden surface removal.",
+      "fill-area clipping",
+      "both for hidden surface removal and fill-area calculation",
+      "none of the above"
+    ],
+    "answer": "hidden surface removal.",
+    "topic": "Assignment 6: Back Face Elimination",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Depth Sorting (Painter’s) algorithm works at",
+    "options": [
+      "image space",
+      "object space",
+      "both image and object spaces",
+      "neither image space not object space"
+    ],
+    "answer": "both image and object spaces",
+    "topic": "Assignment 6: Depth Sorting Algorithm",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Process of discarding objects is",
+    "options": [
+      "clamping",
+      "clipping",
+      "popping",
+      "pushing"
+    ],
+    "answer": "clipping",
+    "topic": "Assignment 6: Clipping Concept",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "2D clipping algorithms cannot be extended to be used in 3D clipping.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 6: 3D Clipping",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Clipping algorithms are used to remove hidden surfaces.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 6: Clipping vs HSR",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "HSR method broadly of TWO types: object space method and ______ space method",
+    "options": [
+      "unhidden",
+      "plane",
+      "hidden",
+      "image"
+    ],
+    "answer": "image",
+    "topic": "Assignment 6: HSR Methods",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Warnock’s Algorithm is a __________ method.",
+    "options": [
+      "clipping",
+      "area subdivision",
+      "ray tracing",
+      "edge detection"
+    ],
+    "answer": "area subdivision",
+    "topic": "Assignment 6: Warnock Algorithm",
+    "lecture": "Assignment 6",
+    "section": "Assignment Questions"
   }
-].map(q => ({
-  ...q,
-  options: [...q.options].sort(() => Math.random() - 0.5)
-}));
+];
 
+let activeSection = "Assignment Questions"; // Default active section
+let questions = [];
 let currentQuestion = 0;
-let userAnswers = Array(questions.length).fill(null);
-let markedForReview = Array(questions.length).fill(false);
-let timeLeft = 180 * 60; // 180 minutes (3 hours)
+let userAnswers = [];
+let markedForReview = [];
+let timeLeft = 45 * 60;
 let submitted = false;
 let started = false;
 let paused = false;
 let timerInterval = null;
+
+const sectionDurations = {
+  "Assignment Questions": 45 * 60,
+  "Lecture MCQs": 180 * 60,
+  "All": 225 * 60
+};
 
 const questionNumber = document.getElementById("question-number");
 const questionTopic = document.getElementById("question-topic");
@@ -5547,34 +6750,90 @@ const feedback = document.getElementById("feedback");
 const timer = document.getElementById("timer");
 const palette = document.getElementById("question-palette");
 const lectureSelect = document.getElementById("lecture-select");
+const sectionTabs = document.querySelectorAll(".section-tab");
+const sectionBadges = document.querySelectorAll(".current-section-badge");
 
-const totalQuestionsEl = document.getElementById("total-questions");
-if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
-const totalMinutesEl = document.getElementById("total-minutes");
-if (totalMinutesEl) totalMinutesEl.textContent = Math.round(timeLeft / 60);
+function setSection(secName, resetTimer = true) {
+  activeSection = secName;
+  if (secName === "All") {
+    questions = allQuestions.map(q => ({
+      ...q,
+      options: [...q.options].sort(() => Math.random() - 0.5)
+    }));
+  } else {
+    questions = allQuestions.filter(q => q.section === secName).map(q => ({
+      ...q,
+      options: [...q.options].sort(() => Math.random() - 0.5)
+    }));
+  }
 
-// Populate lecture select dropdown
-if (lectureSelect) {
-  const lectureMap = new Map();
+  currentQuestion = 0;
+  userAnswers = Array(questions.length).fill(null);
+  markedForReview = Array(questions.length).fill(false);
+  submitted = false;
+
+  if (resetTimer) {
+    timeLeft = sectionDurations[secName] || (60 * 60);
+    clearInterval(timerInterval);
+    if (started) {
+      startTimer();
+    }
+  }
+
+  // Update Start Screen stats
+  const totalQuestionsEl = document.getElementById("total-questions");
+  if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
+  const totalMinutesEl = document.getElementById("total-minutes");
+  if (totalMinutesEl) totalMinutesEl.textContent = Math.round(timeLeft / 60);
+  const activeSectionTitle = document.getElementById("active-section-title");
+  if (activeSectionTitle) activeSectionTitle.textContent = activeSection;
+
+  // Update tabs UI
+  sectionTabs.forEach(tab => {
+    if (tab.dataset.section === secName) {
+      tab.classList.add("active");
+    } else {
+      tab.classList.remove("active");
+    }
+  });
+
+  sectionBadges.forEach(badge => {
+    badge.textContent = secName;
+  });
+
+  updateTimerDisplay();
+  populateJumpSelect();
+  renderQuestion();
+}
+
+function populateJumpSelect() {
+  if (!lectureSelect) return;
+  lectureSelect.innerHTML = "";
+
+  const groupMap = new Map();
   questions.forEach((q, idx) => {
-    const key = q.lecture || (q.topic ? q.topic.split(":")[0].trim() : "");
-    if (key && !lectureMap.has(key)) {
-      lectureMap.set(key, { index: idx, title: q.topic || key });
+    const key = q.lecture || (q.topic ? q.topic.split(":")[0].trim() : "Other");
+    if (!groupMap.has(key)) {
+      groupMap.set(key, { index: idx, title: q.topic || key });
     }
   });
 
   const defaultOpt = document.createElement("option");
   defaultOpt.value = "";
-  defaultOpt.textContent = "Jump to Lecture...";
+  defaultOpt.textContent = activeSection === "Assignment Questions" 
+    ? "Jump to Assignment..." 
+    : "Jump to Topic / Lecture...";
   lectureSelect.appendChild(defaultOpt);
 
-  lectureMap.forEach((info, lec) => {
+  groupMap.forEach((info, key) => {
     const opt = document.createElement("option");
     opt.value = info.index;
     opt.textContent = info.title;
     lectureSelect.appendChild(opt);
   });
+}
 
+if (lectureSelect) {
   lectureSelect.addEventListener("change", (e) => {
     if (e.target.value !== "") {
       currentQuestion = parseInt(e.target.value, 10);
@@ -5584,13 +6843,26 @@ if (lectureSelect) {
   });
 }
 
+sectionTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    const targetSection = tab.dataset.section;
+    if (started && !submitted) {
+      if (!confirm(`Switch to "${targetSection}"? Current test progress in this section will be reset.`)) {
+        return;
+      }
+    }
+    setSection(targetSection, true);
+  });
+});
+
 function renderQuestion() {
+  if (questions.length === 0) return;
   const question = questions[currentQuestion];
 
   questionNumber.textContent = `Question ${currentQuestion + 1}`;
   if (questionTopic) {
-    questionTopic.textContent = question.topic || "";
-    questionTopic.title = question.topic || "";
+    questionTopic.textContent = question.topic || question.section;
+    questionTopic.title = question.topic || question.section;
   }
   questionCount.textContent = `${currentQuestion + 1} of ${questions.length}`;
   questionText.textContent = question.q;
@@ -5679,7 +6951,7 @@ function renderPalette() {
     palette.appendChild(button);
   });
 
-  // Ensure current question button is visible in scrollable palette
+  // Auto-scroll palette to active button
   const activeBtn = palette.children[currentQuestion];
   if (activeBtn) {
     activeBtn.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -5796,6 +7068,5 @@ document.getElementById("start-btn").addEventListener("click", beginTest);
 document.getElementById("stop-btn").addEventListener("click", stopTest);
 document.getElementById("submit-btn").addEventListener("click", () => submitTest());
 
-// Show the first question behind the start screen, but keep the timer idle
-// until the user presses Start.
-renderQuestion();
+// Initialize default section: Assignment Questions (60)
+setSection("Assignment Questions", true);
