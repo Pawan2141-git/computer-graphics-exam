@@ -1,6 +1,6 @@
-// 520 Total Questions:
+// 580 Total Questions:
 // - 460 Lecture MCQs (L1 - L49 from NPTEL PDFs)
-// - 60 Assignment Questions (Assignments 1 - 6)
+// - 120 Assignment Questions (Assignments 1 - 12)
 
 const allQuestions = [
   {
@@ -6721,6 +6721,745 @@ const allQuestions = [
     "topic": "Assignment 6: Warnock Algorithm",
     "lecture": "Assignment 6",
     "section": "Assignment Questions"
+  },
+  {
+    "q": "In the fifth stage of graphics pipeline, we map the discrete pixels into continuous form to render them on the device-screen.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 7: Pipeline Stage 5",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In CG, a region (fill area) is defined broadly in two ways:",
+    "options": [
+      "pixel level and geometric",
+      "pixel level and voxel level",
+      "pixel level and screen level",
+      "voxel level and screen level"
+    ],
+    "answer": "pixel level and geometric",
+    "topic": "Assignment 7: Fill Area Definition",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Font is rendered broadly in two ways: one is “bitmapped” and another is “_______________”.",
+    "options": [
+      "JPEG",
+      "PNG",
+      "outlined",
+      "vectored"
+    ],
+    "answer": "outlined",
+    "topic": "Assignment 7: Font Rendering",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In midpoint algorithm we divide a circle into ________ quadrants.",
+    "options": [
+      "two",
+      "four",
+      "eight",
+      "sixteen"
+    ],
+    "answer": "eight",
+    "topic": "Assignment 7: Midpoint Circle Algorithm",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In Bresenham’s algorithm we choose pixels at each step depending on the ________________.",
+    "options": [
+      "sign of decision parameter",
+      "magnitude of the decision parameter"
+    ],
+    "answer": "sign of decision parameter",
+    "topic": "Assignment 7: Bresenham Algorithm",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In super sampling each pixel is assumed to consist of a grid of sub-pixels.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 7: Super Sampling",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Bresenham’s line drawing algorithm completely eliminates floating point operations.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 7: Bresenham Line Drawing",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The distortion that occurs to the original object shapes due to scan conversion is known as ____________.",
+    "options": [
+      "Sampling",
+      "Anti-aliasing",
+      "Filtering",
+      "Aliasing"
+    ],
+    "answer": "Aliasing",
+    "topic": "Assignment 7: Aliasing Distortion",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The DDA line drawing algorithm completely eliminates floating point operations.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 7: DDA Line Drawing",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Gupta-Sproull algorithm is a post-filtering technique for anti-aliased line drawing. (T/F)",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 7: Gupta-Sproull Algorithm",
+    "lecture": "Assignment 7",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "All flat panel displays are emissive displays.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 8: Flat Panel Displays",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Laser printers are example of",
+    "options": [
+      "impact printer",
+      "non-impact printer"
+    ],
+    "answer": "non-impact printer",
+    "topic": "Assignment 8: Printers",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "GPU at any instant can process a subset of all the screen pixel positions. This is called as",
+    "options": [
+      "sub shader",
+      "fragment shader",
+      "pixel shader",
+      "grid shader"
+    ],
+    "answer": "fragment shader",
+    "topic": "Assignment 8: GPU Shaders",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which among the following is not an example of General Programming Package for computer graphics?",
+    "options": [
+      "OpenGL",
+      "VRML",
+      "Java 3D",
+      "None of these"
+    ],
+    "answer": "None of these",
+    "topic": "Assignment 8: Graphics Packages",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Frame buffer content may change depending on input from input devices.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 8: Frame Buffer",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Instead of pen, ink-jet technology is also used to design plotters",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 8: Plotters",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Each core in a multicore GPU is called a __________ processor.",
+    "options": [
+      "vector",
+      "shader",
+      "stream",
+      "pixel"
+    ],
+    "answer": "stream",
+    "topic": "Assignment 8: GPU Cores",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Multiple cores of a GPU are grouped together to form streaming ____________.",
+    "options": [
+      "multiprocessor",
+      "blocks",
+      "threads",
+      "units"
+    ],
+    "answer": "multiprocessor",
+    "topic": "Assignment 8: Streaming Multiprocessors",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "What GLUT stands for?",
+    "options": [
+      "OpenGL Utility Toolkit.",
+      "OpenGL Useful Tools",
+      "OpenGL Utility Techniques."
+    ],
+    "answer": "OpenGL Utility Toolkit.",
+    "topic": "Assignment 8: GLUT",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Each OpenGL library function is prefixed with “glut”.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 8: OpenGL Naming Convention",
+    "lecture": "Assignment 8",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "What is computer animation?",
+    "options": [
+      "Methods to display motion using computers",
+      "Methods to generate only static images",
+      "Methods to detect collisions only",
+      "Methods to model lighting only"
+    ],
+    "answer": "Methods to display motion using computers",
+    "topic": "Assignment 9: Animation Definition",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "An animation is a sequence of ______________.",
+    "options": [
+      "Objects",
+      "Frames",
+      "Polygons",
+      "Textures"
+    ],
+    "answer": "Frames",
+    "topic": "Assignment 9: Animation Frames",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "What is Staging?",
+    "options": [
+      "Choosing the right arrangement to make motion visible",
+      "Recording motion with sensors",
+      "Generating in-between frames",
+      "Solving differential equations"
+    ],
+    "answer": "Choosing the right arrangement to make motion visible",
+    "topic": "Assignment 9: Staging Technique",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which technique deforms an object's shape to reflect motion?",
+    "options": [
+      "Squash and Stretch",
+      "Staging",
+      "Appeal",
+      "Solid Drawing"
+    ],
+    "answer": "Squash and Stretch",
+    "topic": "Assignment 9: Squash and Stretch",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In Inverse Kinematics, the animator specifies every joint’s motion.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 9: Kinematics",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which of the following stands for FACS?",
+    "options": [
+      "Free Animation Control System",
+      "Facial Action Coding System",
+      "Forward Animation Control Skeleton",
+      "Facial Appearance Color System"
+    ],
+    "answer": "Facial Action Coding System",
+    "topic": "Assignment 9: FACS",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In FACS, facial expressions are represented as combinations of __________.",
+    "options": [
+      "Keyframes",
+      "Action Units",
+      "Splines",
+      "Lattices"
+    ],
+    "answer": "Action Units",
+    "topic": "Assignment 9: Action Units",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Deformation is also called ___________.",
+    "options": [
+      "Rendering",
+      "Morphing",
+      "Staging",
+      "Tracking"
+    ],
+    "answer": "Morphing",
+    "topic": "Assignment 9: Deformation & Morphing",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In FFD, the object deformation is determined by the change in lattice shape.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 9: Free Form Deformation",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the following (Facial Animation and Tracking):\nI. FACS                                  1. Deformation technique using a lattice of control points\nII. Action Units                        2. Elementary building blocks of facial expressions\nIII. Free Form Deformation (FFD)         3. Represents facial expressions as combinations of facial movements\nIV. Magnetic Tracking                   4. Uses sensors placed at the subject's joints\nV. Optical Tracking                     5. Uses reflective markers and cameras to capture motion",
+    "options": [
+      "I–3, II–2, III–1, IV–4, V–5",
+      "I–2, II–3, III–1, IV–5, V–4",
+      "I–3, II–1, III–2, IV–4, V–5",
+      "I–1, II–2, III–3, IV–5, V–4"
+    ],
+    "answer": "I–3, II–2, III–1, IV–4, V–5",
+    "topic": "Assignment 9: Facial Animation & Tracking",
+    "lecture": "Assignment 9",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which is one of the four aspects of multimedia?",
+    "options": [
+      "Content Creation",
+      "Ray Tracing",
+      "Rasterization",
+      "Modeling"
+    ],
+    "answer": "Content Creation",
+    "topic": "Assignment 10: Multimedia Aspects",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which of the following is an example of a hypermedia system?",
+    "options": [
+      "JPEG",
+      "World Wide Web",
+      "H.261",
+      "MPEG"
+    ],
+    "answer": "World Wide Web",
+    "topic": "Assignment 10: Hypermedia Systems",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "HTTP stands for ___________________.",
+    "options": [
+      "Hypertext Transfer Protocol",
+      "Hyperlink Text Transmission Program",
+      "High Transfer Text Protocol",
+      "Hypermedia Transfer Processing"
+    ],
+    "answer": "Hypertext Transfer Protocol",
+    "topic": "Assignment 10: HTTP",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The two steps of sound digitization are _____________.",
+    "options": [
+      "Sampling and quantization",
+      "Encoding and decoding",
+      "DCT and RLC",
+      "Filtering and rendering"
+    ],
+    "answer": "Sampling and quantization",
+    "topic": "Assignment 10: Sound Digitization",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which of the following is a lossless compression technique?",
+    "options": [
+      "Huffman coding",
+      "Quantization",
+      "DCT",
+      "Vector quantization"
+    ],
+    "answer": "Huffman coding",
+    "topic": "Assignment 10: Lossless Compression",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "B-frames use _____________ reference frames.",
+    "options": [
+      "Only the next",
+      "Only the previous",
+      "Previous and next",
+      "No"
+    ],
+    "answer": "Previous and next",
+    "topic": "Assignment 10: B-frames",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "How many bitstream layers are present in MPEG-1?",
+    "options": [
+      "Four",
+      "Five",
+      "Six",
+      "Seven"
+    ],
+    "answer": "Six",
+    "topic": "Assignment 10: MPEG-1 Bitstream Layers",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Lossless compression permanently removes some information from the original data.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 10: Compression Concepts",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "MPEG B-frames can use both forward and backward prediction.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 10: Bidirectional Prediction",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the following (for video compression frame types):\nI. I-frame        A. Uses bidirectional prediction\nII. P-frame       B. Independent image exploiting spatial redundancy\nIII. B-frame      C. Predicted from a preceding reference frame\nIV. Motion Vector D. Represents the displacement and direction of a macroblock",
+    "options": [
+      "I-B, II-C, III-A, IV-D",
+      "I-A, II-C, III-B, IV-D",
+      "I-B, II-A, III-C, IV-D",
+      "I-C, II-B, III-D, IV-A"
+    ],
+    "answer": "I-B, II-C, III-A, IV-D",
+    "topic": "Assignment 10: Video Compression Frames",
+    "lecture": "Assignment 10",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The main goal of acceleration techniques in ray tracing is to ___________.",
+    "options": [
+      "Increase image resolution",
+      "Reduce the number of intersection calculations",
+      "Remove all secondary rays",
+      "Eliminate lighting calculations"
+    ],
+    "answer": "Reduce the number of intersection calculations",
+    "topic": "Assignment 11: Ray Tracing Acceleration",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which of the following is a family of ray-tracing acceleration techniques?",
+    "options": [
+      "Bounding volume techniques",
+      "Texture mapping",
+      "Scan conversion",
+      "Gamma correction"
+    ],
+    "answer": "Bounding volume techniques",
+    "topic": "Assignment 11: Bounding Volumes",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the concept with its property:\nA. Uniform subdivision            1. Avoids wasted divisions in empty regions\nB. Adaptive subdivision           2. Divides each cell into eight equal octants / uniform grid\nC. Octree                         3. Stores the subdivision\nD. Hierarchical bounding volumes  4. Build hierarchy bounding volumes",
+    "options": [
+      "A–1, B–2, C–3, D–4",
+      "A–2, B–1, C–3, D–4",
+      "A–2, B–3, C–4, D–1",
+      "A–3, B–1, C–2, D–4"
+    ],
+    "answer": "A–2, B–1, C–3, D–4",
+    "topic": "Assignment 11: Spatial Subdivisions",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In the parametric ray equation, t = 0 gives_____________.",
+    "options": [
+      "The farthest point",
+      "The origin point of the ray",
+      "The sphere center",
+      "The light source"
+    ],
+    "answer": "The origin point of the ray",
+    "topic": "Assignment 11: Parametric Ray Equation",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The ray that finds the visible surface for a pixel is called the Primary ray.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 11: Primary Ray",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In the ray-tracing tree, which behavior is represented by the right edge?",
+    "options": [
+      "Reflection",
+      "Refraction",
+      "Local lighting",
+      "Pixel sampling"
+    ],
+    "answer": "Refraction",
+    "topic": "Assignment 11: Ray-Tracing Tree",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The main goal of H.26L, the predecessor to H.264, was to double the coding efficiency of existing standards.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 11: H.264 Standards",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "CABAC stands for___________.",
+    "options": [
+      "Context-Adaptive Binary Arithmetic Coding",
+      "Coding-Adaptive Block Analysis Coding",
+      "Context-Based Analog Bit Coding",
+      "Compression and Binary Adaptive Codec"
+    ],
+    "answer": "Context-Adaptive Binary Arithmetic Coding",
+    "topic": "Assignment 11: CABAC",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Who developed WebP?",
+    "options": [
+      "Microsoft",
+      "Google",
+      "Netflix",
+      "Mozilla"
+    ],
+    "answer": "Google",
+    "topic": "Assignment 11: WebP Origin",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "How many reversible transforms are used by lossless WebP before entropy coding?",
+    "options": [
+      "Three",
+      "Four",
+      "Five",
+      "Seven"
+    ],
+    "answer": "Five",
+    "topic": "Assignment 11: Lossless WebP",
+    "lecture": "Assignment 11",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "The magnitude of a unit vector is _______________.",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Depends on direction"
+    ],
+    "answer": "1",
+    "topic": "Assignment 12: Unit Vector",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Matrix multiplication is generally___________.",
+    "options": [
+      "Commutative",
+      "Not commutative",
+      "Always zero",
+      "Always symmetric"
+    ],
+    "answer": "Not commutative",
+    "topic": "Assignment 12: Matrix Multiplication",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "A matrix has an inverse when its determinant is zero.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False",
+    "topic": "Assignment 12: Matrix Inverse",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "If A is m×n and B is n×q, AB has size __________.",
+    "options": [
+      "m×n",
+      "n×q",
+      "m×q",
+      "q×m"
+    ],
+    "answer": "m×q",
+    "topic": "Assignment 12: Matrix Dimensions",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Which identity is correct for the transpose of a product?",
+    "options": [
+      "(AB)^T = A^T B^T",
+      "(AB)^T = B^T A^T",
+      "(AB)^T = AB",
+      "(AB)^T = BA"
+    ],
+    "answer": "(AB)^T = B^T A^T",
+    "topic": "Assignment 12: Transpose Identity",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "A matrix inverse exists only if the matrix is ____________.",
+    "options": [
+      "Rectangular",
+      "Square with non-zero determinant",
+      "Square with zero determinant",
+      "A vector"
+    ],
+    "answer": "Square with non-zero determinant",
+    "topic": "Assignment 12: Invertibility Condition",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "In slope-intercept form y = mx + c, c is the ____________.",
+    "options": [
+      "Slope",
+      "Y-axis intercept",
+      "X-axis intercept",
+      "Normal"
+    ],
+    "answer": "Y-axis intercept",
+    "topic": "Assignment 12: Line Slope Intercept",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "A vertical line has an equation of the form x = b.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 12: Vertical Line Equation",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "A plane is a 2D surface in 3D space.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "topic": "Assignment 12: Plane Definition",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
+  },
+  {
+    "q": "Match the product with its result:\nA. Dot product                         1. Zero vector\nB. Cross product                       2. Scalar\nC. Dot product of V with V             3. |V|^2\nD. Cross product of parallel vectors   4. Vector perpendicular to both inputs",
+    "options": [
+      "A–1, B–4, C–3, D–2",
+      "A–2, B–4, C–3, D–1",
+      "A–2, B–3, C–4, D–1",
+      "A–4, B–2, C–1, D–3"
+    ],
+    "answer": "A–2, B–4, C–3, D–1",
+    "topic": "Assignment 12: Dot & Cross Products",
+    "lecture": "Assignment 12",
+    "section": "Assignment Questions"
   }
 ];
 
@@ -6729,16 +7468,16 @@ let questions = [];
 let currentQuestion = 0;
 let userAnswers = [];
 let markedForReview = [];
-let timeLeft = 45 * 60;
+let timeLeft = 90 * 60; // 90 minutes for 120 assignment questions
 let submitted = false;
 let started = false;
 let paused = false;
 let timerInterval = null;
 
 const sectionDurations = {
-  "Assignment Questions": 45 * 60,
+  "Assignment Questions": 90 * 60,
   "Lecture MCQs": 180 * 60,
-  "All": 225 * 60
+  "All": 240 * 60
 };
 
 const questionNumber = document.getElementById("question-number");
@@ -7068,5 +7807,5 @@ document.getElementById("start-btn").addEventListener("click", beginTest);
 document.getElementById("stop-btn").addEventListener("click", stopTest);
 document.getElementById("submit-btn").addEventListener("click", () => submitTest());
 
-// Initialize default section: Assignment Questions (60)
+// Initialize default section: Assignment Questions (120)
 setSection("Assignment Questions", true);
