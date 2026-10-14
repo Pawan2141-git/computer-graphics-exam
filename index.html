@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Graphics | Online Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="start-screen" class="start-screen">
+        <div class="start-card">
+            <h1>Computer Graphics Exam</h1>
+            <p><span id="total-questions">460</span> questions &middot; <span id="total-minutes">180</span> minutes</p>
+            <p class="start-hint">The timer will only start when you press the button below.</p>
+            <button id="start-btn">Start Test</button>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <h2>Computer Graphics Exam</h2>
+        <div id="timer">03:00:00</div>
+        <button id="stop-btn" class="stop-btn" hidden>Stop</button>
+    </header>
+
+    <main class="exam-container">
+        <section class="question-panel">
+            <div class="question-header">
+                <span id="question-number">Question 1</span>
+                <span id="question-topic" class="question-topic"></span>
+                <span id="question-count">1 of 460</span>
+            </div>
+
+            <h3 id="question-text">Loading question...</h3>
+
+            <div id="options-container"></div>
+
+            <p id="feedback" aria-live="polite"></p>
+
+            <div class="actions">
+                <button id="previous-btn">Previous</button>
+                <button id="review-btn">Mark for Review</button>
+                <button id="next-btn">Next</button>
+            </div>
+        </section>
+
+        <aside class="navigation-panel">
+            <div class="palette-header">
+                <h3>Question Palette</h3>
+                <div class="lecture-jump">
+                    <label for="lecture-select">Jump to Lecture:</label>
+                    <select id="lecture-select"></select>
+                </div>
+            </div>
+            <div id="question-palette"></div>
+            <button id="submit-btn">Submit Test</button>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
