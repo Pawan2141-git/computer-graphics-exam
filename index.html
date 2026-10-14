@@ -16,24 +16,14 @@
     <div class="upload-bg"></div>
     <div class="upload-card">
       <div class="logo-area">
+        <div class="free-badge">&#10024; 100% Free &#8226; No API Key Needed</div>
         <div class="logo-icon">&#9889;</div>
         <h1>PDF &#8594; MCQ Test</h1>
-        <p class="tagline">Upload any PDF &#8212; AI generates an instant practice test</p>
+        <p class="tagline">Upload any PDF (Assignment, Question Bank or Notes) &#8212; Instant Test!</p>
       </div>
 
       <div class="field-group">
-        <label for="api-key-input">
-          &#128273; Gemini API Key
-          <a href="https://aistudio.google.com/app/apikey" target="_blank" class="get-key-link">Get free key &#8594;</a>
-        </label>
-        <div class="input-row">
-          <input type="password" id="api-key-input" placeholder="Paste your Gemini API key here..." autocomplete="off">
-          <button id="toggle-key-btn" class="icon-btn" title="Show/Hide">&#128065;</button>
-        </div>
-      </div>
-
-      <div class="field-group">
-        <label>&#128196; Upload PDF</label>
+        <label>&#128196; Upload PDF File</label>
         <div class="drop-zone" id="drop-zone">
           <input type="file" id="pdf-input" accept=".pdf" hidden>
           <div class="drop-inner" id="drop-inner">
@@ -44,7 +34,7 @@
           <div class="file-selected hidden" id="file-selected">
             <span>&#9989;</span>
             <span id="file-name-display"></span>
-            <button class="remove-file-btn" id="remove-file-btn">&#10005;</button>
+            <button class="remove-file-btn" id="remove-file-btn" type="button">&#10005;</button>
           </div>
         </div>
       </div>
@@ -81,10 +71,22 @@
         </div>
       </div>
 
+      <details class="advanced-settings">
+        <summary class="advanced-summary">&#9881;&#65039; Advanced: Custom Gemini Key (Optional)</summary>
+        <div class="advanced-content">
+          <p class="advanced-hint">Direct PDF Question Bank parser &amp; built-in AI work with <b>zero API key</b>! Add a key only if you want to use your personal Gemini quota.</p>
+          <div class="input-row">
+            <input type="password" id="api-key-input" placeholder="Paste Gemini API key (optional)..." autocomplete="off">
+            <button id="toggle-key-btn" type="button" class="icon-btn" title="Show/Hide">&#128065;</button>
+          </div>
+          <a href="https://aistudio.google.com/app/apikey" target="_blank" class="get-key-link">Get free Gemini key &#8594;</a>
+        </div>
+      </details>
+
       <button id="generate-btn" class="generate-btn" disabled>
         &#128640; Generate Test
       </button>
-      <p class="privacy-note">&#128274; Your PDF &amp; key never leave your browser. 100% client-side.</p>
+      <p class="privacy-note">&#9889; <b>No API key required!</b> Works instantly with Question Banks, Assignments &amp; Notes.</p>
     </div>
   </div>
 

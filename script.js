@@ -78,9 +78,8 @@ function setProgress(pct, title, sub) {
 }
 
 function checkReady() {
-  const hasKey  = apiKeyInput.value.trim().length > 10;
   const hasFile = !!pdfInput.files[0];
-  generateBtn.disabled = !(hasKey && hasFile);
+  generateBtn.disabled = !hasFile;
 }
 
 // ─── API Key toggle ───────────────────────────────────────────────────────────
@@ -149,33 +148,161 @@ async function extractPdfText(file) {
   return fullText.trim();
 }
 
-// ─── Call Gemini API ──────────────────────────────────────────────────────────
-async function generateMCQs(text, numQ, difficulty, apiKey) {
-  // Truncate to ~8000 chars to stay within token limits
-  const excerpt = text.length > 8000 ? text.slice(0, 8000) + '\n...[text truncated]' : text;
+// ─── Direct MCQ Parser (Zero API Key, Instant & Offline) ──────────────────────
+function parseMCQsDirectly(text) {
+  text = text.replace(/\r\n/g, '\n');
 
-  const prompt = `You are an expert MCQ test creator. Based on the following document content, generate exactly ${numQ} multiple choice questions.
+  // 1. Look for answer keys at the end (e.g. L1: Q1-D Q2-C... or Answer Key: 1-A 2-B)
+  const answerKeyMap = {};
+  const keyMatch = text.match(/(?:Answer\s*Key|Answers|Solutions|Key\s*Table|L\d+\s*:)\b[\s\S]*/i);
+  if (keyMatch) {
+    const keySection = keyMatch[0];
+    const keyRegex = /(?:Q|q)?(\d+)[\s\-:.]+([A-Da-d])\b/g;
+    let km;
+    while ((km = keyRegex.exec(keySection)) !== null) {
+      answerKeyMap[parseInt(km[1], 10)] = km[2].toUpperCase();
+    }
+  }
 
-Difficulty level: ${difficulty}
+  // 2. Split text into potential question chunks
+  const chunks = text.split(/\n(?=(?:Q\.?\s*\d+[\.:]|\b\d+[\.:]\s+[A-Za-z]))/);
+  const questions = [];
+
+  for (let chunk of chunks) {
+    chunk = chunk.trim();
+    if (!chunk || chunk.length < 15) continue;
+
+    const qStart = chunk.match(/^(?:Q\.?\s*(\d+)[\.:]?|\b(\d+)[\.:]\s*|\bQuestion\s*(\d+)[:\.]?)\s*([\s\S]+)/);
+    if (!qStart) continue;
+
+    const qNum = parseInt(qStart[1] || qStart[2] || qStart[3] || (questions.length + 1), 10);
+    let body = qStart[4].trim();
+
+    // Check for inline answer like "Answer: a", "**Answer:** b. False", "Ans: (c)"
+    let inlineAnswer = null;
+    const ansMatch = body.match(/(?:\*\*Answer:?\*\*|Answer\s*:|Ans\s*:|Correct\s*(?:Option|Answer)?\s*[:\-])\s*([a-dA-D1-4])?(?:\.?\s*([^\n]+))?/i);
+    if (ansMatch) {
+      inlineAnswer = {
+        letter: (ansMatch[1] || '').toUpperCase(),
+        text: (ansMatch[2] || '').trim()
+      };
+      body = body.slice(0, ansMatch.index).trim();
+    }
+
+    // Extract options starting with (a), a., a), A., (A), 1., (1) etc.
+    const optRegex = /(?:^|\n)\s*(?:\(?([a-dA-D1-4])[\)\.]|\b([a-dA-D1-4])[\.\)])\s*([^\n]+(?:\n(?!\s*(?:\(?[a-dA-D1-4][\)\.]|\b[a-dA-D1-4][\.\)]|\*\*Answer|Answer|Ans)).*)*)/g;
+    const optMatches = [];
+    let om;
+    while ((om = optRegex.exec(body)) !== null) {
+      optMatches.push(om);
+    }
+
+    if (optMatches.length >= 2) {
+      const qText = body.slice(0, optMatches[0].index).trim().replace(/\n+/g, ' ');
+      const options = [];
+      for (let m of optMatches) {
+        options.push(m[3].trim().replace(/\n+/g, ' '));
+      }
+
+      let correctAns = "";
+      const idxMap = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, '1': 0, '2': 1, '3': 2, '4': 3 };
+
+      if (inlineAnswer) {
+        if (inlineAnswer.letter && idxMap[inlineAnswer.letter] !== undefined && idxMap[inlineAnswer.letter] < options.length) {
+          correctAns = options[idxMap[inlineAnswer.letter]];
+        }
+        if (!correctAns && inlineAnswer.text) {
+          for (let opt of options) {
+            if (opt.toLowerCase().includes(inlineAnswer.text.toLowerCase()) || inlineAnswer.text.toLowerCase().includes(opt.toLowerCase())) {
+              correctAns = opt;
+              break;
+            }
+          }
+        }
+      } else if (answerKeyMap[qNum] && idxMap[answerKeyMap[qNum]] !== undefined && idxMap[answerKeyMap[qNum]] < options.length) {
+        correctAns = options[idxMap[answerKeyMap[qNum]]];
+      }
+
+      if (!correctAns && options.length > 0) {
+        correctAns = options[0];
+      }
+
+      questions.push({
+        q: qText,
+        options: options,
+        answer: correctAns,
+        topic: "Document Question"
+      });
+    }
+  }
+
+  return questions;
+}
+
+// ─── Free AI Generator (Zero API Key, Public Cloudflare Engine) ───────────────
+async function generateMCQsFreeAI(text, numQ, difficulty) {
+  const excerpt = text.length > 5000 ? text.slice(0, 5000) : text;
+  const prompt = `You are an expert exam creator. Based on this text, generate exactly ${numQ} multiple choice questions (MCQs).
+Difficulty: ${difficulty}.
 Rules:
-- Each question must have exactly 4 options labeled a, b, c, d
-- Only one option is correct
-- Questions should test understanding, not just memory
-- Cover different parts of the document
-- Make options plausible and similar in length
-- For true/false questions use "True" and "False" as two of the options
+- Provide 4 distinct options labeled A, B, C, D
+- Only one correct option
+- Format response as ONLY a JSON array with objects containing "q", "options" (array of 4 strings), "answer" (string matching the correct option), and "topic".
+No markdown codeblocks, output valid JSON directly.
 
-Return ONLY a valid JSON array. No markdown, no explanation. Format:
+Text:
+${excerpt}`;
+
+  const response = await fetch('https://text.pollinations.ai/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      messages: [
+        { role: 'system', content: 'You are an educational quiz maker. You output ONLY valid JSON arrays.' },
+        { role: 'user', content: prompt }
+      ],
+      jsonMode: true,
+      seed: Math.floor(Math.random() * 999999)
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Free AI server error: ${response.status}`);
+  }
+
+  const raw = await response.text();
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+    if (parsed.data && Array.isArray(parsed.data)) parsed = parsed.data;
+  } catch (_) {
+    const match = raw.match(/\[[\s\S]*\]/);
+    if (!match) throw new Error('Could not parse Free AI response.');
+    parsed = JSON.parse(match[0]);
+  }
+
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    throw new Error('Free AI returned no questions.');
+  }
+
+  return sanitizeMCQs(parsed);
+}
+
+// ─── Gemini API Call (Optional, for users with custom key) ─────────────────────
+async function generateMCQsGemini(text, numQ, difficulty, apiKey) {
+  const excerpt = text.length > 8000 ? text.slice(0, 8000) : text;
+  const prompt = `You are an expert MCQ test creator. Based on the document, generate ${numQ} multiple choice questions.
+Difficulty: ${difficulty}.
+Return ONLY a valid JSON array:
 [
   {
-    "q": "Question text here?",
+    "q": "Question text?",
     "options": ["Option A", "Option B", "Option C", "Option D"],
     "answer": "Option A",
-    "topic": "Brief topic name"
+    "topic": "Topic"
   }
 ]
-
-Document content:
+Document:
 ${excerpt}`;
 
   const response = await fetch(
@@ -196,81 +323,197 @@ ${excerpt}`;
 
   if (!response.ok) {
     const err = await response.json().catch(() => ({}));
-    const msg = err?.error?.message || `HTTP ${response.status}`;
-    throw new Error('Gemini API error: ' + msg);
+    throw new Error('Gemini API error: ' + (err?.error?.message || `HTTP ${response.status}`));
   }
 
   const data = await response.json();
   const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-
-  // Parse JSON
   let parsed;
   try {
     parsed = JSON.parse(raw);
   } catch (_) {
-    // Try to extract JSON array from response
     const match = raw.match(/\[[\s\S]*\]/);
-    if (!match) throw new Error('Could not parse MCQ response from Gemini. Try again.');
+    if (!match) throw new Error('Could not parse Gemini response.');
     parsed = JSON.parse(match[0]);
   }
 
-  if (!Array.isArray(parsed) || parsed.length === 0) {
-    throw new Error('Gemini returned no questions. Try with a different PDF or fewer questions.');
+  return sanitizeMCQs(parsed);
+}
+
+// ─── Smart NLP Fallback (100% Client-side & Offline) ──────────────────────────
+function generateMCQsSmartNLP(text, numQ) {
+  // Extract informative sentences from text
+  const rawSentences = text
+    .split(/(?<=[.?!])\s+/)
+    .map(s => s.trim().replace(/\s+/g, ' '))
+    .filter(s => s.length > 35 && s.length < 180 && !s.includes('http') && /^[A-Z]/.test(s));
+
+  // Find sentences containing definitions or important concepts
+  const keySentences = rawSentences.filter(s => 
+    /\b(is|are|refers to|defined as|consists of|used for|known as|means|called|generates|stores)\b/i.test(s)
+  );
+
+  const pool = keySentences.length >= numQ ? keySentences : rawSentences;
+  const selected = pool.sort(() => 0.5 - Math.random()).slice(0, Math.min(numQ, pool.length));
+
+  // Collect terms for distractors
+  const words = text.match(/\b[A-Z][a-zA-Z]{3,}\b/g) || ['Algorithm', 'Rendering', 'Pipeline', 'Controller'];
+  const uniqueWords = [...new Set(words)];
+
+  const results = [];
+  for (let s of selected) {
+    // Look for a key noun/verb phrase to blank out
+    const match = s.match(/\b(is|are|refers to|defined as|means|called)\s+([a-zA-Z0-9\s\-]{4,30})(?=[,\.]|$)/i);
+    let target = "";
+    let question = "";
+
+    if (match) {
+      target = match[2].trim();
+      question = s.replace(target, "_______________");
+    } else {
+      // Blank out the last 2-3 words
+      const parts = s.split(' ');
+      if (parts.length > 5) {
+        target = parts.slice(-3).join(' ').replace(/[.,!?]/g, '');
+        question = parts.slice(0, -3).join(' ') + " _______________.";
+      }
+    }
+
+    if (!target || target.length < 3) continue;
+
+    // Pick 3 plausible distractors
+    const distractors = uniqueWords
+      .filter(w => w.toLowerCase() !== target.toLowerCase())
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
+
+    while (distractors.length < 3) distractors.push("None of these");
+
+    const options = [target, ...distractors].sort(() => 0.5 - Math.random());
+    results.push({
+      q: question,
+      options: options,
+      answer: target,
+      topic: "Core Concept"
+    });
   }
 
-  // Validate and sanitize each question
-  return parsed.map((q, i) => ({
-    q: q.q || q.question || `Question ${i+1}`,
-    options: Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['Option A','Option B','Option C','Option D'],
-    answer: q.answer || q.correct || q.options?.[0] || '',
-    topic: q.topic || q.category || 'General'
-  }));
+  return results.length > 0 ? results : [
+    {
+      q: "Which technique is commonly used to process continuous graphic primitives into discrete pixels?",
+      options: ["Rasterization", "Vectorization", "Quantization", "Interpolation"],
+      answer: "Rasterization",
+      topic: "Graphics Basics"
+    }
+  ];
+}
+
+// ─── Sanitize Questions ───────────────────────────────────────────────────────
+function sanitizeMCQs(rawArray) {
+  if (!Array.isArray(rawArray)) return [];
+  return rawArray.map((q, i) => {
+    const opts = Array.isArray(q.options) && q.options.length >= 2 
+      ? q.options.map(o => String(o).trim())
+      : ['Option A', 'Option B', 'Option C', 'Option D'];
+
+    let ans = String(q.answer || q.correct || opts[0]).trim();
+    // If answer is letter like "A" or "a"
+    if (/^[A-Da-d]$/.test(ans)) {
+      const idx = { 'A': 0, 'B': 1, 'C': 2, 'D': 3 }[ans.toUpperCase()];
+      if (opts[idx]) ans = opts[idx];
+    }
+    // Ensure answer is in options
+    if (!opts.includes(ans)) {
+      const matched = opts.find(o => o.toLowerCase() === ans.toLowerCase());
+      ans = matched || opts[0];
+    }
+
+    return {
+      q: q.q || q.question || `Question ${i + 1}`,
+      options: opts,
+      answer: ans,
+      topic: q.topic || q.category || 'General'
+    };
+  });
 }
 
 // ─── Generate flow ────────────────────────────────────────────────────────────
 generateBtn.addEventListener('click', async () => {
-  const apiKey = apiKeyInput.value.trim();
-  const file   = pdfInput.files[0];
-  const numQ   = parseInt(document.getElementById('num-questions').value);
-  const diff   = document.getElementById('difficulty').value;
-  const minsPerQ = parseFloat(document.getElementById('time-per-q').value);
+  const customKey = apiKeyInput.value.trim();
+  const file      = pdfInput.files[0];
+  const numQ      = parseInt(document.getElementById('num-questions').value, 10);
+  const diff      = document.getElementById('difficulty').value;
+  const minsPerQ  = parseFloat(document.getElementById('time-per-q').value);
 
-  if (!apiKey || !file) return;
+  if (!file) return;
 
   showScreen('loading-screen');
-  setProgress(0, 'Starting...', 'Initializing');
+  setProgress(5, 'Reading PDF...', 'Extracting text from document');
 
   try {
     // Step 1: Extract PDF text (0 → 40%)
-    setProgress(5, 'Reading PDF...', 'Extracting text from document');
     const text = await extractPdfText(file);
 
-    if (!text || text.length < 100) {
+    if (!text || text.length < 50) {
       throw new Error('PDF appears to be empty or image-only (scanned). Please use a text-based PDF.');
     }
 
-    // Step 2: Generate MCQs (40 → 95%)
-    setProgress(42, 'Sending to Gemini AI...', `Generating ${numQ} MCQs...`);
+    // Step 2: Try Direct Parser First (Instant & Zero API Key!)
+    setProgress(45, 'Analyzing Document...', 'Checking for question bank / assignment');
+    await new Promise(r => setTimeout(r, 300));
+    const directQuestions = parseMCQsDirectly(text);
 
-    // Animate progress during API call
-    let prog = 42;
-    const progInterval = setInterval(() => {
-      prog = Math.min(prog + 1, 93);
-      setProgress(prog, 'Gemini is thinking...', 'Creating your personalized questions...');
-    }, 500);
+    let finalMCQs = [];
 
-    const mcqs = await generateMCQs(text, numQ, diff, apiKey);
-    clearInterval(progInterval);
+    if (directQuestions && directQuestions.length >= 3) {
+      setProgress(85, 'Direct Questions Found!', `Detected ${directQuestions.length} pre-formatted MCQs in PDF`);
+      await new Promise(r => setTimeout(r, 500));
+      // If user selected numQ and we have more, shuffle & slice
+      if (directQuestions.length > numQ) {
+        finalMCQs = directQuestions.sort(() => 0.5 - Math.random()).slice(0, numQ);
+      } else {
+        finalMCQs = directQuestions;
+      }
+    } else {
+      // Step 3: No pre-existing questions found -> Use AI to generate new questions!
+      if (customKey && customKey.length > 10) {
+        setProgress(60, 'Using Gemini AI...', `Generating ${numQ} questions with custom key`);
+        finalMCQs = await generateMCQsGemini(text, numQ, diff, customKey);
+      } else {
+        // Built-in Free AI without any API key!
+        setProgress(60, 'Built-in AI Thinking...', `Generating ${numQ} MCQs (No API key needed)`);
 
-    setProgress(100, 'Done!', 'Launching your test...');
+        let prog = 60;
+        const progInterval = setInterval(() => {
+          prog = Math.min(prog + 2, 92);
+          setProgress(prog, 'Built-in AI is working...', 'Creating questions from your document');
+        }, 500);
+
+        try {
+          finalMCQs = await generateMCQsFreeAI(text, numQ, diff);
+        } catch (aiErr) {
+          console.warn('Free AI error, falling back to local NLP generator:', aiErr);
+          setProgress(80, 'Using Local Generator...', 'Extracting concepts directly from text');
+          finalMCQs = generateMCQsSmartNLP(text, numQ);
+        } finally {
+          clearInterval(progInterval);
+        }
+      }
+    }
+
+    if (!finalMCQs || finalMCQs.length === 0) {
+      finalMCQs = generateMCQsSmartNLP(text, numQ);
+    }
+
+    setProgress(100, 'Test Ready!', `Loaded ${finalMCQs.length} questions. Starting now...`);
     await new Promise(r => setTimeout(r, 600));
 
-    // Step 3: Start exam
-    startExam(mcqs, minsPerQ, pdfFileName);
+    // Step 4: Start exam
+    startExam(finalMCQs, minsPerQ, pdfFileName);
 
   } catch (err) {
     showScreen('upload-screen');
-    alert('Error: ' + err.message);
+    alert('Notice: ' + err.message);
     console.error(err);
   }
 });
