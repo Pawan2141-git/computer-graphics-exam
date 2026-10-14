@@ -1,124 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Graphics | Online Exam</title>
-    <link rel="stylesheet" href="style.css?v=13.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF to MCQ Test Generator</title>
+  <meta name="description" content="Upload any PDF and instantly generate an MCQ practice test powered by Gemini AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="start-screen" class="start-screen">
-        <div class="start-card">
-            <h1>Computer Graphics Exam</h1>
-            
-            <div class="section-selector-container">
-                <span class="section-select-label">Choose Practice Mode:</span>
-                
-                <!-- Main Category Tabs -->
-                <div class="main-mode-tabs">
-                    <button class="mode-tab active" data-mode="All Assignments">📝 All Assignments (120)</button>
-                    <button class="mode-tab" data-mode="Lecture MCQs">📚 Lecture MCQs (460)</button>
-                    <button class="mode-tab" data-mode="All">🎯 All Questions (580)</button>
-                </div>
+  <!-- UPLOAD SCREEN -->
+  <div id="upload-screen" class="screen upload-screen active">
+    <div class="upload-bg"></div>
+    <div class="upload-card">
+      <div class="logo-area">
+        <div class="logo-icon">&#9889;</div>
+        <h1>PDF &#8594; MCQ Test</h1>
+        <p class="tagline">Upload any PDF &#8212; AI generates an instant practice test</p>
+      </div>
 
-                <span class="section-select-label" style="margin-top: 15px;">Or Practice Individual Assignment (10 Qs each):</span>
-                <!-- Individual 12 Assignment Pills -->
-                <div class="assignment-grid">
-                    <button class="assign-pill" data-mode="Assignment 1">A1</button>
-                    <button class="assign-pill" data-mode="Assignment 2">A2</button>
-                    <button class="assign-pill" data-mode="Assignment 3">A3</button>
-                    <button class="assign-pill" data-mode="Assignment 4">A4</button>
-                    <button class="assign-pill" data-mode="Assignment 5">A5</button>
-                    <button class="assign-pill" data-mode="Assignment 6">A6</button>
-                    <button class="assign-pill" data-mode="Assignment 7">A7</button>
-                    <button class="assign-pill" data-mode="Assignment 8">A8</button>
-                    <button class="assign-pill" data-mode="Assignment 9">A9</button>
-                    <button class="assign-pill" data-mode="Assignment 10">A10</button>
-                    <button class="assign-pill" data-mode="Assignment 11">A11</button>
-                    <button class="assign-pill" data-mode="Assignment 12">A12</button>
-                </div>
-            </div>
-
-            <div class="section-info-box">
-                <h3 id="active-section-title">All 12 Assignments (120 Questions)</h3>
-                <p><span id="total-questions">120</span> questions &middot; <span id="total-minutes">90</span> minutes</p>
-            </div>
-
-            <p class="start-hint">The timer will only start when you press the button below.</p>
-            <button id="start-btn">Start Test</button>
+      <div class="field-group">
+        <label for="api-key-input">
+          &#128273; Gemini API Key
+          <a href="https://aistudio.google.com/app/apikey" target="_blank" class="get-key-link">Get free key &#8594;</a>
+        </label>
+        <div class="input-row">
+          <input type="password" id="api-key-input" placeholder="Paste your Gemini API key here..." autocomplete="off">
+          <button id="toggle-key-btn" class="icon-btn" title="Show/Hide">&#128065;</button>
         </div>
+      </div>
+
+      <div class="field-group">
+        <label>&#128196; Upload PDF</label>
+        <div class="drop-zone" id="drop-zone">
+          <input type="file" id="pdf-input" accept=".pdf" hidden>
+          <div class="drop-inner" id="drop-inner">
+            <div class="drop-icon">&#128194;</div>
+            <div class="drop-text">Drag &amp; drop your PDF here</div>
+            <div class="drop-sub">or <span class="browse-link">click to browse</span></div>
+          </div>
+          <div class="file-selected hidden" id="file-selected">
+            <span>&#9989;</span>
+            <span id="file-name-display"></span>
+            <button class="remove-file-btn" id="remove-file-btn">&#10005;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="options-row">
+        <div class="option-box">
+          <label for="num-questions">Questions</label>
+          <select id="num-questions">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+          </select>
+        </div>
+        <div class="option-box">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div>
+        <div class="option-box">
+          <label for="time-per-q">Min / Q</label>
+          <select id="time-per-q">
+            <option value="1">1 min</option>
+            <option value="1.5" selected>1.5 min</option>
+            <option value="2">2 min</option>
+            <option value="3">3 min</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="generate-btn" class="generate-btn" disabled>
+        &#128640; Generate Test
+      </button>
+      <p class="privacy-note">&#128274; Your PDF &amp; key never leave your browser. 100% client-side.</p>
     </div>
+  </div>
 
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen" class="screen loading-screen">
+    <div class="loader-card">
+      <div class="spinner-ring"></div>
+      <h2 id="loading-title">Reading PDF...</h2>
+      <p id="loading-sub">Extracting text from your document</p>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p id="progress-label" class="progress-label">0%</p>
+    </div>
+  </div>
+
+  <!-- EXAM SCREEN -->
+  <div id="exam-screen" class="screen exam-screen">
     <header class="topbar">
-        <div class="topbar-left">
-            <h2>Computer Graphics Exam</h2>
-            <span id="current-section-badge" class="current-section-badge">All Assignments</span>
-        </div>
-
-        <div class="topbar-center">
-            <div class="topbar-jump">
-                <select id="jump-select"></select>
-            </div>
-        </div>
-
-        <div class="topbar-right">
-            <div id="timer">01:30:00</div>
-            <button id="stop-btn" class="stop-btn" hidden>Stop</button>
-        </div>
+      <div class="topbar-left">
+        <button id="back-btn" class="back-btn">&#8592; New Test</button>
+        <h2 id="exam-title">MCQ Test</h2>
+      </div>
+      <div class="topbar-right">
+        <div id="timer" class="timer-display">00:00</div>
+        <button id="pause-btn" class="pause-btn">&#9208; Pause</button>
+      </div>
     </header>
-
-    <main class="exam-container">
-        <section class="question-panel">
-            <div class="question-header">
-                <span id="question-number">Question 1</span>
-                <span id="question-topic" class="question-topic"></span>
-                <span id="question-count">1 of 120</span>
-            </div>
-
-            <h3 id="question-text">Loading question...</h3>
-
-            <div id="options-container"></div>
-
-            <p id="feedback" aria-live="polite"></p>
-
-            <div class="actions">
-                <button id="previous-btn">Previous</button>
-                <button id="review-btn">Mark for Review</button>
-                <button id="next-btn">Next</button>
-            </div>
-        </section>
-
-        <aside class="navigation-panel">
-            <div class="palette-header">
-                <h3>Question Palette</h3>
-                
-                <!-- Quick Switcher in Sidebar -->
-                <div class="sidebar-assign-pills">
-                    <span class="pills-title">Quick Switch Assignment:</span>
-                    <div class="pills-row">
-                        <button class="mini-pill" data-mode="All Assignments">All</button>
-                        <button class="mini-pill" data-mode="Assignment 1">A1</button>
-                        <button class="mini-pill" data-mode="Assignment 2">A2</button>
-                        <button class="mini-pill" data-mode="Assignment 3">A3</button>
-                        <button class="mini-pill" data-mode="Assignment 4">A4</button>
-                        <button class="mini-pill" data-mode="Assignment 5">A5</button>
-                        <button class="mini-pill" data-mode="Assignment 6">A6</button>
-                        <button class="mini-pill" data-mode="Assignment 7">A7</button>
-                        <button class="mini-pill" data-mode="Assignment 8">A8</button>
-                        <button class="mini-pill" data-mode="Assignment 9">A9</button>
-                        <button class="mini-pill" data-mode="Assignment 10">A10</button>
-                        <button class="mini-pill" data-mode="Assignment 11">A11</button>
-                        <button class="mini-pill" data-mode="Assignment 12">A12</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="question-palette"></div>
-            <button id="submit-btn">Submit Test</button>
-        </aside>
+    <main class="exam-body">
+      <section class="question-panel">
+        <div class="question-header">
+          <span id="q-number" class="q-number">Q 1</span>
+          <span id="q-topic" class="q-topic-badge"></span>
+          <span id="q-count" class="q-count">1 of 10</span>
+        </div>
+        <div class="question-text-wrap">
+          <p id="question-text">Loading...</p>
+        </div>
+        <div id="options-container" class="options-list"></div>
+        <div id="feedback" class="feedback-msg" aria-live="polite"></div>
+        <div class="nav-actions">
+          <button id="prev-btn" class="nav-btn">&#9664; Prev</button>
+          <button id="mark-btn" class="nav-btn mark-btn-style">&#9873; Mark</button>
+          <button id="next-btn" class="nav-btn">Next &#9654;</button>
+        </div>
+      </section>
+      <aside class="palette-panel">
+        <div class="palette-head">
+          <h3>Question Map</h3>
+          <div class="legend">
+            <span class="leg answered">&#10003;</span> Done &nbsp;
+            <span class="leg marked">&#9733;</span> Flagged
+          </div>
+        </div>
+        <div id="question-palette" class="q-palette"></div>
+        <button id="submit-btn" class="submit-btn">&#9873; Submit Test</button>
+      </aside>
     </main>
+  </div>
 
-    <script src="script.js?v=13.0"></script>
+  <!-- RESULT SCREEN -->
+  <div id="result-screen" class="screen result-screen">
+    <div class="result-card">
+      <div class="result-emoji" id="result-emoji">&#127919;</div>
+      <h2 id="result-title">Test Complete!</h2>
+      <div class="score-circle">
+        <div class="score-number" id="score-number">0/0</div>
+        <div class="score-pct" id="score-pct">0%</div>
+      </div>
+      <div class="result-stats">
+        <div class="stat correct-stat">
+          <span class="stat-val" id="stat-correct">0</span>
+          <span class="stat-lbl">Correct</span>
+        </div>
+        <div class="stat wrong-stat">
+          <span class="stat-val" id="stat-wrong">0</span>
+          <span class="stat-lbl">Wrong</span>
+        </div>
+        <div class="stat skip-stat">
+          <span class="stat-val" id="stat-skip">0</span>
+          <span class="stat-lbl">Skipped</span>
+        </div>
+      </div>
+      <div class="result-actions">
+        <button id="review-result-btn" class="review-btn">&#128203; Review Answers</button>
+        <button id="new-test-btn" class="new-test-btn">&#128260; New Test</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (typeof pdfjsLib !== "undefined") {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
