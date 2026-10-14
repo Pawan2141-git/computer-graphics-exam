@@ -1,6 +1,5 @@
-// 580 Total Questions:
-// - 460 Lecture MCQs (L1 - L49 from NPTEL PDFs)
-// - 120 Assignment Questions (Assignments 1 - 12)
+// Computer Graphics Online Exam - Full Bank
+// 460 Lecture MCQs (L1 to L49) + 120 Assignment Questions (Assignments 1 to 12) = 580 Total
 
 const allQuestions = [
   {
@@ -7463,22 +7462,16 @@ const allQuestions = [
   }
 ];
 
-let activeSection = "Assignment Questions"; // Default active section
+let activeMode = "All Assignments"; // "Assignment 1".."Assignment 12", "All Assignments", "Lecture MCQs", "All"
 let questions = [];
 let currentQuestion = 0;
 let userAnswers = [];
 let markedForReview = [];
-let timeLeft = 90 * 60; // 90 minutes for 120 assignment questions
+let timeLeft = 90 * 60;
 let submitted = false;
 let started = false;
 let paused = false;
 let timerInterval = null;
-
-const sectionDurations = {
-  "Assignment Questions": 90 * 60,
-  "Lecture MCQs": 180 * 60,
-  "All": 240 * 60
-};
 
 const questionNumber = document.getElementById("question-number");
 const questionTopic = document.getElementById("question-topic");
@@ -7488,56 +7481,77 @@ const optionsContainer = document.getElementById("options-container");
 const feedback = document.getElementById("feedback");
 const timer = document.getElementById("timer");
 const palette = document.getElementById("question-palette");
-const lectureSelect = document.getElementById("lecture-select");
-const sectionTabs = document.querySelectorAll(".section-tab");
-const sectionBadges = document.querySelectorAll(".current-section-badge");
+const jumpSelect = document.getElementById("jump-select");
+const currentSectionBadge = document.getElementById("current-section-badge");
 
-function setSection(secName, resetTimer = true) {
-  activeSection = secName;
-  if (secName === "All") {
-    questions = allQuestions.map(q => ({
-      ...q,
-      options: [...q.options].sort(() => Math.random() - 0.5)
-    }));
-  } else {
-    questions = allQuestions.filter(q => q.section === secName).map(q => ({
+function getFilteredQuestions(mode) {
+  if (mode === "All") {
+    return allQuestions.map(q => ({
       ...q,
       options: [...q.options].sort(() => Math.random() - 0.5)
     }));
   }
+  if (mode === "Lecture MCQs") {
+    return allQuestions.filter(q => q.section === "Lecture MCQs").map(q => ({
+      ...q,
+      options: [...q.options].sort(() => Math.random() - 0.5)
+    }));
+  }
+  if (mode === "All Assignments") {
+    return allQuestions.filter(q => q.section === "Assignment Questions").map(q => ({
+      ...q,
+      options: [...q.options].sort(() => Math.random() - 0.5)
+    }));
+  }
+  // Individual assignment like "Assignment 1", "Assignment 7", etc.
+  return allQuestions.filter(q => q.lecture === mode).map(q => ({
+    ...q,
+    options: [...q.options].sort(() => Math.random() - 0.5)
+  }));
+}
 
+function getDurationForMode(mode, qCount) {
+  if (mode.startsWith("Assignment ")) return 10 * 60; // 10 minutes for 10 questions
+  if (mode === "All Assignments") return 90 * 60; // 90 mins for 120 questions
+  if (mode === "Lecture MCQs") return 180 * 60; // 180 mins for 460 questions
+  return 240 * 60; // 240 mins for all 580 questions
+}
+
+function setExamMode(mode, resetProgress = true) {
+  activeMode = mode;
+  questions = getFilteredQuestions(mode);
   currentQuestion = 0;
   userAnswers = Array(questions.length).fill(null);
   markedForReview = Array(questions.length).fill(false);
   submitted = false;
 
-  if (resetTimer) {
-    timeLeft = sectionDurations[secName] || (60 * 60);
+  if (resetProgress) {
+    timeLeft = getDurationForMode(mode, questions.length);
     clearInterval(timerInterval);
     if (started) {
       startTimer();
     }
   }
 
-  // Update Start Screen stats
+  // Update UI stats on Start Screen & App
   const totalQuestionsEl = document.getElementById("total-questions");
   if (totalQuestionsEl) totalQuestionsEl.textContent = questions.length;
   const totalMinutesEl = document.getElementById("total-minutes");
   if (totalMinutesEl) totalMinutesEl.textContent = Math.round(timeLeft / 60);
   const activeSectionTitle = document.getElementById("active-section-title");
-  if (activeSectionTitle) activeSectionTitle.textContent = activeSection;
+  if (activeSectionTitle) activeSectionTitle.textContent = getModeTitle(mode);
+  
+  if (currentSectionBadge) {
+    currentSectionBadge.textContent = mode;
+  }
 
-  // Update tabs UI
-  sectionTabs.forEach(tab => {
-    if (tab.dataset.section === secName) {
-      tab.classList.add("active");
+  // Update buttons across UI
+  document.querySelectorAll("[data-mode]").forEach(btn => {
+    if (btn.dataset.mode === mode) {
+      btn.classList.add("active");
     } else {
-      tab.classList.remove("active");
+      btn.classList.remove("active");
     }
-  });
-
-  sectionBadges.forEach(badge => {
-    badge.textContent = secName;
   });
 
   updateTimerDisplay();
@@ -7545,61 +7559,91 @@ function setSection(secName, resetTimer = true) {
   renderQuestion();
 }
 
-function populateJumpSelect() {
-  if (!lectureSelect) return;
-  lectureSelect.innerHTML = "";
+function getModeTitle(mode) {
+  if (mode === "All Assignments") return "All 12 Assignments (120 Questions)";
+  if (mode === "Lecture MCQs") return "Lecture MCQs (460 Questions, L1-L49)";
+  if (mode === "All") return "Complete Question Bank (580 Questions)";
+  return `${mode} (10 Questions)`;
+}
 
-  const groupMap = new Map();
-  questions.forEach((q, idx) => {
-    const key = q.lecture || (q.topic ? q.topic.split(":")[0].trim() : "Other");
-    if (!groupMap.has(key)) {
-      let displayTitle = q.topic || key;
-      if (activeSection === "Assignment Questions" && key.startsWith("Assignment ")) {
-        const num = parseInt(key.replace("Assignment ", ""), 10);
-        const startQ = (num - 1) * 10 + 1;
-        const endQ = num * 10;
-        const topicPart = q.topic.includes(":") ? q.topic.split(":")[1].trim() : "";
-        displayTitle = `${key} (Q${startQ}-${endQ}): ${topicPart}`;
-      }
-      groupMap.set(key, { index: idx, title: displayTitle });
-    }
-  });
+function populateJumpSelect() {
+  if (!jumpSelect) return;
+  jumpSelect.innerHTML = "";
 
   const defaultOpt = document.createElement("option");
   defaultOpt.value = "";
-  defaultOpt.textContent = activeSection === "Assignment Questions" 
-    ? "Jump to Assignment (1 - 12)..." 
-    : "Jump to Topic / Lecture...";
-  lectureSelect.appendChild(defaultOpt);
+  defaultOpt.textContent = "Select Section / Assignment to Jump...";
+  jumpSelect.appendChild(defaultOpt);
 
-  groupMap.forEach((info, key) => {
+  // Group 1: All Assignments (1 to 12)
+  const assignGroup = document.createElement("optgroup");
+  assignGroup.label = "── Assignments (1 to 12) ──";
+  
+  const allAssignOpt = document.createElement("option");
+  allAssignOpt.value = "mode:All Assignments";
+  allAssignOpt.textContent = "📝 All Assignments (120 Questions)";
+  if (activeMode === "All Assignments") allAssignOpt.selected = true;
+  assignGroup.appendChild(allAssignOpt);
+
+  for (let i = 1; i <= 12; i++) {
     const opt = document.createElement("option");
-    opt.value = info.index;
-    opt.textContent = info.title;
-    lectureSelect.appendChild(opt);
-  });
+    opt.value = `mode:Assignment ${i}`;
+    opt.textContent = `Assignment ${i} (Q${(i-1)*10+1} - Q${i*10})`;
+    if (activeMode === `Assignment ${i}`) opt.selected = true;
+    assignGroup.appendChild(opt);
+  }
+  jumpSelect.appendChild(assignGroup);
+
+  // Group 2: Lectures
+  const lecGroup = document.createElement("optgroup");
+  lecGroup.label = "── Lecture MCQs ──";
+  const allLecOpt = document.createElement("option");
+  allLecOpt.value = "mode:Lecture MCQs";
+  allLecOpt.textContent = "📚 All Lecture MCQs (460 Questions)";
+  if (activeMode === "Lecture MCQs") allLecOpt.selected = true;
+  lecGroup.appendChild(allLecOpt);
+  jumpSelect.appendChild(lecGroup);
+
+  // Group 3: All
+  const allGroup = document.createElement("optgroup");
+  allGroup.label = "── Combined ──";
+  const allOpt = document.createElement("option");
+  allOpt.value = "mode:All";
+  allOpt.textContent = "🎯 All 580 Questions";
+  if (activeMode === "All") allOpt.selected = true;
+  allGroup.appendChild(allOpt);
+  jumpSelect.appendChild(allGroup);
 }
 
-if (lectureSelect) {
-  lectureSelect.addEventListener("change", (e) => {
-    if (e.target.value !== "") {
-      currentQuestion = parseInt(e.target.value, 10);
-      renderQuestion();
-      e.target.value = "";
+if (jumpSelect) {
+  jumpSelect.addEventListener("change", (e) => {
+    const val = e.target.value;
+    if (!val) return;
+    if (val.startsWith("mode:")) {
+      const targetMode = val.replace("mode:", "");
+      if (started && !submitted) {
+        if (!confirm(`Switch to "${targetMode}"? Current test progress will be reset.`)) {
+          populateJumpSelect();
+          return;
+        }
+      }
+      setExamMode(targetMode, true);
     }
   });
 }
 
-sectionTabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    const targetSection = tab.dataset.section;
+// Wire up all mode buttons
+document.addEventListener("click", (e) => {
+  const modeBtn = e.target.closest("[data-mode]");
+  if (modeBtn) {
+    const targetMode = modeBtn.dataset.mode;
     if (started && !submitted) {
-      if (!confirm(`Switch to "${targetSection}"? Current test progress in this section will be reset.`)) {
+      if (!confirm(`Switch to "${targetMode}"? Current test progress will be reset.`)) {
         return;
       }
     }
-    setSection(targetSection, true);
-  });
+    setExamMode(targetMode, true);
+  }
 });
 
 function renderQuestion() {
@@ -7608,8 +7652,8 @@ function renderQuestion() {
 
   questionNumber.textContent = `Question ${currentQuestion + 1}`;
   if (questionTopic) {
-    questionTopic.textContent = question.topic || question.section;
-    questionTopic.title = question.topic || question.section;
+    questionTopic.textContent = question.topic || question.lecture || "";
+    questionTopic.title = question.topic || "";
   }
   questionCount.textContent = `${currentQuestion + 1} of ${questions.length}`;
   questionText.textContent = question.q;
@@ -7815,5 +7859,5 @@ document.getElementById("start-btn").addEventListener("click", beginTest);
 document.getElementById("stop-btn").addEventListener("click", stopTest);
 document.getElementById("submit-btn").addEventListener("click", () => submitTest());
 
-// Initialize default section: Assignment Questions (120)
-setSection("Assignment Questions", true);
+// Set default mode: "All Assignments" (120 Questions)
+setExamMode("All Assignments", true);

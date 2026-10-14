@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Graphics | Online Exam</title>
-    <link rel="stylesheet" href="style.css?v=12.5">
+    <link rel="stylesheet" href="style.css?v=13.0">
 </head>
 <body>
 
@@ -13,26 +13,36 @@
             <h1>Computer Graphics Exam</h1>
             
             <div class="section-selector-container">
-                <span class="section-select-label">Choose Section to Practice:</span>
-                <div class="section-tabs">
-                    <button class="section-tab active" data-section="Assignment Questions">
-                        📝 Assignment Questions (120)
-                    </button>
-                    <button class="section-tab" data-section="Lecture MCQs">
-                        📚 Lecture MCQs (460)
-                    </button>
-                    <button class="section-tab" data-section="All">
-                        🎯 All Questions (580)
-                    </button>
+                <span class="section-select-label">Choose Practice Mode:</span>
+                
+                <!-- Main Category Tabs -->
+                <div class="main-mode-tabs">
+                    <button class="mode-tab active" data-mode="All Assignments">📝 All Assignments (120)</button>
+                    <button class="mode-tab" data-mode="Lecture MCQs">📚 Lecture MCQs (460)</button>
+                    <button class="mode-tab" data-mode="All">🎯 All Questions (580)</button>
+                </div>
+
+                <span class="section-select-label" style="margin-top: 15px;">Or Practice Individual Assignment (10 Qs each):</span>
+                <!-- Individual 12 Assignment Pills -->
+                <div class="assignment-grid">
+                    <button class="assign-pill" data-mode="Assignment 1">A1</button>
+                    <button class="assign-pill" data-mode="Assignment 2">A2</button>
+                    <button class="assign-pill" data-mode="Assignment 3">A3</button>
+                    <button class="assign-pill" data-mode="Assignment 4">A4</button>
+                    <button class="assign-pill" data-mode="Assignment 5">A5</button>
+                    <button class="assign-pill" data-mode="Assignment 6">A6</button>
+                    <button class="assign-pill" data-mode="Assignment 7">A7</button>
+                    <button class="assign-pill" data-mode="Assignment 8">A8</button>
+                    <button class="assign-pill" data-mode="Assignment 9">A9</button>
+                    <button class="assign-pill" data-mode="Assignment 10">A10</button>
+                    <button class="assign-pill" data-mode="Assignment 11">A11</button>
+                    <button class="assign-pill" data-mode="Assignment 12">A12</button>
                 </div>
             </div>
 
             <div class="section-info-box">
-                <h3 id="active-section-title">Assignment Questions</h3>
+                <h3 id="active-section-title">All 12 Assignments (120 Questions)</h3>
                 <p><span id="total-questions">120</span> questions &middot; <span id="total-minutes">90</span> minutes</p>
-                <div style="margin-top: 8px; font-size: 13px; color: #1e40af; font-weight: 600;">
-                    Includes all 12 Assignments (Assignments 1 to 12)
-                </div>
             </div>
 
             <p class="start-hint">The timer will only start when you press the button below.</p>
@@ -43,14 +53,12 @@
     <header class="topbar">
         <div class="topbar-left">
             <h2>Computer Graphics Exam</h2>
-            <span class="current-section-badge">Assignment Questions</span>
+            <span id="current-section-badge" class="current-section-badge">All Assignments</span>
         </div>
 
         <div class="topbar-center">
-            <div class="section-tabs nav-tabs">
-                <button class="section-tab active" data-section="Assignment Questions">Assignments (120)</button>
-                <button class="section-tab" data-section="Lecture MCQs">Lectures (460)</button>
-                <button class="section-tab" data-section="All">All (580)</button>
+            <div class="topbar-jump">
+                <select id="jump-select"></select>
             </div>
         </div>
 
@@ -84,16 +92,33 @@
         <aside class="navigation-panel">
             <div class="palette-header">
                 <h3>Question Palette</h3>
-                <div class="lecture-jump">
-                    <label for="lecture-select">Jump to Assignment (1 to 12):</label>
-                    <select id="lecture-select"></select>
+                
+                <!-- Quick Switcher in Sidebar -->
+                <div class="sidebar-assign-pills">
+                    <span class="pills-title">Quick Switch Assignment:</span>
+                    <div class="pills-row">
+                        <button class="mini-pill" data-mode="All Assignments">All</button>
+                        <button class="mini-pill" data-mode="Assignment 1">A1</button>
+                        <button class="mini-pill" data-mode="Assignment 2">A2</button>
+                        <button class="mini-pill" data-mode="Assignment 3">A3</button>
+                        <button class="mini-pill" data-mode="Assignment 4">A4</button>
+                        <button class="mini-pill" data-mode="Assignment 5">A5</button>
+                        <button class="mini-pill" data-mode="Assignment 6">A6</button>
+                        <button class="mini-pill" data-mode="Assignment 7">A7</button>
+                        <button class="mini-pill" data-mode="Assignment 8">A8</button>
+                        <button class="mini-pill" data-mode="Assignment 9">A9</button>
+                        <button class="mini-pill" data-mode="Assignment 10">A10</button>
+                        <button class="mini-pill" data-mode="Assignment 11">A11</button>
+                        <button class="mini-pill" data-mode="Assignment 12">A12</button>
+                    </div>
                 </div>
             </div>
+            
             <div id="question-palette"></div>
             <button id="submit-btn">Submit Test</button>
         </aside>
     </main>
 
-    <script src="script.js?v=12.5"></script>
+    <script src="script.js?v=13.0"></script>
 </body>
 </html>
